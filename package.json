@@ -233,7 +233,8 @@
       "cordova-sqlite-storage": {},
       "@moodlehq/phonegap-plugin-push": {
         "ANDROIDX_CORE_VERSION": "1.6.+",
-        "FCM_VERSION": "23.+"
+        "FCM_VERSION": "23.+",
+        "IOS_FIREBASE_MESSAGING_VERSION": "~> 8.1.1"
       },
       "@moodlehq/cordova-plugin-intent": {},
       "nl.kingsquare.cordova.background-audio": {},
