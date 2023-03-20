@@ -40,6 +40,7 @@ import { CorePath } from '@singletons/path';
 import { CorePromisedValue } from '@classes/promised-value';
 import { SafeHtml } from '@angular/platform-browser';
 import { CoreLoginError } from '@classes/errors/loginerror';
+import { WebserviceService } from '@/customservices/webservice.service';
 
 const PASSWORD_RESETS_CONFIG_KEY = 'password-resets';
 
@@ -65,7 +66,7 @@ export class CoreLoginHelperProvider {
     protected isOpenEditAlertShown = false;
     protected waitingForBrowser?: CorePromisedValue<void>;
 
-    constructor() {
+    constructor(private ws: WebserviceService) {
         this.logger = CoreLogger.getInstance('CoreLoginHelper');
     }
 
@@ -1348,24 +1349,24 @@ export class CoreLoginHelperProvider {
      * @returns Promise resolved when done.
      */
     async scanQR(): Promise<void> {
-        // Scan for a QR code.
+        const urlToOpen = CoreNavigator.getRouteParam('urlToOpen');
         const text = await CoreUtils.scanQR();
+        if(text !== undefined) {
+            const results = text.split(';');
 
-        if (text && CoreCustomURLSchemes.isCustomURL(text)) {
-            try {
-                await CoreCustomURLSchemes.handleCustomURL(text);
-            } catch (error) {
-                CoreCustomURLSchemes.treatHandleCustomURLError(error);
-            }
-        } else if (text) {
-            // Not a custom URL scheme, check if it's a URL scheme to another app.
-            const scheme = CoreUrlUtils.getUrlProtocol(text);
+            const userId = Number(results[1]);
+            const privatekey = results[0];
 
-            if (scheme && scheme != 'http' && scheme != 'https') {
-                CoreDomUtils.showErrorModal(Translate.instant('core.errorurlschemeinvalidscheme', { $a: text }));
-            } else {
-                CoreDomUtils.showErrorModal('core.login.errorqrnoscheme', true);
-            }
+            this.ws.loginUserWithQRCode(userId, privatekey).subscribe(async res => {
+
+                await CoreSites.newSite(
+                    'https://wuk.wunderbyte.at/',
+                    res.token,
+                    res.privateToken,
+                );
+                await CoreNavigator.navigateToSiteHome({ params: { urlToOpen: urlToOpen } });
+
+            });
         }
     }
 

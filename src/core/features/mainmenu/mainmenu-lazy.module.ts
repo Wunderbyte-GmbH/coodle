@@ -24,6 +24,9 @@ import { CoreMainMenuHomeHandlerService } from './services/handlers/mainmenu';
 import { CoreMainMenuProvider } from './services/mainmenu';
 import { CoreMainMenuComponentsModule } from './components/components.module';
 
+/**
+ *
+ */
 function buildRoutes(injector: Injector): Routes {
     const routes = resolveModuleRoutes(injector, MAIN_MENU_ROUTES);
 
@@ -43,6 +46,11 @@ function buildRoutes(injector: Injector): Routes {
                 {
                     path: CoreMainMenuProvider.MORE_PAGE_NAME,
                     loadChildren: () => import('./pages/more/more.module').then(m => m.CoreMainMenuMorePageModule),
+                },
+                {
+                    path: 'coodlelanding',
+                    loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
+                        .then(m => m.CoodlelandingPageModule),
                 },
                 ...routes.children,
             ],

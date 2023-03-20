@@ -32,7 +32,6 @@
                 <p *ngIf="siteName" class="ion-padding core-sitename">
                     <core-format-text [text]="siteName" [filter]="false"></core-format-text>
                 </p>
-                <p class="core-siteurl">{{siteUrl}}</p>
 
                 <ion-card *ngIf="!isLoggedOut" class="core-danger-card core-login-reconnect-warning">
                     <ion-item>
@@ -48,7 +47,7 @@
                     <div [innerHTML]="exceededAttemptsHTML" (click)="exceededAttemptsClicked($event)"></div>
                 </core-login-exceeded-attempts>
             </div>
-            <form *ngIf="!isOAuth" [formGroup]="credForm" (ngSubmit)="login($event)" class="core-login-form" #reconnectForm>
+            <!-- <form *ngIf="!isOAuth" [formGroup]="credForm" (ngSubmit)="login($event)" class="core-login-form" #reconnectForm>
                 <ion-item class="ion-text-wrap core-username item-interactive">
                     <ion-label>
                         <p>{{username}}</p>
@@ -78,7 +77,7 @@
                     {{ 'core.login.loginbutton' | translate }}
                 </ion-button>
 
-                <!-- Forgotten password option. -->
+
                 <ion-button *ngIf="showForgottenPassword && !isOAuth" expand="block" fill="clear"
                     class="core-login-forgotten-password core-button-as-link ion-text-wrap" (click)="forgottenPassword()">
                     {{ 'core.login.forgotten' | translate }}
@@ -86,7 +85,6 @@
 
                 <div class="ion-text-center ion-padding core-login-site-qrcode-separator">{{ 'core.login.or' | translate }}</div>
 
-                <!-- Login methods -->
                 <core-login-methods></core-login-methods>
 
                 <ng-container *ngIf="showScanQR && !isBrowserSSO">
@@ -96,12 +94,19 @@
                         {{ 'core.scanqr' | translate }}
                     </ion-button>
                 </ng-container>
-            </form>
+            </form> -->
 
+
+            <ng-container *ngIf="showScanQR">
+                <ion-button expand="block" fill="outline" class="ion-margin core-login-site-qrcode" (click)="showInstructionsAndScanQR()">
+                    <ion-icon slot="start" name="fas-qrcode" aria-hidden="true"></ion-icon>
+                    {{ 'core.scanqr' | translate }}
+                </ion-button>
+            </ng-container>
 
 
             <!-- Identity providers. -->
-            <ion-list *ngIf="identityProviders?.length" class="ion-padding-top core-login-identity-providers">
+            <!-- <ion-list *ngIf="identityProviders?.length" class="ion-padding-top core-login-identity-providers">
                 <ion-item class="ion-text-wrap">
                     <ion-label>
                         <h2 class="item-heading">{{ 'core.login.potentialidps' | translate }}</h2>
@@ -113,14 +118,14 @@
                     <img [src]="provider.iconurl" alt="" width="32" height="32" slot="start">
                     <ion-label>{{ provider.name }}</ion-label>
                 </ion-button>
-            </ion-list>
+            </ion-list> -->
 
             <!-- If OAuth, display cancel button since the form isn't displayed. -->
-            <ion-list *ngIf="isOAuth">
+            <!-- <ion-list *ngIf="isOAuth">
                 <ion-button expand="block" class="ion-margin" fill="outline" (click)="cancel($event)">
                     {{ 'core.login.cancel' | translate }}
                 </ion-button>
-            </ion-list>
+            </ion-list> -->
         </div>
     </core-loading>
 </ion-content>

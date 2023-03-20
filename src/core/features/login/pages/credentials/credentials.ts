@@ -58,7 +58,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
     isBrowserSSO = false;
     isFixedUrlSet = false;
     showForgottenPassword = true;
-    showScanQR = false;
+    showScanQR = true;
     loginAttempts = 0;
     supportConfig?: CoreUserSupportConfig;
     exceededAttemptsHTML?: SafeHtml | string | null;
@@ -347,7 +347,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
      */
     async showInstructionsAndScanQR(): Promise<void> {
         try {
-            await CoreLoginHelper.showScanQRInstructions();
+            // await CoreLoginHelper.showScanQRInstructions();
 
             await CoreLoginHelper.scanQR();
         } catch {

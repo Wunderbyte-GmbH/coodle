@@ -339,7 +339,7 @@ export class CoreLoginReconnectPage implements OnInit, OnDestroy {
      */
     async showInstructionsAndScanQR(): Promise<void> {
         try {
-            await CoreLoginHelper.showScanQRInstructions();
+            // await CoreLoginHelper.showScanQRInstructions();
 
             await CoreLoginHelper.scanQR();
         } catch {

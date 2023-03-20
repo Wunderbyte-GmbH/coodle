@@ -504,7 +504,7 @@ export class CoreLoginSitePage implements OnInit {
      */
     async showInstructionsAndScanQR(): Promise<void> {
         try {
-            await CoreLoginHelper.showScanQRInstructions();
+            // await CoreLoginHelper.showScanQRInstructions();
 
             await this.scanQR();
         } catch {

@@ -185,6 +185,7 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
         }
 
         this.tabs = newTabs;
+        this.tabs[1].page = 'coodlelanding';
 
         // Sort them by priority so new handlers are in the right position.
         this.tabs.sort((a, b) => (b.priority || 0) - (a.priority || 0));
@@ -205,8 +206,10 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
             // No tab selected or handler no longer available, select the first one.
             await CoreUtils.nextTick();
 
-            const tabPage = this.tabs[0] ? this.tabs[0].page : this.morePageName;
-            const tabPageParams = this.tabs[0] ? this.tabs[0].pageParams : {};
+            // const tabPage = this.tabs[0] ? this.tabs[0].page : this.morePageName;
+            // const tabPageParams = this.tabs[0] ? this.tabs[0].pageParams : {};
+            const tabPage = this.tabs[1] ? this.tabs[1].page : this.morePageName;
+            const tabPageParams = this.tabs[1] ? this.tabs[1].pageParams : {};
             this.logger.debug(`Select first tab: ${tabPage}.`, this.tabs);
 
             // Use navigate instead of mainTabs.select to be able to pass page params.

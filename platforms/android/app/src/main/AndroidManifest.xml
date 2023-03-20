@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <service android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.ClickReceiver" />
         <receiver android:directBootAware="true" android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.RestoreReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
@@ -62,6 +61,7 @@
         </provider>
         <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.TriggerReceiver" />
         <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.ClearReceiver" />
+        <service android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.ClickReceiver" />
     </application>
     <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />

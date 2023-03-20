@@ -19,6 +19,9 @@ import { ModuleRoutesConfig, resolveModuleRoutes } from '@/app/app-routing.modul
 
 export const MAIN_MENU_TAB_ROUTES = new InjectionToken('MAIN_MENU_TAB_ROUTES');
 
+/**
+ *
+ */
 export function buildTabMainRoutes(injector: Injector, mainRoute: Route): Routes {
     const routes = resolveModuleRoutes(injector, MAIN_MENU_TAB_ROUTES);
 
@@ -28,6 +31,16 @@ export function buildTabMainRoutes(injector: Injector, mainRoute: Route): Routes
 
     return [
         mainRoute,
+        {
+            path: '',
+            loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
+                .then(m => m.CoodlelandingPageModule),
+        },
+        {
+            path: 'coodlelanding',
+            loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
+                .then(m => m.CoodlelandingPageModule),
+        },
         ...routes.siblings,
     ];
 }

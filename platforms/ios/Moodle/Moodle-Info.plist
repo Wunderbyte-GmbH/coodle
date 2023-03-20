@@ -48,16 +48,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location so you can attach it as part of your submissions.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need your location so you can attach it as part of your submissions.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
 	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
 	<string>YES</string>
 	<key>NSCrossWebsiteTrackingUsageDescription</key>
@@ -470,6 +460,16 @@
 		<string>audio</string>
 		<string>remote-notification</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location so you can attach it as part of your submissions.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location so you can attach it as part of your submissions.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>

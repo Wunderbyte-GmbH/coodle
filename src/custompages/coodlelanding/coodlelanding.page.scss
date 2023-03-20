@@ -1,0 +1,50 @@
+.landingcol {
+    height: 200px;
+    margin: 10px;
+    overflow: auto;
+}
+
+.col1 {
+  background: #264653;
+}
+
+.col2 {
+  background: #2A9D8F;
+}
+
+.col3 {
+    background: #E9C46A
+}
+
+.col4 {
+    background: #F4A261;
+  }
+
+.col5 {
+  background: #E76F51;
+}
+
+.col6 {
+    background: #e75151;
+}
+
+.gridbutton {
+    height: 100%;
+width: 100%;
+background: transparent;
+--background: transparent;
+margin: 0;
+}
+
+ion-icon {
+    font-size: 2em;
+}
+
+ion-row {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+ion-label {
+    font-size: 1em;
+}

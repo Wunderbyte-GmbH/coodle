@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'core.back' | translate"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>Coodlelanding</h1>
+    </ion-title>
+    <ion-buttons slot="end">
+      <core-user-menu-button></core-user-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="landingcol col1">
+        <ion-button class="gridbutton">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Wegbeschreibung</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="archive-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+      <ion-col class="landingcol col2">
+        <ion-button class="gridbutton" [routerLink]="['/main/messages/group-conversations']" routerDirection="back">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Nachrichten</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="landingcol col3">
+        <ion-button class="gridbutton" [routerLink]="['/main/notifications/private/root']">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Datein</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="file-tray-full-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+      <ion-col class="landingcol col4">
+        <ion-button class="gridbutton">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Kontakt</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="person-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="landingcol col5">
+        <ion-button class="gridbutton" [routerLink]="['/main/more/calendar/index']">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Kalender</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="calendar-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+      <ion-col class="landingcol col6">
+        <ion-button class="gridbutton" router-link="/calendar">
+          <ion-grid>
+            <ion-row>
+              <ion-label>Platzhalter</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="reorder-four-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
