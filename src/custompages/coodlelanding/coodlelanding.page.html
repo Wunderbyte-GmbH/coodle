@@ -4,7 +4,7 @@
       <ion-back-button [text]="'core.back' | translate"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <h1>Coodlelanding</h1>
+      <h1>{{'local.coodle.landingpage' | translate}}</h1>
     </ion-title>
     <ion-buttons slot="end">
       <core-user-menu-button></core-user-menu-button>
@@ -15,8 +15,29 @@
 <ion-content>
   <ion-grid>
     <ion-row>
+      <ng-container *ngFor="let button of buttons">
+        <ion-col [ngStyle]="{'background' : button.color}" class="landingcol" size="5">
+          <ion-button class="gridbutton" (click)="openHandler(button)">
+            <ion-grid class="innergrid">
+              <ion-row>
+                <ion-col>
+                  <ion-label>{{button.title}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-icon name="{{button.icon}}"></ion-icon>
+              </ion-row>
+            </ion-grid>
+          </ion-button>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+
+    <!-- <ion-row>
       <ion-col class="landingcol col1">
-        <ion-button class="gridbutton">
+        <ion-button class="gridbutton" [routerLink]="['/main/home/siteplugins/homecontent/local_coodle/view_address']"
+          routerDirection="back">
           <ion-grid>
             <ion-row>
               <ion-label>Wegbeschreibung</ion-label>
@@ -42,7 +63,8 @@
     </ion-row>
     <ion-row>
       <ion-col class="landingcol col3">
-        <ion-button class="gridbutton" [routerLink]="['/main/notifications/private/root']">
+        <ion-button class="gridbutton"
+          [routerLink]="['/main/more/siteplugins/content/local_coodle/view_files/0?title=plugin.local_coodle.myfiles']">
           <ion-grid>
             <ion-row>
               <ion-label>Datein</ion-label>
@@ -91,6 +113,6 @@
           </ion-grid>
         </ion-button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 </ion-content>

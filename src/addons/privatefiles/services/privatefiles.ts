@@ -85,7 +85,11 @@ export class AddonPrivateFilesProvider {
             updateFrequency: CoreSite.FREQUENCY_SOMETIMES,
         };
 
-        const result: AddonPrivateFilesGetFilesWSResult = await site.read('core_files_get_files', params, preSets);
+        // !! Hardcode area to test.
+        // params.component = 'local_coodle';
+        // params.filearea = 'coodle';
+        // const result: AddonPrivateFilesGetFilesWSResult = await site.read('core_files_get_files', params, preSets);
+        const result: AddonPrivateFilesGetFilesWSResult = await site.read('local_coodle_get_files', {}, preSets);
 
         if (!result.files) {
             return [];
@@ -374,9 +378,14 @@ export class AddonPrivateFilesProvider {
      * @param siteId ID of the site. If not defined, use current site.
      * @returns Promise resolved in success, rejected otherwise.
      */
-    async moveFromDraftToPrivate(draftId: number, siteId?: string): Promise<null> {
-        const params: AddonPrivateFilesAddUserPrivateFilesWSParams = {
+    async moveFromDraftToPrivate(draftId: number, fileName?: string, siteId?: string): Promise<unknown> {
+        // const params: AddonPrivateFilesAddUserPrivateFilesWSParams = {
+        //     draftid: draftId,
+        // };
+
+        const params =  {
             draftid: draftId,
+            filename: fileName,
         };
         const preSets = {
             responseExpected: false,
@@ -384,7 +393,8 @@ export class AddonPrivateFilesProvider {
 
         const site = await CoreSites.getSite(siteId);
 
-        return site.write('core_user_add_user_private_files', params, preSets);
+        // return site.write('core_user_add_user_private_files', params, preSets);
+        return site.write('local_coodle_upload_file', params, preSets);
     }
 
 }

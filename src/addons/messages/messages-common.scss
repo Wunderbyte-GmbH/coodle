@@ -64,3 +64,10 @@
         margin-right: 16px;
     }
 }
+ion-header ion-title h1, ion-header ion-title h2, ion-header ion-title .subheading {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    text-align: start;
+    padding: 0;
+}

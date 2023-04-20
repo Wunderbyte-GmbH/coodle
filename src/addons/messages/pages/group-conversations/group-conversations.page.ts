@@ -39,6 +39,7 @@ import { CoreScreen } from '@services/screen';
 import { CoreMainMenuDeepLinkManager } from '@features/mainmenu/classes/deep-link-manager';
 import { CorePlatform } from '@services/platform';
 import { CoreSplitViewComponent } from '@components/split-view/split-view';
+import { promises } from 'dns';
 
 /**
  * Page that displays the list of conversations, including group conversations.
@@ -53,6 +54,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
     @ViewChild(CoreSplitViewComponent) splitView!: CoreSplitViewComponent;
 
     @ViewChild(IonContent) content?: IonContent;
+    @ViewChild('completeList')completeListEl?: ElementRef;
     @ViewChild('favlist') favListEl?: ElementRef;
     @ViewChild('grouplist') groupListEl?: ElementRef;
     @ViewChild('indlist') indListEl?: ElementRef;
@@ -62,6 +64,8 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
     selectedConversationId?: number;
     selectedUserId?: number;
     contactRequestsCount = 0;
+    allConversations?: any;
+
     favourites: AddonMessagesGroupConversationOption = {
         type: undefined,
         favourites: true,
@@ -114,11 +118,11 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
             (data) => {
             // Check if the new message belongs to the option that is currently expanded.
                 const expandedOption = this.getExpandedOption();
-                const messageOption = this.getConversationOption(data);
+                // const messageOption = this.getConversationOption(data);
 
-                if (expandedOption != messageOption) {
-                    return; // Message doesn't belong to current list, stop.
-                }
+                // if (expandedOption != messageOption) {
+                //     return; // Message doesn't belong to current list, stop.
+                // }
 
                 // Search the conversation to update.
                 const conversation = this.findConversation(data.conversationId, data.userId, expandedOption);
@@ -148,6 +152,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
                         this.content?.scrollToTop();
                     }
                 }
+                this.fetchAllinOne();
             },
             this.siteId,
         );
@@ -165,6 +170,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
                     AddonMessages.invalidateConversations(this.siteId);
                     AddonMessages.refreshUnreadConversationCounts(this.siteId);
                 }
+                this.fetchAllinOne();
             }
         }, this.siteId);
 
@@ -175,6 +181,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
                 if (data.conversationId || data.userId) {
                     this.gotoConversation(data.conversationId, data.userId);
                 }
+                this.fetchAllinOne();
             },
             this.siteId,
         );
@@ -231,6 +238,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
                 this.favourites.unread = data.favourites;
                 this.individual.unread = data.individual + data.self; // Self is only returned if it's not favourite.
                 this.group.unread = data.group;
+                this.fetchAllinOne();
             },
             this.siteId,
         );
@@ -240,6 +248,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
             AddonMessagesProvider.CONTACT_REQUESTS_COUNT_EVENT,
             (data) => {
                 this.contactRequestsCount = data.count;
+                this.fetchAllinOne();
             },
             this.siteId,
         );
@@ -264,6 +273,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
                         conversation.isblocked = data.userBlocked;
                     }
                 }
+                this.fetchAllinOne();
             },
             this.siteId,
         );
@@ -306,6 +316,20 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         deepLinkManager.treatLink();
     }
 
+    async fetchAllinOne(): Promise<void> {
+        const promises: Promise<void>[] = [];
+
+        promises.push(this.fetchDataForOption(this.favourites, false));
+        promises.push(this.fetchDataForOption(this.group, false));
+        promises.push(this.fetchDataForOption(this.individual, false));
+
+        await Promise.all(promises);
+        const temp = AddonMessages.sortConversations(this.favourites.conversations.concat(this.group.conversations)
+            .concat(this.individual.conversations));
+        this.allConversations = [...temp];
+
+    }
+
     /**
      * Fetch conversations.
      *
@@ -326,6 +350,8 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
 
         try {
             await Promise.all(promises);
+
+            await this.fetchAllinOne();
 
             // The expanded status hasn't been initialized. Do it now.
             if (this.favourites.expanded === undefined && (this.selectedConversationId || this.selectedUserId)) {
@@ -357,6 +383,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
             CoreDomUtils.showErrorModalDefault(error, 'addon.messages.errorwhileretrievingdiscussions', true);
         }
         this.loaded = true;
+
     }
 
     /**
@@ -484,6 +511,8 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         const conversations = option
             ? option.conversations
             : this.favourites.conversations.concat(this.individual.conversations);
+
+        // this.allConversations =  conversations;
 
         return conversations.find((conv) => conv.userid == userId);
     }

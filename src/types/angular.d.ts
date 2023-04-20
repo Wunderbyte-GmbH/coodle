@@ -18,7 +18,6 @@ import { NavigationOptions } from '@ionic/angular/providers/nav-controller';
 declare module '@ionic/angular' {
 
     export class NavController {
-
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         navigateForward(url: string | UrlTree | any[], options?: NavigationOptions): Promise<boolean | null>;
 

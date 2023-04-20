@@ -41,11 +41,13 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
     jsData?: Record<string, unknown>; // JS variables to pass to the plugin so they can be used in the template or JS.
     preSets?: CoreSiteWSPreSets; // The preSets for the WS call.
     ptrEnabled = false;
+    comingFromCoodle? : boolean;
 
     /**
      * @inheritdoc
      */
     ngOnInit(): void {
+        this.comingFromCoodle = CoreNavigator.getRouteParam('comingFromCoodle');
         this.title = CoreNavigator.getRouteParam('title');
         this.component = CoreNavigator.getRouteParam('component');
         this.method = CoreNavigator.getRouteParam('method');

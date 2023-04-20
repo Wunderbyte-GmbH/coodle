@@ -1,6 +1,6 @@
 {
-  "name": "moodlemobile",
-  "version": "4.1.1",
+  "name": "coodlemobile",
+  "version": "1.0.0",
   "description": "The official app for Moodle.",
   "author": {
     "name": "Moodle Pty Ltd.",
@@ -205,7 +205,7 @@
       },
       "cordova-plugin-chooser": {},
       "cordova-plugin-customurlscheme": {
-        "URL_SCHEME": "moodlemobile",
+        "URL_SCHEME": "coodlemobile",
         "ANDROID_SCHEME": " ",
         "ANDROID_HOST": " ",
         "ANDROID_PATHPREFIX": "/"

@@ -1,13 +1,13 @@
 {
     "app_id": "at.wunderbyte.coodle",
-    "appname": "Moodle Mobile",
-    "versioncode": 41100,
-    "versionname": "4.1.1",
+    "appname": "Coodle",
+    "versioncode": 100,
+    "versionname": "1.0.0",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
     "cache_update_frequency_rarely": 43200000,
-    "default_lang": "en",
+    "default_lang": "de",
     "languages": {
         "af": "Afrikaans",
         "ar": "عربي",
@@ -66,26 +66,15 @@
         "zh-tw": "正體中文"
     },
     "wsservice": "moodle_mobile_app",
-    "demo_sites": {
-        "student": {
-            "url": "https://school.moodledemo.net",
-            "username": "student",
-            "password": "moodle"
-        },
-        "teacher": {
-            "url": "https://school.moodledemo.net",
-            "username": "teacher",
-            "password": "moodle"
-        }
-    },
     "defaultZoomLevel": "none",
     "zoomlevels": {
         "none": 100,
         "medium": 110,
         "high": 120
     },
-    "customurlscheme": "moodlemobile",
+    "customurlscheme": "coodlemobile",
     "siteurl": "wuk.wunderbyte.at",
+    // "siteurl" "http://localhost:8000/",
     "sitename": "WUK COODLE",
     "multisitesdisplay": false,
     "sitefindersettings": {},

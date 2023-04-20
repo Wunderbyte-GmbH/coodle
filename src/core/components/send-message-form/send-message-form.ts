@@ -21,6 +21,10 @@ import { CoreTextUtils } from '@services/utils/text';
 import { CoreConstants } from '@/core/constants';
 import { CoreForms } from '@singletons/form';
 import { CorePlatform } from '@services/platform';
+import { AddonPrivateFilesHelper } from '@addons/privatefiles/services/privatefiles-helper';
+import { CoreNetwork } from '@services/network';
+import { CoreDomUtils } from '@services/utils/dom';
+import { AddonPrivateFilesGetUserInfoWSResult } from '@addons/privatefiles/services/privatefiles';
 
 /**
  * Component to display a "send message form".
@@ -49,6 +53,8 @@ export class CoreSendMessageFormComponent implements OnInit {
     @ViewChild('messageForm') formElement!: ElementRef;
 
     protected sendOnEnter = false;
+    filesInfo?: AddonPrivateFilesGetUserInfoWSResult;
+    filesLoaded = false; // Whether the files are loaded.
 
     constructor() {
 
@@ -70,6 +76,9 @@ export class CoreSendMessageFormComponent implements OnInit {
 
     ngOnInit(): void {
         this.showKeyboard = CoreUtils.isTrueOrOne(this.showKeyboard);
+        AddonPrivateFilesHelper.uploadEvent.subscribe((event)=> {
+            this.handleSendFileEvent(event);
+        });
     }
 
     /**
@@ -94,6 +103,49 @@ export class CoreSendMessageFormComponent implements OnInit {
 
         value = CoreTextUtils.replaceNewLines(value, '<br>');
         this.onSubmit.emit(value);
+    }
+
+    async uploadFile(): Promise<void>{
+        console.log('upload');
+
+        if (!CoreNetwork.isOnline()) {
+            CoreDomUtils.showErrorModal('core.fileuploader.errormustbeonlinetoupload', true);
+
+            return;
+        }
+
+        try {
+            await AddonPrivateFilesHelper.uploadPrivateFile(this.filesInfo);
+
+            // File uploaded, refresh the list.
+            this.filesLoaded = false;
+
+            // await CoreUtils.ignoreErrors(this.refreshFiles());
+
+            this.filesLoaded = true;
+        } catch (error) {
+            CoreDomUtils.showErrorModalDefault(error, 'core.fileuploader.errorwhileuploading', true);
+        }
+    }
+
+    handleSendFileEvent(event: any): void {
+        const splitarray = event.fileurl.split('.');
+        const format = splitarray[splitarray.length - 1];
+        let message = '';
+        switch(format) {
+            case 'jpeg':
+            case 'gif':
+            case 'jpg':
+                message = '<img src="' + event.fileurl + '"/>';
+                break;
+            case 'mp4':
+                message = '<video width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mp4"></video>';
+                break;
+            default:
+                message = '<a href="' + event.fileurl + '">Link</a>';
+                break;
+        }
+        this.onSubmit.emit(message);
     }
 
     /**

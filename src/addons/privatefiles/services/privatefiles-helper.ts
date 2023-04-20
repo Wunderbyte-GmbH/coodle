@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 import { CoreSites } from '@services/sites';
 import { CoreDomUtils } from '@services/utils/dom';
@@ -26,6 +26,8 @@ import { makeSingleton, Translate } from '@singletons';
  */
 @Injectable({ providedIn: 'root' })
 export class AddonPrivateFilesHelperProvider {
+
+    @Output() uploadEvent = new EventEmitter<any>();
 
     /**
      * Select a file, upload it and move it to private files.
@@ -62,8 +64,10 @@ export class AddonPrivateFilesHelperProvider {
         const modal = await CoreDomUtils.showModalLoading('core.fileuploader.uploading', true);
 
         try {
-            await AddonPrivateFiles.moveFromDraftToPrivate(result.itemid);
+            const wsresult = await AddonPrivateFiles.moveFromDraftToPrivate(result.itemid, result.filename);
 
+            // Emit return url to listeners.
+            this.uploadEvent.emit(wsresult);
             CoreDomUtils.showToast('core.fileuploader.fileuploaded', true, undefined, 'core-toast-success');
         } finally {
             modal.dismiss();

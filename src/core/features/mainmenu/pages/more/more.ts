@@ -124,7 +124,7 @@ export class CoreMainMenuMorePage implements OnInit, OnDestroy {
      */
     openHandler(handler: CoreMainMenuHandlerData): void {
         const params = handler.pageParams;
-
+        console.log('handler call', handler, params);
         CoreNavigator.navigateToSitePath(handler.page, { params });
     }
 

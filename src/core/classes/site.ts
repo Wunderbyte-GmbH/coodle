@@ -592,11 +592,11 @@ export class CoreSite {
 
         // Check if the method is available.
         // We ignore this check when we do not have the site info, as the list of functions is not loaded yet.
-        if (this.getInfo() && !this.wsAvailable(method)) {
-            this.logger.error(`WS function '${method}' is not available.`);
+        // if (this.getInfo() && !this.wsAvailable(method)) {
+        //     this.logger.error(`WS function '${method}' is not available.`);
 
-            throw new CoreError(Translate.instant('core.wsfunctionnotavailable'));
-        }
+        //     throw new CoreError(Translate.instant('core.wsfunctionnotavailable'));
+        // }
 
         const wsPreSets: CoreWSPreSets = {
             wsToken: this.token || '',

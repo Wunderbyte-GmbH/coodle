@@ -98,6 +98,7 @@
 		C7D9F8E02E3E4F029CB4A27F /* BackgroundAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 363447B137944495BF6EEFD3 /* BackgroundAudio.m */; };
 		CAB2C33B03824C86B23CC72E /* IONAssetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCA12D51C404DC69EA103D6 /* IONAssetHandler.m */; };
 		CE395A26482841E88811D825 /* APPNotificationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BDBD462CF4CC288E00A91 /* APPNotificationOptions.m */; };
+		D0B9417652EF6EF4E5AE7168 /* Pods_Moodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF7156C37671904B533D7AE /* Pods_Moodle.framework */; };
 		D25A5DDBE3584D84A15DDF17 /* FileOpener2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CFFBE7C2948669F847314 /* FileOpener2.m */; };
 		D3160F9D37E144D0A7209DD2 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E988A8CD924195846866F5 /* Photos.framework */; };
 		D34E198FD94845F8AEE23A9F /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 387235FD243A44C78ADA429C /* pwd2key.c */; };
@@ -109,7 +110,6 @@
 		E2B48E58C5124DAAADAD3ED7 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3850A154974C4287EE4A43 /* CDVAssetLibraryFilesystem.m */; };
 		E4D7092FCAD6444AA860AA72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414BAA93D6FE4471A121E553 /* Security.framework */; };
 		E9715DECCF3D412DA38D7522 /* TextResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E98343B48F4ABEBAB23CBE /* TextResponseSerializer.m */; };
-		F471EDA52BD935F2137A13DB /* Pods_Moodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD040E6C0E8CF75C069FADAB /* Pods_Moodle.framework */; };
 		F7A2FB760EFA4C1B8B79A194 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ED58D593D04F7892098E94 /* CDVFileTransfer.m */; };
 		FB436DC595064A078A786C08 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07021F06DFC245868158C7D8 /* PhotosUI.framework */; };
 		FCFC889277644BA6811FD3EB /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B46F4EFDD62A48D791B22F77 /* CDVWKProcessPoolFactory.m */; };
@@ -200,7 +200,6 @@
 		46CC50957E5A40E7AFA6B5D7 /* EventKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		4A3C3C088E0344B496C29BF1 /* AppDelegate+notification.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+notification.h"; path = "@moodlehq/phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; };
 		4B5A820108D045168F8198E9 /* Diagnostic_Notifications.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Diagnostic_Notifications.h; path = cordova.plugins.diagnostic/Diagnostic_Notifications.h; sourceTree = "<group>"; };
-		4C09A03FA818B0C48768DFD7 /* Pods-Moodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodle.release.xcconfig"; path = "Target Support Files/Pods-Moodle/Pods-Moodle.release.xcconfig"; sourceTree = "<group>"; };
 		4C8CFFBE7C2948669F847314 /* FileOpener2.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = FileOpener2.m; path = "@moodlehq/cordova-plugin-file-opener/FileOpener2.m"; sourceTree = "<group>"; };
 		4DDE2FB29A7E4BE78EA22E0C /* CDVInAppBrowserOptions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowserOptions.h; path = "@moodlehq/cordova-plugin-inappbrowser/CDVInAppBrowserOptions.h"; sourceTree = "<group>"; };
 		4E0C8159D31644B1A524B880 /* Common.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Common.h; path = "@moodlehq/cordova-plugin-zip/Common.h"; sourceTree = "<group>"; };
@@ -232,6 +231,7 @@
 		72DEA4507EBC4B35BD41969E /* CDVInAppBrowserOptions.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowserOptions.m; path = "@moodlehq/cordova-plugin-inappbrowser/CDVInAppBrowserOptions.m"; sourceTree = "<group>"; };
 		7403A4523DAD4631A901C094 /* SM_AFURLSessionManager.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SM_AFURLSessionManager.h; path = "cordova-plugin-advanced-http/SM_AFURLSessionManager.h"; sourceTree = "<group>"; };
 		75D9761E54A14DDB99BF11B4 /* IONAssetHandler.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IONAssetHandler.h; path = "@moodlehq/cordova-plugin-ionic-webview/IONAssetHandler.h"; sourceTree = "<group>"; };
+		766CEE41F9A176CEA189BA08 /* Pods-Moodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodle.release.xcconfig"; path = "Target Support Files/Pods-Moodle/Pods-Moodle.release.xcconfig"; sourceTree = "<group>"; };
 		7695E5E729B247E881B06923 /* CDVClipboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVClipboard.h; path = "cordova-clipboard/CDVClipboard.h"; sourceTree = "<group>"; };
 		76BA6B0976ED451DAF1C9207 /* ioapi.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ioapi.c; path = "@moodlehq/cordova-plugin-zip/Plugins/minizip/ioapi.c"; sourceTree = "<group>"; };
 		774915E76847400C903DA34E /* entropy.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = entropy.c; path = "@moodlehq/cordova-plugin-zip/Plugins/aes/entropy.c"; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 		BCFDBB024B1E449CB8C85753 /* CDVWKWebViewCookies.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKWebViewCookies.m; path = "cordova-plugin-wkwebview-cookies/CDVWKWebViewCookies.m"; sourceTree = "<group>"; };
 		C03835223B074B95A64A0B40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4666FA892A54847B0161EF9 /* entropy.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = entropy.h; path = "@moodlehq/cordova-plugin-zip/Plugins/aes/entropy.h"; sourceTree = "<group>"; };
-		C497B69F46B899255113E144 /* Pods-Moodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodle.debug.xcconfig"; path = "Target Support Files/Pods-Moodle/Pods-Moodle.debug.xcconfig"; sourceTree = "<group>"; };
+		C66AD5308EB11E9119900D6F /* Pods-Moodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodle.debug.xcconfig"; path = "Target Support Files/Pods-Moodle/Pods-Moodle.debug.xcconfig"; sourceTree = "<group>"; };
 		C6926108F5FC4C47897F8AA0 /* UIImage+CropScaleOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropScaleOrientation.h"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.h"; sourceTree = "<group>"; };
 		C6DFB121A9334BEBB9C23275 /* CDVConnection.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVConnection.h; path = "cordova-plugin-network-information/CDVConnection.h"; sourceTree = "<group>"; };
 		C85222D293E84F42A6D7D3EC /* sqlite3.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; };
@@ -308,7 +308,6 @@
 		CB8369DE9CF94BF298360193 /* unzip.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = "@moodlehq/cordova-plugin-zip/Plugins/minizip/unzip.h"; sourceTree = "<group>"; };
 		CBF8C667E0754DB28F06B084 /* fileenc.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = fileenc.c; path = "@moodlehq/cordova-plugin-zip/Plugins/aes/fileenc.c"; sourceTree = "<group>"; };
 		CCF2203C34EB4C828E753459 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CD040E6C0E8CF75C069FADAB /* Pods_Moodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5029D4FD7040EAAE41FBAC /* Diagnostic_Camera.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Diagnostic_Camera.m; path = cordova.plugins.diagnostic/Diagnostic_Camera.m; sourceTree = "<group>"; };
 		CFBE31CA669E46408248CD07 /* SM_AFURLSessionManager.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SM_AFURLSessionManager.m; path = "cordova-plugin-advanced-http/SM_AFURLSessionManager.m"; sourceTree = "<group>"; };
 		D2B43F1740384313A65D66CA /* sqlite3.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = sqlite3.c; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; };
@@ -321,6 +320,7 @@
 		DD3F41C0467A48AB84DC4C94 /* Diagnostic_Motion.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Diagnostic_Motion.m; path = cordova.plugins.diagnostic/Diagnostic_Motion.m; sourceTree = "<group>"; };
 		DE3F5A5F4C2E4548BAC94EFD /* APPNotificationContent.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = APPNotificationContent.h; path = "@moodlehq/cordova-plugin-local-notification/APPNotificationContent.h"; sourceTree = "<group>"; };
 		DF3850A154974C4287EE4A43 /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; };
+		DFF7156C37671904B533D7AE /* Pods_Moodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C1A22E12BD40D0A481D4BD /* aescrypt.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = aescrypt.c; path = "@moodlehq/cordova-plugin-zip/Plugins/aes/aescrypt.c"; sourceTree = "<group>"; };
 		E45BDBD462CF4CC288E00A91 /* APPNotificationOptions.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = APPNotificationOptions.m; path = "@moodlehq/cordova-plugin-local-notification/APPNotificationOptions.m"; sourceTree = "<group>"; };
 		E5AFF8550AA94D64B4D0BDA0 /* CDVCamera.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; };
@@ -371,7 +371,7 @@
 				66E1DDC0C33248DFA66E4835 /* WebKit.framework in Frameworks */,
 				3E4BC83821624743BFAF3BC2 /* libz.dylib in Frameworks */,
 				E03A0E666F1E403E8D1E82F6 /* PushKit.framework in Frameworks */,
-				F471EDA52BD935F2137A13DB /* Pods_Moodle.framework in Frameworks */,
+				D0B9417652EF6EF4E5AE7168 /* Pods_Moodle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +399,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				EB87FDF41871DAF40020F90C /* config.xml */,
@@ -462,7 +462,7 @@
 				852C0BC62ECD4531A1EFCF87 /* WebKit.framework */,
 				BAECF31D08B24956A8E53B83 /* libz.dylib */,
 				9DE361B4C9B740F8AF001D4B /* PushKit.framework */,
-				CD040E6C0E8CF75C069FADAB /* Pods_Moodle.framework */,
+				DFF7156C37671904B533D7AE /* Pods_Moodle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -660,8 +660,8 @@
 		5305FB2DD5EC79F328C0A343 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C497B69F46B899255113E144 /* Pods-Moodle.debug.xcconfig */,
-				4C09A03FA818B0C48768DFD7 /* Pods-Moodle.release.xcconfig */,
+				C66AD5308EB11E9119900D6F /* Pods-Moodle.debug.xcconfig */,
+				766CEE41F9A176CEA189BA08 /* Pods-Moodle.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -682,12 +682,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Moodle" */;
 			buildPhases = (
-				02C077B74C558B9B712B099C /* [CP] Check Pods Manifest.lock */,
+				4208C912D994B84EB9EF28B2 /* [CP] Check Pods Manifest.lock */,
 				304B58A110DAC018002A0835 /* Copy www directory */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				FE7F4959656DCDAFFCECB71C /* [CP] Embed Pods Frameworks */,
+				8A19812C3E8B0A606AA5AAD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -720,7 +720,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -769,7 +769,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02C077B74C558B9B712B099C /* [CP] Check Pods Manifest.lock */ = {
+		304B58A110DAC018002A0835 /* Copy www directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy www directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/Moodle/Scripts/copy-www-build-step.sh\"";
+			showEnvVarsInLog = 0;
+		};
+		4208C912D994B84EB9EF28B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -791,22 +806,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		304B58A110DAC018002A0835 /* Copy www directory */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy www directory";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Moodle/Scripts/copy-www-build-step.sh\"";
-			showEnvVarsInLog = 0;
-		};
-		FE7F4959656DCDAFFCECB71C /* [CP] Embed Pods Frameworks */ = {
+		8A19812C3E8B0A606AA5AAD5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

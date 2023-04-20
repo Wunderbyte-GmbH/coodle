@@ -148,6 +148,7 @@ export class CoreNavigatorService {
             ? await NavController.navigateRoot(url, navigationOptions)
             : await NavController.navigateForward(url, navigationOptions);
 
+        console.log('navresult', navigationResult)
         if (options.nextNavigation?.path && navigationResult !== false) {
             if (options.nextNavigation.isSitePath) {
                 return this.navigateToSitePath(options.nextNavigation.path, options.nextNavigation.options);

@@ -220,6 +220,7 @@ let CoreMainMenuMorePage = class CoreMainMenuMorePage {
      */
     openHandler(handler) {
         const params = handler.pageParams;
+        console.log('handler call', handler, params);
         _services_navigator__WEBPACK_IMPORTED_MODULE_7__["CoreNavigator"].navigateToSitePath(handler.page, { params });
     }
     /**

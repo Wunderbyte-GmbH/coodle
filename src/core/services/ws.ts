@@ -884,6 +884,10 @@ export class CoreWSProvider {
         return data;
     }
 
+    // uploadCoodlefile() {
+
+    // }
+
     /*
      * Uploads a file.
      *
@@ -917,7 +921,7 @@ export class CoreWSProvider {
         options.httpMethod = 'POST';
         options.params = {
             token: preSets.wsToken,
-            filearea: options.fileArea || 'draft',
+            filearea: 'testarea',
             itemid: options.itemId || 0,
         };
         options.chunkedMode = false;

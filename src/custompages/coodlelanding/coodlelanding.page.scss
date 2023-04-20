@@ -1,32 +1,32 @@
 .landingcol {
-    height: 200px;
+    height: 25vh;
     margin: 10px;
     overflow: auto;
 }
 
-.col1 {
-  background: #264653;
-}
+// .col1 {
+//   background: #264653;
+// }
 
-.col2 {
-  background: #2A9D8F;
-}
+// .col2 {
+//   background: #2A9D8F;
+// }
 
-.col3 {
-    background: #E9C46A
-}
+// .col3 {
+//     background: #E9C46A
+// }
 
-.col4 {
-    background: #F4A261;
-  }
+// .col4 {
+//     background: #F4A261;
+//   }
 
-.col5 {
-  background: #E76F51;
-}
+// .col5 {
+//   background: #E76F51;
+// }
 
-.col6 {
-    background: #e75151;
-}
+// .col6 {
+//     background: #e75151;
+// }
 
 .gridbutton {
     height: 100%;
@@ -37,7 +37,7 @@ margin: 0;
 }
 
 ion-icon {
-    font-size: 2em;
+    font-size: 1.9em;
 }
 
 ion-row {
@@ -46,5 +46,20 @@ ion-row {
 }
 
 ion-label {
-    font-size: 1em;
+    font-size: 2.7vw;
+    white-space: normal;
+    // overflow-wrap: anywhere;
+}
+
+ion-grid {
+  overflow: visible;
+
+}
+
+.innergrid {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: flex-end; */
+    flex-direction: column;
+    height: 80%;
 }
