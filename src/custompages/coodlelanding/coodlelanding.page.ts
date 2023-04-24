@@ -39,10 +39,9 @@ export class CoodlelandingPage implements OnInit {
         { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
     ];
 
+    openHandler(handler: any): void {
 
-    openHandler(handler): void {
-
-            CoreNavigator.navigate(handler.url, {params: {title: handler.title.replace(/\s/g, ''), comingFromCoodle: true}});
+        CoreNavigator.navigate(handler.url, { params: { title: handler.title.replace(/\s/g, ''), comingFromCoodle: true } });
 
     }
 

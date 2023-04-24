@@ -28,19 +28,20 @@ export function buildTabMainRoutes(injector: Injector, mainRoute: Route): Routes
     mainRoute.path = mainRoute.path || '';
     mainRoute.children = mainRoute.children || [];
     mainRoute.children = mainRoute.children.concat(routes.children);
+    console.log('main route', mainRoute, routes);
 
     return [
         mainRoute,
-        {
-            path: '',
-            loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
-                .then(m => m.CoodlelandingPageModule),
-        },
-        {
-            path: 'coodlelanding',
-            loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
-                .then(m => m.CoodlelandingPageModule),
-        },
+        // {
+        //     path: '',
+        //     loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
+        //         .then(m => m.CoodlelandingPageModule),
+        // },
+        // {
+        //     path: 'coodlelanding',
+        //     loadChildren: () => import('../../../custompages/coodlelanding/coodlelanding.module')
+        //         .then(m => m.CoodlelandingPageModule),
+        // },
         ...routes.siblings,
     ];
 }

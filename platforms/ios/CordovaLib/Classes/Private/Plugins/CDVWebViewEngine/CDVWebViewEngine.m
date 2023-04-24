@@ -205,6 +205,10 @@
     WKWebView* wkWebView = [[WKWebView alloc] initWithFrame:self.engineWebView.frame configuration:configuration];
     wkWebView.UIDelegate = self.uiDelegate;
 
+    if (@available(iOS 16.4, *)) {
+            BOOL allowWebviewInspectionDefault = YES;
+            wkWebView.inspectable = [settings cordovaBoolSettingForKey:@"InspectableWebview" defaultValue:allowWebviewInspectionDefault];
+    }
     /*
      * This is where the "OverrideUserAgent" is handled. This will replace the entire UserAgent
      * with the user defined custom UserAgent.

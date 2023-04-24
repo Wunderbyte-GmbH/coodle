@@ -24,6 +24,8 @@ if (cordovaConfig.IS_GRADLE_PLUGIN_KOTLIN_ENABLED) {
     apply plugin: 'kotlin-android-extensions'
 }
 
+    apply plugin: 'com.google.gms.google-services'
+
 buildscript {
     apply from: '../CordovaLib/cordova.gradle'
 

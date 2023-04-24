@@ -565,6 +565,12 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "es6-promise-plugin.Promise",
+      "file": "plugins/es6-promise-plugin/www/promise.js",
+      "pluginId": "es6-promise-plugin",
+      "runs": true
+    },
+    {
       "id": "@moodlehq/cordova-plugin-file-opener.FileOpener2",
       "file": "plugins/@moodlehq/cordova-plugin-file-opener/www/plugins.FileOpener2.js",
       "pluginId": "@moodlehq/cordova-plugin-file-opener",
@@ -676,6 +682,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-wkwebview-cookies": "1.0.1",
     "cordova-sqlite-storage": "6.0.0",
     "cordova.plugins.diagnostic": "7.1.1",
+    "es6-promise-plugin": "4.2.2",
     "nl.kingsquare.cordova.background-audio": "1.0.1",
     "@moodlehq/cordova-plugin-file-opener": "3.0.5-moodle.1",
     "@moodlehq/cordova-plugin-file-transfer": "1.7.1-moodle.5",
