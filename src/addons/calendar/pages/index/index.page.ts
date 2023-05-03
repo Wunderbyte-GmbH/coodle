@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { IonRefresher } from '@ionic/angular';
 import { CoreNetwork } from '@services/network';
 import { CoreEventObserver, CoreEvents } from '@singletons/events';
@@ -81,7 +81,7 @@ export class AddonCalendarIndexPage implements OnInit, OnDestroy {
     };
 
     constructor(
-        protected route: ActivatedRoute,
+        protected route: ActivatedRoute, private cdRef: ChangeDetectorRef
     ) {
         this.currentSiteId = CoreSites.getCurrentSiteId();
 
@@ -290,10 +290,13 @@ export class AddonCalendarIndexPage implements OnInit, OnDestroy {
         promises.push(AddonCalendar.invalidateAllowedEventTypes());
 
         // Refresh the sub-component.
-        if (this.showCalendar && this.calendarComponent) {
+        if (this.showCalendar && this.calendarComponent && !this.upcomingEventsComponent) {
             promises.push(this.calendarComponent.refreshData(afterChange));
         } else if (!this.showCalendar && this.upcomingEventsComponent) {
             promises.push(this.upcomingEventsComponent.refreshData());
+        } else if (this.calendarComponent && this.upcomingEventsComponent) {
+            promises.push(this.upcomingEventsComponent.refreshData());
+            promises.push(this.calendarComponent.refreshData(afterChange));
         }
 
         await Promise.all(promises).finally(() => this.fetchData(sync, showErrors));
@@ -372,6 +375,10 @@ export class AddonCalendarIndexPage implements OnInit, OnDestroy {
         if (!this.showCalendar) {
             this.loadUpcoming = true;
         }
+    }
+
+    updateList() {
+        this.cdRef.detectChanges();
     }
 
     /**

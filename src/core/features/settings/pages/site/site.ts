@@ -63,6 +63,8 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
         const source = CoreRoutedItemsManagerSourcesTracker.getOrCreateSource(CoreSettingsHandlersSource, []);
 
         this.handlers = new CoreListItemsManager(source, CoreSitePreferencesPage);
+        // const generalSettingHandler = new Core
+        console.log('pref handlers', this.handlers)
 
         this.sitesObserver = CoreEvents.on(CoreEvents.SITE_UPDATED, () => {
             this.refreshData();

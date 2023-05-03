@@ -65,6 +65,13 @@
             line-height: 20px;
             border-radius: 50%;
         }
+        // &.today{
+        //     background: var(--addon-calendar-today-border-color)
+        // }
+        &.hasevents {
+            background-color: $blue;
+            --background: $blue;
+        }
         &.dayblank {
             cursor: auto;
             background-color: var(--addon-calendar-blank-day-background-color);
@@ -126,21 +133,21 @@
         cursor: pointer;
     }
 
-    .calendar_event_type {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        border: 1px solid white;
-        margin-right: 1px;
-        margin-left: 1px;
+    // .calendar_event_type {
+    //     display: inline-block;
+    //     width: 8px;
+    //     height: 8px;
+    //     border-radius: 50%;
+    //     border: 1px solid white;
+    //     margin-right: 1px;
+    //     margin-left: 1px;
 
-        @each $category, $value in $calendar-event-category-colors {
-            &.calendar_event_#{$category} {
-                background-color: $value;
-            }
-        }
-    }
+    //     @each $category, $value in $calendar-event-category-colors {
+    //         &.calendar_event_#{$category} {
+    //             background-color: $value;
+    //         }
+    //     }
+    // }
 
     ion-slide {
         display: block;

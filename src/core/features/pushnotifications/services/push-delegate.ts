@@ -20,6 +20,8 @@ import { CoreUtils } from '@services/utils/utils';
 import { makeSingleton } from '@singletons';
 import { CoreLogger } from '@singletons/logger';
 import { CorePushNotificationsNotificationBasicData } from './pushnotifications';
+import { CoreNavigator } from '@services/navigator';
+import { CoreTextUtils } from '@services/utils/text';
 
 /**
  * Interface that all click handlers must implement.
@@ -83,6 +85,17 @@ export class CorePushNotificationsDelegateService {
     async clicked(notification: CorePushNotificationsNotificationBasicData): Promise<void> {
         if (!notification) {
             return;
+        }
+
+        console.log('notification', notification);
+
+        if (typeof notification.customdata == 'string') {
+            notification.customdata = CoreTextUtils.parseJSON<Record<string, unknown>>(notification.customdata, {});
+        }
+        if (notification.customdata?.coodle == true) {
+            const url = '/main/more/siteplugins/content/local_coodle/' + notification.customdata?.coodleurl;
+             await CoreNavigator.navigate(url, {params: { comingFromCoodle: true }});
+             return;
         }
 
         let handlers: CorePushNotificationsClickHandler[] = [];

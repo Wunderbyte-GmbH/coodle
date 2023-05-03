@@ -278,6 +278,11 @@
     // add to keyWindow to ensure it is 'active'
     [UIApplication.sharedApplication.keyWindow addSubview:self.engineWebView];
 
+    if (@available(iOS 16.4, *)) {
+        BOOL allowWebviewInspectionDefault = YES;
+        wkWebView.inspectable = [settings cordovaBoolSettingForKey:@"InspectableWebview" defaultValue:allowWebviewInspectionDefault];
+}
+
     NSString * overrideUserAgent = [settings cordovaSettingForKey:@"OverrideUserAgent"];
     if (overrideUserAgent != nil) {
         wkWebView.customUserAgent = overrideUserAgent;

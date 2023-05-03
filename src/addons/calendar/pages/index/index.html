@@ -43,6 +43,10 @@
         [displayNavButtons]="showCalendar" (onEventClicked)="gotoEvent($event)" (onDayClicked)="gotoDay($event)">
     </addon-calendar-calendar>
 
+    <h5 class='upcoming'>{{ 'addon.calendar.upcomingevents' | translate }}</h5>
+    <addon-calendar-upcoming-events [filter]="filter" (onEventClicked)="gotoEvent($event)">
+    </addon-calendar-upcoming-events>
+
     <addon-calendar-upcoming-events *ngIf="loadUpcoming" [hidden]="showCalendar" [filter]="filter" (onEventClicked)="gotoEvent($event)">
     </addon-calendar-upcoming-events>
 
