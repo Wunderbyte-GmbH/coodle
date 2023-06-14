@@ -1,5 +1,12 @@
 {
-    "local.coodle.landingpage": "Mein Bereich",
+    "addon.local_coodle.viewinfo": "Info",
+    "addon.local_coodle.viewtodos": "Aufgaben",
+    "addon.local_coodle.dok1": "Dokumente",
+    "addon.local_coodle.dok2": "Dokumente",
+    "addon.local_coodle.dok3": "Beratung",
+    "addon.local_coodle.viewaddress": "Wege",
+    "addon.local_coodle.landingpage": "Mein Bereich",
+    "addon.local_coodle.notes": "Notizen",
     "addon.messages.contacts": "Kontakte",
     "addon.messages.messages": "Nachrichten",
     "addon.badges.alignment": "Ausrichtung",

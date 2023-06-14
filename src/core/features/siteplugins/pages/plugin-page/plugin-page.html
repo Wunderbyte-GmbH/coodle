@@ -22,3 +22,9 @@
         [data]="jsData" [pageTitle]="title">
     </core-site-plugins-plugin-content>
 </ion-content>
+<ion-fab *ngIf="title === 'plugin.local_coodle.dok1' || title === 'plugin.local_coodle.dok3'" slot="fixed" vertical="bottom"
+    horizontal="end">
+    <ion-fab-button (click)="uploadFile()">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

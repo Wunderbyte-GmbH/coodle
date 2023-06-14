@@ -98,7 +98,7 @@ export class CoreMainMenuMorePage implements OnInit, OnDestroy {
         if (!this.allHandlers) {
             return;
         }
-
+        console.log('all Handlers', this.allHandlers);
         // Calculate the main handlers not to display them in this view.
         const mainHandlers = this.allHandlers
             .filter((handler) => !handler.onlyInMore)

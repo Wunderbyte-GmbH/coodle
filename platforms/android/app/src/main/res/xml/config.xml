@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="103" id="at.wunderbyte.coodle" ios-CFBundleVersion="1.0.0" version="1.0.3" versionCode="103" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="106" id="at.wunderbyte.coodle" ios-CFBundleVersion="1.0.1" version="1.0.6" versionCode="106" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="IntentShim">
         <param name="android-package" value="com.darryncampbell.cordova.plugin.intent.IntentShim" />
         <param name="onload" value="true" />
@@ -196,8 +196,8 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="prerendered-icon" value="true" />
-    <preference name="AppendUserAgent" value="Coodle 1.0.3 (103)" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="AppendUserAgent" value="Coodle 1.0.6 (106)" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />

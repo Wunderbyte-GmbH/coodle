@@ -45,6 +45,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AddonMessagesConversationInfoComponent } from '../../components/conversation-info/conversation-info';
 import { CoreConstants } from '@/core/constants';
 import { CoreDom } from '@singletons/dom';
+import { CoreUserWithAvatar } from '@components/user-avatar/user-avatar';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Page that displays a message discussion page.
@@ -109,8 +111,14 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
     scrollElement?: HTMLElement;
     unreadMessageFrom = 0;
     initialized = false;
+    currentlyReplying = false;
+    originalMsg = '';
+    replyToUser? : CoreUserWithAvatar;
+    previewText = '';
+    previewRendered = false;
 
     constructor(
+        private sanitizer: DomSanitizer,
         protected route: ActivatedRoute,
         protected elementRef: ElementRef<HTMLElement>,
     ) {
@@ -124,6 +132,7 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
 
         // Refresh data if this discussion is synchronized automatically.
         this.syncObserver = CoreEvents.on(AddonMessagesSyncProvider.AUTO_SYNCED, (data) => {
+            console.log('refresh convo');
             if ((data.userId && data.userId == this.userId) ||
                     (data.conversationId && data.conversationId == this.conversationId)) {
                 // Fetch messages.
@@ -136,16 +145,21 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
             }
         }, this.siteId);
 
-        // Refresh data if info of a mamber of the conversation have changed.
+        // Refresh data if info of a member of the conversation have changed.
         this.memberInfoObserver = CoreEvents.on(
             AddonMessagesProvider.MEMBER_INFO_CHANGED_EVENT,
             (data) => {
+                console.log('refresh convo2');
                 if (data.userId && (this.members[data.userId] || this.otherMember && data.userId == this.otherMember.id)) {
                     this.fetchData();
                 }
             },
             this.siteId,
         );
+    }
+
+    sanitize(html) {
+        return this.sanitizer.bypassSecurityTrustHtml(html) ;
     }
 
     /**
@@ -199,6 +213,37 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
         this.keepMessageMap[message.hash] = keep;
 
         return added;
+    }
+
+    replyToMsg(data) {
+        // this.unsetPolling();
+        this.currentlyReplying = true;
+        this.originalMsg = data.answerText;
+            var srcRegex = /<source\s+src="([^"]+)"\s+type="video\/mp4"\s*\/?>/i;
+            var srcMatch = this.originalMsg.match(srcRegex);
+            var srcValue = srcMatch ? srcMatch[1] : '';
+
+            this.previewText = this.originalMsg.replace(/<video\b[^>]*>(.*?)<\/video>/gi, '<a href="' + srcValue + '">Video</a>');
+
+// console.log(replacedCode);
+        // this.originalMsg = data.answerText;
+        const replace = ['<p>','</p>'];
+        // replace.forEach(string => {
+        //     this.previewText = this.originalMsg.replace(string, '')
+        // })
+        // this.previewText = CoreTextUtils.decodeHTMLEntities(this.originalMsg);
+        console.log('preview', this.previewText)
+        // this.showKeyboard = true;
+        this.replyToUser = data.user;
+        this.previewRendered = true;
+    }
+
+    closeReply() {
+        console.log('close reply');
+        this.currentlyReplying = false;
+        this.originalMsg = '';
+        this.showKeyboard = false;
+        this.previewText = '';
     }
 
     /**
@@ -401,6 +446,7 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
             // Fetch messages. Invalidate the cache before fetching.
             if (this.groupMessagingEnabled) {
                 await AddonMessages.invalidateConversationMessages(this.conversationId!);
+                console.log('1');
                 messages = await this.getConversationMessages(this.pagesLoaded);
             } else {
                 await AddonMessages.invalidateDiscussionCache(this.userId!);
@@ -621,6 +667,7 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
         if (!this.conversationId) {
             return [];
         }
+        console.log('get covnso messages');
 
         const excludePending = offset > 0;
 
@@ -644,6 +691,7 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
             offset += AddonMessagesProvider.LIMIT_MESSAGES;
 
             // Get more messages.
+            console.log('2');
             const nextMessages = await this.getConversationMessages(pagesToLoad, offset);
 
             return messages.concat(nextMessages);
@@ -1099,20 +1147,33 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
      */
     async sendMessage(text: string): Promise<void> {
         this.hideUnreadLabel();
-
+        // this.setPolling;
         this.showDelete = false;
         this.scrollBottom = true;
         this.setNewMessagesBadge(0);
+
+        let custommessage = '';
+        if (this.currentlyReplying) {
+            // TODO html message:
+            // custommessage =   '<ion-card *ngIf="currentlyReplying" style="background: #e5e5e5;"><div (click)="closeReply()" style="position: absolute; right: 10px; top: 10px; z-index: 100000"><ion-icon name="close-circle-outline" slot="end"></ion-icon></div><ion-card-subtitle style="padding: 5px">Replying</ion-card-subtitle><ion-card-content style="border-left: 8px solid red;">Hallo Welt</ion-card-content></ion-card>'
+            custommessage = '<blockquote class="reply-wrap"><span class="otheruser">' + this.replyToUser?.fullname +'<span>:<div class="reply-message"><p>' + this.originalMsg +'</p></div></blockquote><p>' + text +'</p>'
+            text = custommessage;
+        }
+
+        this.currentlyReplying = false;
+        this.originalMsg = '';
 
         const message: AddonMessagesConversationMessageFormatted = {
             id: -1,
             pending: true,
             sending: true,
             useridfrom: this.currentUserId,
-            smallmessage: text,
+            smallmessage: custommessage + text,
             text: text,
             timecreated: Date.now(),
+            isReply: this.currentlyReplying ? true : false
         };
+
         message.showDate = this.showDate(message, this.messages[this.messages.length - 1]);
         this.addMessage(message, false);
 

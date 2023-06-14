@@ -132,6 +132,7 @@ export class CoreSendMessageFormComponent implements OnInit {
         const splitarray = event.fileurl.split('.');
         const format = splitarray[splitarray.length - 1];
         let message = '';
+        console.log('upload-format', format, event);
         switch(format) {
             case 'jpeg':
             case 'gif':
@@ -139,10 +140,14 @@ export class CoreSendMessageFormComponent implements OnInit {
                 message = '<img src="' + event.fileurl + '"/>';
                 break;
             case 'mp4':
-                message = '<video width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mp4"></video>';
+                message = '<video preload="metadata" width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mp4"></video>';
+                break;
+            case 'MOV':
+                message = '<video preload="metadata" width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mov"></video>';
                 break;
             default:
                 message = '<a href="' + event.fileurl + '">Link</a>';
+                // message = '<video width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mp4"></video>'
                 break;
         }
         this.onSubmit.emit(message);

@@ -35,7 +35,7 @@ export class AddonPrivateFilesHelperProvider {
      * @param info Private files info. See AddonPrivateFilesProvider.getPrivateFilesInfo.
      * @returns Promise resolved when a file is uploaded, rejected otherwise.
      */
-    async uploadPrivateFile(info?: AddonPrivateFilesGetUserInfoWSResult): Promise<void> {
+    async uploadPrivateFile(info?: AddonPrivateFilesGetUserInfoWSResult, uploadarea?: string): Promise<void> {
         // Calculate the max size.
         const currentSite = CoreSites.getCurrentSite();
         let maxSize = currentSite?.getInfo()?.usermaxuploadfilesize || -1;
@@ -64,10 +64,17 @@ export class AddonPrivateFilesHelperProvider {
         const modal = await CoreDomUtils.showModalLoading('core.fileuploader.uploading', true);
 
         try {
-            const wsresult = await AddonPrivateFiles.moveFromDraftToPrivate(result.itemid, result.filename);
+            let component = '';
+            if (uploadarea != null) {
+                const splitarray = uploadarea.split('.')
+                component = splitarray[splitarray.length - 1];
+                const wsresult = await AddonPrivateFiles.moveFromDraftToPrivate(result.itemid, component + '_' + result.filename);
+                this.uploadEvent.emit(wsresult);
+            } else {
+                const wsresult = await AddonPrivateFiles.moveFromDraftToPrivate(result.itemid, result.filename);
+                this.uploadEvent.emit(wsresult);
+            }
 
-            // Emit return url to listeners.
-            this.uploadEvent.emit(wsresult);
             CoreDomUtils.showToast('core.fileuploader.fileuploaded', true, undefined, 'core-toast-success');
         } finally {
             modal.dismiss();

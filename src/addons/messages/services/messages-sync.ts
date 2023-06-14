@@ -277,6 +277,7 @@ export class AddonMessagesSyncProvider extends CoreSyncBaseProvider<AddonMessage
         userId?: number,
         siteId?: string,
     ): Promise<string[]> {
+        console.log('sync after send');
         const site = await CoreSites.getSite(siteId);
 
         const siteCurrentUserId = site.getUserId();

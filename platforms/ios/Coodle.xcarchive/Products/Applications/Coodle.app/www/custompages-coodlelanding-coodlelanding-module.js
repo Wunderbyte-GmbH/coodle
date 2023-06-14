@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <h1>{{'local.coodle.landingpage' | translate}}</h1>\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <core-user-menu-button></core-user-menu-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ng-container *ngFor=\"let button of buttons\">\n        <ion-col [ngStyle]=\"{'background' : button.color}\" class=\"landingcol\" size=\"5\">\n          <ion-button class=\"gridbutton\" (click)=\"openHandler(button)\">\n            <ion-grid class=\"innergrid\">\n              <ion-row>\n                <ion-col>\n                  <ion-label>{{button.title}}</ion-label>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-icon name=\"{{button.icon}}\"></ion-icon>\n              </ion-row>\n            </ion-grid>\n          </ion-button>\n        </ion-col>\n      </ng-container>\n    </ion-row>\n\n\n    <!-- <ion-row>\n      <ion-col class=\"landingcol col1\">\n        <ion-button class=\"gridbutton\" [routerLink]=\"['/main/home/siteplugins/homecontent/local_coodle/view_address']\"\n          routerDirection=\"back\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Wegbeschreibung</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"archive-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n      <ion-col class=\"landingcol col2\">\n        <ion-button class=\"gridbutton\" [routerLink]=\"['/main/messages/group-conversations']\" routerDirection=\"back\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Nachrichten</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"chatbox-ellipses-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"landingcol col3\">\n        <ion-button class=\"gridbutton\"\n          [routerLink]=\"['/main/more/siteplugins/content/local_coodle/view_files/0?title=plugin.local_coodle.myfiles']\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Datein</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"file-tray-full-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n      <ion-col class=\"landingcol col4\">\n        <ion-button class=\"gridbutton\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Kontakt</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"person-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"landingcol col5\">\n        <ion-button class=\"gridbutton\" [routerLink]=\"['/main/more/calendar/index']\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Kalender</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"calendar-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n      <ion-col class=\"landingcol col6\">\n        <ion-button class=\"gridbutton\" router-link=\"/calendar\">\n          <ion-grid>\n            <ion-row>\n              <ion-label>Platzhalter</ion-label>\n            </ion-row>\n            <ion-row>\n              <ion-icon name=\"reorder-four-outline\"></ion-icon>\n            </ion-row>\n          </ion-grid>\n        </ion-button>\n      </ion-col>\n    </ion-row> -->\n  </ion-grid>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <h1>{{'addon.local_coodle.landingpage' | translate}}</h1>\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <core-user-menu-button></core-user-menu-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ng-container *ngFor=\"let button of buttons\">\n        <ion-col [ngStyle]=\"{'background' : button.color}\" class=\"landingcol\" size=\"12\">\n          <ion-button class=\"gridbutton\" (click)=\"openHandler(button)\">\n            <ion-icon slot=\"start\" name=\"{{button.icon}}\"></ion-icon>\n            <!-- <ion-grid class=\"innergrid\"> -->\n            <!-- <ion-row>\n                <ion-col> -->\n            <ion-label>{{button.title | translate}}</ion-label>\n            <!-- </ion-col>\n              </ion-row> -->\n            <!-- <ion-row>\n                <ion-icon name=\"{{button.icon}}\"></ion-icon>\n              </ion-row> -->\n            <!-- </ion-grid> -->\n          </ion-button>\n        </ion-col>\n      </ng-container>\n    </ion-row>\n");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ CoodlelandingPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".landingcol {\n  height: 25vh;\n  margin: 10px;\n  overflow: auto;\n}\n\n.gridbutton {\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  --background: transparent;\n  margin: 0;\n}\n\nion-icon {\n  font-size: 1.9em;\n}\n\nion-row {\n  justify-content: center;\n  margin-bottom: 10px;\n}\n\nion-label {\n  font-size: 2.7vw;\n  white-space: normal;\n}\n\nion-grid {\n  overflow: visible;\n}\n\n.innergrid {\n  display: flex;\n  justify-content: space-around;\n  /* align-items: flex-end; */\n  flex-direction: column;\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jdXN0b21wYWdlcy9jb29kbGVsYW5kaW5nL2Nvb2RsZWxhbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0FBQ0o7O0FBMEJBO0VBQ0ksWUFBQTtFQUNKLFdBQUE7RUFDQSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsU0FBQTtBQXZCQTs7QUEwQkE7RUFDSSxnQkFBQTtBQXZCSjs7QUEwQkE7RUFDSSx1QkFBQTtFQUNBLG1CQUFBO0FBdkJKOztBQTBCQTtFQUNJLGdCQUFBO0VBQ0EsbUJBQUE7QUF2Qko7O0FBMkJBO0VBQ0UsaUJBQUE7QUF4QkY7O0FBNEJBO0VBQ0ksYUFBQTtFQUNBLDZCQUFBO0VBQ0EsMkJBQUE7RUFDQSxzQkFBQTtFQUNBLFdBQUE7QUF6QkoiLCJmaWxlIjoic3JjL2N1c3RvbXBhZ2VzL2Nvb2RsZWxhbmRpbmcvY29vZGxlbGFuZGluZy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGFuZGluZ2NvbCB7XG4gICAgaGVpZ2h0OiAyNXZoO1xuICAgIG1hcmdpbjogMTBweDtcbiAgICBvdmVyZmxvdzogYXV0bztcbn1cblxuLy8gLmNvbDEge1xuLy8gICBiYWNrZ3JvdW5kOiAjMjY0NjUzO1xuLy8gfVxuXG4vLyAuY29sMiB7XG4vLyAgIGJhY2tncm91bmQ6ICMyQTlEOEY7XG4vLyB9XG5cbi8vIC5jb2wzIHtcbi8vICAgICBiYWNrZ3JvdW5kOiAjRTlDNDZBXG4vLyB9XG5cbi8vIC5jb2w0IHtcbi8vICAgICBiYWNrZ3JvdW5kOiAjRjRBMjYxO1xuLy8gICB9XG5cbi8vIC5jb2w1IHtcbi8vICAgYmFja2dyb3VuZDogI0U3NkY1MTtcbi8vIH1cblxuLy8gLmNvbDYge1xuLy8gICAgIGJhY2tncm91bmQ6ICNlNzUxNTE7XG4vLyB9XG5cbi5ncmlkYnV0dG9uIHtcbiAgICBoZWlnaHQ6IDEwMCU7XG53aWR0aDogMTAwJTtcbmJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbm1hcmdpbjogMDtcbn1cblxuaW9uLWljb24ge1xuICAgIGZvbnQtc2l6ZTogMS45ZW07XG59XG5cbmlvbi1yb3cge1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG5cbmlvbi1sYWJlbCB7XG4gICAgZm9udC1zaXplOiAyLjd2dztcbiAgICB3aGl0ZS1zcGFjZTogbm9ybWFsO1xuICAgIC8vIG92ZXJmbG93LXdyYXA6IGFueXdoZXJlO1xufVxuXG5pb24tZ3JpZCB7XG4gIG92ZXJmbG93OiB2aXNpYmxlO1xuXG59XG5cbi5pbm5lcmdyaWQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gICAgLyogYWxpZ24taXRlbXM6IGZsZXgtZW5kOyAqL1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgaGVpZ2h0OiA4MCU7XG59XG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".landingcol {\n  height: 14vh;\n  margin: 10px;\n  overflow: auto;\n}\n\n.gridbutton {\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  --background: transparent;\n  margin: 0;\n}\n\nion-icon {\n  font-size: 1.9em;\n}\n\nion-row {\n  justify-content: center;\n  margin-bottom: 10px;\n}\n\nion-label {\n  font-size: 4.7vw;\n  white-space: normal;\n  line-height: initial;\n}\n\nion-grid {\n  overflow: visible;\n}\n\n.innergrid {\n  display: flex;\n  justify-content: space-around;\n  /* align-items: flex-end; */\n  flex-direction: column;\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jdXN0b21wYWdlcy9jb29kbGVsYW5kaW5nL2Nvb2RsZWxhbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0FBQ0o7O0FBMEJBO0VBQ0ksWUFBQTtFQUNKLFdBQUE7RUFDQSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsU0FBQTtBQXZCQTs7QUEwQkE7RUFDSSxnQkFBQTtBQXZCSjs7QUEwQkE7RUFDSSx1QkFBQTtFQUNBLG1CQUFBO0FBdkJKOztBQTBCQTtFQUNJLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtBQXZCSjs7QUEyQkE7RUFDRSxpQkFBQTtBQXhCRjs7QUE0QkE7RUFDSSxhQUFBO0VBQ0EsNkJBQUE7RUFDQSwyQkFBQTtFQUNBLHNCQUFBO0VBQ0EsV0FBQTtBQXpCSiIsImZpbGUiOiJzcmMvY3VzdG9tcGFnZXMvY29vZGxlbGFuZGluZy9jb29kbGVsYW5kaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5kaW5nY29sIHtcbiAgICBoZWlnaHQ6IDE0dmg7XG4gICAgbWFyZ2luOiAxMHB4O1xuICAgIG92ZXJmbG93OiBhdXRvO1xufVxuXG4vLyAuY29sMSB7XG4vLyAgIGJhY2tncm91bmQ6ICMyNjQ2NTM7XG4vLyB9XG5cbi8vIC5jb2wyIHtcbi8vICAgYmFja2dyb3VuZDogIzJBOUQ4Rjtcbi8vIH1cblxuLy8gLmNvbDMge1xuLy8gICAgIGJhY2tncm91bmQ6ICNFOUM0NkFcbi8vIH1cblxuLy8gLmNvbDQge1xuLy8gICAgIGJhY2tncm91bmQ6ICNGNEEyNjE7XG4vLyAgIH1cblxuLy8gLmNvbDUge1xuLy8gICBiYWNrZ3JvdW5kOiAjRTc2RjUxO1xuLy8gfVxuXG4vLyAuY29sNiB7XG4vLyAgICAgYmFja2dyb3VuZDogI2U3NTE1MTtcbi8vIH1cblxuLmdyaWRidXR0b24ge1xuICAgIGhlaWdodDogMTAwJTtcbndpZHRoOiAxMDAlO1xuYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4tLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xubWFyZ2luOiAwO1xufVxuXG5pb24taWNvbiB7XG4gICAgZm9udC1zaXplOiAxLjllbTtcbn1cblxuaW9uLXJvdyB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cblxuaW9uLWxhYmVsIHtcbiAgICBmb250LXNpemU6IDQuN3Z3O1xuICAgIHdoaXRlLXNwYWNlOiBub3JtYWw7XG4gICAgbGluZS1oZWlnaHQ6IGluaXRpYWw7XG4gICAgLy8gb3ZlcmZsb3ctd3JhcDogYW55d2hlcmU7XG59XG5cbmlvbi1ncmlkIHtcbiAgb3ZlcmZsb3c6IHZpc2libGU7XG5cbn1cblxuLmlubmVyZ3JpZCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICAvKiBhbGlnbi1pdGVtczogZmxleC1lbmQ7ICovXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBoZWlnaHQ6IDgwJTtcbn1cbiJdfQ== */");
 
 /***/ }),
 
@@ -184,6 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _services_navigator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/navigator */ "./src/core/services/navigator.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu-delegate */ "./src/core/features/mainmenu/services/mainmenu-delegate.ts");
+/* harmony import */ var _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu */ "./src/core/features/mainmenu/services/mainmenu.ts");
 
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
@@ -201,27 +203,56 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let CoodlelandingPage = class CoodlelandingPage {
     constructor(router) {
         this.router = router;
         this.buttons = [
-            { title: 'Wegbeschreibung', icon: 'home-outline',
-                url: '/main/home/siteplugins/homecontent/local_coodle/view_address',
-                color: '#264653' },
-            { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-            { title: 'Dokumente', icon: 'file-tray-full-outline',
-                url: '/main/more/siteplugins/content/local_coodle/view_files1/0', color: '#2A9D8F' },
-            { title: 'Bewerbungs\nunterlagen', icon: 'folder-outline',
-                url: '/main/more/siteplugins/content/local_coodle/view_files2/0', color: '#4664ba' },
-            { title: 'Beratungsinhalt', icon: 'document-outline',
-                url: '/main/more/siteplugins/content/local_coodle/view_files3/0', color: '#898989' },
-            { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
+            //! TODOS
+            { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
+                url: 'siteplugins/content/local_coodle/view_todos/0', color: 'rgb(238, 58, 47)' },
+            //! WEGE
+            { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
+                url: 'siteplugins/content/local_coodle/view_address/0',
+                color: 'rgb(163, 96, 239)' },
+            //! Beratung
+            { title: 'addon.local_coodle.dok3', icon: 'people-outline',
+                url: 'siteplugins/content/local_coodle/view_files3/0', color: 'rgb(33, 181, 98)' },
+            // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
+            //! Dokumente
+            { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
+                url: 'siteplugins/content/local_coodle/view_files1/0', color: 'rgb(94, 160, 242)' },
+            //! Info
+            { title: 'addon.local_coodle.viewinfo', icon: 'globe-outline',
+                url: 'siteplugins/content/local_coodle/view_info/0', color: 'rgb(251, 135, 66)' },
         ];
     }
-    openHandler(handler) {
-        _services_navigator__WEBPACK_IMPORTED_MODULE_2__["CoreNavigator"].navigate(handler.url, { params: { title: handler.title.replace(/\s/g, ''), comingFromCoodle: true } });
+    ngOnInit() {
+        // Load the handlers.
+        this.subscription = _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_4__["CoreMainMenuDelegate"].getHandlersObservable().subscribe((handlers) => {
+            this.allHandlers = handlers;
+            console.log('allHandlersCoodle', this.allHandlers);
+            // this.initHandlers();
+        });
+        this.initHandlers();
     }
-    ngOnInit() { }
+    initHandlers() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            // CoreNavigator.navigateToSitePath('siteplugins/content/local_coodle/view_files1/0', { params });
+            this.customItems = yield _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_5__["CoreMainMenu"].getCustomMenuItems();
+            console.log('custom Items', this.customItems);
+        });
+    }
+    openHandler(handlerClicked) {
+        var _a;
+        const selectedHandler = (_a = this.allHandlers) === null || _a === void 0 ? void 0 : _a.filter(handler => handler.page === handlerClicked.url)[0];
+        console.log('selectedHandler', selectedHandler, handlerClicked, this.allHandlers);
+        if (selectedHandler) {
+            const params = selectedHandler.pageParams;
+            _services_navigator__WEBPACK_IMPORTED_MODULE_2__["CoreNavigator"].navigateToSitePath(selectedHandler.page, { params });
+        }
+    }
 };
 CoodlelandingPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }

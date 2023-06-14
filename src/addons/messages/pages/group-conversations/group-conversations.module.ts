@@ -23,6 +23,7 @@ import { CoreSharedModule } from '@/core/shared.module';
 import { AddonMessagesGroupConversationsPage } from './group-conversations.page';
 import { AddonMessagesMainMenuHandlerService } from '@addons/messages/services/handlers/mainmenu';
 import { CoreMainMenuComponentsModule } from '@features/mainmenu/components/components.module';
+import { FilterpipePipe } from '@/app/pipes/filterpipe.pipe';
 
 const mobileRoutes: Routes = [
     {
@@ -58,6 +59,7 @@ const routes: Routes = [
         CoreMainMenuComponentsModule,
     ],
     declarations: [
+        FilterpipePipe,
         AddonMessagesGroupConversationsPage,
     ],
     exports: [RouterModule],

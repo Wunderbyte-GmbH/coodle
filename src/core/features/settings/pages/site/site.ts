@@ -82,6 +82,10 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
         });
     }
 
+    goToGenSettings() {
+        CoreNavigator.navigateToSitePath('/settings/general');
+    }
+
     /**
      * @inheritdoc
      */

@@ -971,7 +971,7 @@ export class AddonMessagesProvider {
         conversationId: number,
         options: AddonMessagesGetConversationMessagesOptions = {},
     ): Promise<AddonMessagesGetConversationMessagesResult> {
-
+        console.log('convo getconversationmessages');
         const site = await CoreSites.getSite(options.siteId);
 
         options.userId = options.userId || site.getUserId();
@@ -1434,7 +1434,7 @@ export class AddonMessagesProvider {
         preSets: CoreSiteWSPreSets,
         siteId?: string,
     ): Promise<AddonMessagesGetMessagesResult> {
-
+        console.log('getting messages')
         params.type = 'conversations';
         params.newestfirst = true;
 
@@ -2651,6 +2651,8 @@ export class AddonMessagesProvider {
             })),
         };
 
+        const test = params;
+
         return site.write('core_message_send_messages_to_conversation', params);
     }
 
@@ -2999,6 +3001,7 @@ export type AddonMessagesConversationMessageFormatted =
         showDate?: boolean; // Calculated in the app. Whether to show the date before the message.
         showUserData?: boolean; // Calculated in the app. Whether to show the user data in the message.
         showTail?: boolean; // Calculated in the app. Whether to show a "tail" in the message.
+        isReply?: boolean;
     };
 
 /**

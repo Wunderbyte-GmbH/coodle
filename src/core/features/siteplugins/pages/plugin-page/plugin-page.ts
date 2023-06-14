@@ -21,6 +21,9 @@ import { CanLeave } from '@guards/can-leave';
 import { CoreNavigator } from '@services/navigator';
 import { CoreUtils } from '@services/utils/utils';
 import { CoreSitePluginsPluginContentComponent } from '../../components/plugin-content/plugin-content';
+import { AddonPrivateFilesHelper } from '@addons/privatefiles/services/privatefiles-helper';
+import { AddonPrivateFilesGetUserInfoWSResult } from '@addons/privatefiles/services/privatefiles';
+import { CoreDomUtils } from '@services/utils/dom';
 
 /**
  * Page to render a site plugin page.
@@ -32,7 +35,7 @@ import { CoreSitePluginsPluginContentComponent } from '../../components/plugin-c
 export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
 
     @ViewChild(CoreSitePluginsPluginContentComponent) content?: CoreSitePluginsPluginContentComponent;
-
+    filesInfo?: AddonPrivateFilesGetUserInfoWSResult;
     title?: string; // Page title.
     component?: string;
     method?: string;
@@ -64,6 +67,7 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
      * @param refresher Refresher.
      */
     refreshData(refresher: IonRefresher): void {
+        console.log('refresh data');
         this.content?.refreshContent(false).finally(() => {
             refresher.complete();
         });
@@ -117,6 +121,18 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
         const result = await this.content.callComponentFunction('canLeave');
 
         return result === undefined || result === null ? true : !!result;
+    }
+
+
+    async uploadFile(): Promise<void>{
+        console.log('upload');
+        try {
+            await AddonPrivateFilesHelper.uploadPrivateFile(this.filesInfo, this.title);
+
+            this.content?.refreshContent(false);
+        } catch (error) {
+            CoreDomUtils.showErrorModalDefault(error, 'core.fileuploader.errorwhileuploading', true);
+        }
     }
 
 }

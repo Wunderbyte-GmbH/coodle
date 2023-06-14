@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1>{{ (showCalendar ? 'addon.calendar.calendarevents' : 'addon.calendar.upcomingevents') | translate }}</h1>\n        </ion-title>\n        <ion-buttons slot=\"end\">\n            <ion-button fill=\"clear\" (click)=\"openFilter()\" [attr.aria-label]=\"'core.filter' | translate\">\n                <ion-icon slot=\"icon-only\" name=\"fas-filter\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <core-context-menu>\n                <core-context-menu-item *ngIf=\"showCalendar\" [priority]=\"800\" [content]=\"'addon.calendar.upcomingevents' | translate\"\n                    iconAction=\"fas-th-list\" (action)=\"toggleDisplay()\"></core-context-menu-item>\n                <core-context-menu-item *ngIf=\"!showCalendar\" [priority]=\"800\" [content]=\"'addon.calendar.monthlyview' | translate\"\n                    iconAction=\"fas-calendar-alt\" (action)=\"toggleDisplay()\"></core-context-menu-item>\n                <core-context-menu-item [priority]=\"600\" [content]=\"'core.settings.settings' | translate\" (action)=\"openSettings()\"\n                    iconAction=\"fas-cogs\">\n                </core-context-menu-item>\n                <core-context-menu-item [hidden]=\"!loaded || !hasOffline || !isOnline\" [priority]=\"400\"\n                    [content]=\"'core.settings.synchronizenow' | translate\" (action)=\"doRefresh(undefined, $event, true)\"\n                    [iconAction]=\"syncIcon\" [closeOnClick]=\"false\"></core-context-menu-item>\n            </core-context-menu>\n            <core-user-menu-button></core-user-menu-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <ion-refresher slot=\"fixed\" [disabled]=\"!loaded\" (ionRefresh)=\"doRefresh($event.target)\">\n        <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n    </ion-refresher>\n\n    <!-- There is data to be synchronized -->\n    <ion-card class=\"core-warning-card\" *ngIf=\"hasOffline\">\n        <ion-item>\n            <ion-icon name=\"fas-exclamation-triangle\" slot=\"start\" aria-hidden=\"true\"></ion-icon>\n            <ion-label>{{ 'core.hasdatatosync' | translate:{$a: 'addon.calendar.calendar' | translate} }}</ion-label>\n        </ion-item>\n    </ion-card>\n\n    <addon-calendar-calendar [hidden]=\"!showCalendar\" [initialYear]=\"year\" [initialMonth]=\"month\" [filter]=\"filter\"\n        [displayNavButtons]=\"showCalendar\" (onEventClicked)=\"gotoEvent($event)\" (onDayClicked)=\"gotoDay($event)\">\n    </addon-calendar-calendar>\n\n    <addon-calendar-upcoming-events *ngIf=\"loadUpcoming\" [hidden]=\"showCalendar\" [filter]=\"filter\" (onEventClicked)=\"gotoEvent($event)\">\n    </addon-calendar-upcoming-events>\n\n    <!-- Create a calendar event. -->\n    <ion-fab slot=\"fixed\" core-fab vertical=\"bottom\" horizontal=\"end\" *ngIf=\"canCreate\">\n        <ion-fab-button (click)=\"openEdit()\" [attr.aria-label]=\"'addon.calendar.newevent' | translate\">\n            <ion-icon name=\"fas-plus\" aria-hidden=\"true\"></ion-icon>\n            <span class=\"sr-only\">{{ 'addon.calendar.newevent' | translate }}</span>\n        </ion-fab-button>\n    </ion-fab>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1>{{ (showCalendar ? 'addon.calendar.calendarevents' : 'addon.calendar.upcomingevents') | translate }}</h1>\n        </ion-title>\n        <ion-buttons slot=\"end\">\n            <ion-button fill=\"clear\" (click)=\"openFilter()\" [attr.aria-label]=\"'core.filter' | translate\">\n                <ion-icon slot=\"icon-only\" name=\"fas-filter\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <core-context-menu>\n                <core-context-menu-item *ngIf=\"showCalendar\" [priority]=\"800\" [content]=\"'addon.calendar.upcomingevents' | translate\"\n                    iconAction=\"fas-th-list\" (action)=\"toggleDisplay()\"></core-context-menu-item>\n                <core-context-menu-item *ngIf=\"!showCalendar\" [priority]=\"800\" [content]=\"'addon.calendar.monthlyview' | translate\"\n                    iconAction=\"fas-calendar-alt\" (action)=\"toggleDisplay()\"></core-context-menu-item>\n                <core-context-menu-item [priority]=\"600\" [content]=\"'core.settings.settings' | translate\" (action)=\"openSettings()\"\n                    iconAction=\"fas-cogs\">\n                </core-context-menu-item>\n                <core-context-menu-item [hidden]=\"!loaded || !hasOffline || !isOnline\" [priority]=\"400\"\n                    [content]=\"'core.settings.synchronizenow' | translate\" (action)=\"doRefresh(undefined, $event, true)\"\n                    [iconAction]=\"syncIcon\" [closeOnClick]=\"false\"></core-context-menu-item>\n            </core-context-menu>\n            <core-user-menu-button></core-user-menu-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <ion-refresher slot=\"fixed\" [disabled]=\"!loaded\" (ionRefresh)=\"doRefresh($event.target)\">\n        <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n    </ion-refresher>\n\n    <!-- There is data to be synchronized -->\n    <ion-card class=\"core-warning-card\" *ngIf=\"hasOffline\">\n        <ion-item>\n            <ion-icon name=\"fas-exclamation-triangle\" slot=\"start\" aria-hidden=\"true\"></ion-icon>\n            <ion-label>{{ 'core.hasdatatosync' | translate:{$a: 'addon.calendar.calendar' | translate} }}</ion-label>\n        </ion-item>\n    </ion-card>\n\n    <addon-calendar-calendar [hidden]=\"!showCalendar\" [initialYear]=\"year\" [initialMonth]=\"month\" [filter]=\"filter\"\n        [displayNavButtons]=\"showCalendar\" (onEventClicked)=\"gotoEvent($event)\" (onDayClicked)=\"gotoDay($event)\">\n    </addon-calendar-calendar>\n\n    <h5 class='upcoming'>{{ 'addon.calendar.upcomingevents' | translate }}</h5>\n    <addon-calendar-upcoming-events [filter]=\"filter\" (onEventClicked)=\"gotoEvent($event)\">\n    </addon-calendar-upcoming-events>\n\n    <addon-calendar-upcoming-events *ngIf=\"loadUpcoming\" [hidden]=\"showCalendar\" [filter]=\"filter\" (onEventClicked)=\"gotoEvent($event)\">\n    </addon-calendar-upcoming-events>\n\n    <!-- Create a calendar event. -->\n    <ion-fab slot=\"fixed\" core-fab vertical=\"bottom\" horizontal=\"end\" *ngIf=\"canCreate\">\n        <ion-fab-button (click)=\"openEdit()\" [attr.aria-label]=\"'addon.calendar.newevent' | translate\">\n            <ion-icon name=\"fas-plus\" aria-hidden=\"true\"></ion-icon>\n            <span class=\"sr-only\">{{ 'addon.calendar.newevent' | translate }}</span>\n        </ion-fab-button>\n    </ion-fab>\n</ion-content>\n");
 
 /***/ }),
 
@@ -142,8 +142,9 @@ __webpack_require__.r(__webpack_exports__);
  * Page that displays the calendar events.
  */
 let AddonCalendarIndexPage = class AddonCalendarIndexPage {
-    constructor(route) {
+    constructor(route, cdRef) {
         this.route = route;
+        this.cdRef = cdRef;
         this.canCreate = false;
         this.courses = [];
         this.loaded = false;
@@ -325,11 +326,15 @@ let AddonCalendarIndexPage = class AddonCalendarIndexPage {
             const promises = [];
             promises.push(_services_calendar__WEBPACK_IMPORTED_MODULE_7__["AddonCalendar"].invalidateAllowedEventTypes());
             // Refresh the sub-component.
-            if (this.showCalendar && this.calendarComponent) {
+            if (this.showCalendar && this.calendarComponent && !this.upcomingEventsComponent) {
                 promises.push(this.calendarComponent.refreshData(afterChange));
             }
             else if (!this.showCalendar && this.upcomingEventsComponent) {
                 promises.push(this.upcomingEventsComponent.refreshData());
+            }
+            else if (this.calendarComponent && this.upcomingEventsComponent) {
+                promises.push(this.upcomingEventsComponent.refreshData());
+                promises.push(this.calendarComponent.refreshData(afterChange));
             }
             yield Promise.all(promises).finally(() => this.fetchData(sync, showErrors));
         });
@@ -400,6 +405,9 @@ let AddonCalendarIndexPage = class AddonCalendarIndexPage {
             this.loadUpcoming = true;
         }
     }
+    updateList() {
+        this.cdRef.detectChanges();
+    }
     /**
      * Page destroyed.
      */
@@ -417,7 +425,8 @@ let AddonCalendarIndexPage = class AddonCalendarIndexPage {
     }
 };
 AddonCalendarIndexPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_12__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_12__["ActivatedRoute"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] }
 ];
 AddonCalendarIndexPage.propDecorators = {
     calendarComponent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: [_components_calendar_calendar__WEBPACK_IMPORTED_MODULE_13__["AddonCalendarCalendarComponent"],] }],

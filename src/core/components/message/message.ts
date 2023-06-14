@@ -42,9 +42,11 @@ export class CoreMessageComponent implements OnInit {
     @Input() showDelete = false;
     @Output() onDeleteMessage = new EventEmitter<void>();
     @Output() onUndoDeleteMessage = new EventEmitter<void>();
+    @Output() onReplyToThisMessage = new EventEmitter<any>();
     @Output() afterRender = new EventEmitter<void>();
 
     protected deleted = false; // Needed to fix animation to void in Behat tests.
+
 
     // @TODO Recover the animation using native css or wait for Angular 13.1
     // where the bug https://github.com/angular/angular/issues/30693 is solved.
@@ -98,11 +100,28 @@ export class CoreMessageComponent implements OnInit {
 
     }
 
-    /**
+    // /**
+    //  * Copy message to clipboard.
+    //  */
+    // copyMessage(): void {
+    //     CoreUtils.copyToClipboard(CoreTextUtils.decodeHTMLEntities(this.text));
+    // }
+
+        /**
      * Copy message to clipboard.
      */
     copyMessage(): void {
-        CoreUtils.copyToClipboard(CoreTextUtils.decodeHTMLEntities(this.text));
+        //
+        // const answerText = CoreTextUtils.decodeHTMLEntities(this.text);
+        const answerText = this.text;
+        // this.instanceId this.contextLevel
+        console.log('answertext', answerText);
+        const data = {
+            user: this.user,
+            answerText
+        }
+        this.onReplyToThisMessage.emit(data);
+
     }
 
 }
@@ -118,4 +137,5 @@ type CoreMessageData = {
     showUserData?: boolean; // Whether to show the user data in the message.
     showTail?: boolean; // Whether to show a "tail" in the message.
     delete?: boolean; // Permission to delete=true/false.
+    isReply?: boolean
 };

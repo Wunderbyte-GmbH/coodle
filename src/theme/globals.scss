@@ -75,3 +75,30 @@ addon-calendar-calendar {
 .upcoming {
   padding-left: 10px;
 }
+
+.sendmessageicon {
+  color: var(--primary);
+  font-size: 4em;
+}
+
+.chatuploadbutton {
+  border: 1px solid var(--text-color);
+  border-radius: 46px;
+}
+.reply-message {
+  border-left: 4px solid var(--primary);
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background: #cbcbcb;
+  color: var(--text-color);
+}
+
+.otheruser {
+  color: var(--primary);
+}
+
+.previewcontent img {
+  max-width: 30% !important;
+}

@@ -22,6 +22,8 @@ import { CoreLogger } from '@singletons/logger';
 import { CorePushNotificationsNotificationBasicData } from './pushnotifications';
 import { CoreNavigator } from '@services/navigator';
 import { CoreTextUtils } from '@services/utils/text';
+import { AddonNotificationsNotificationData } from '@addons/notifications/services/handlers/push-click';
+import { AddonNotificationsHelper } from '@addons/notifications/services/notifications-helper';
 
 /**
  * Interface that all click handlers must implement.
@@ -76,6 +78,16 @@ export class CorePushNotificationsDelegateService {
         this.observables['receive'] = new Subject<CorePushNotificationsNotificationBasicData>();
     }
 
+        /**
+     * Mark the notification as read.
+     *
+     * @param notification Notification to mark.
+     * @returns Promise resolved when done.
+     */
+        protected async markAsRead(notification: AddonNotificationsNotificationData): Promise<void> {
+            await CoreUtils.ignoreErrors(AddonNotificationsHelper.markNotificationAsRead(notification));
+        }
+
     /**
      * Function called when a push notification is clicked. Sends notification to handlers.
      *
@@ -93,8 +105,9 @@ export class CorePushNotificationsDelegateService {
             notification.customdata = CoreTextUtils.parseJSON<Record<string, unknown>>(notification.customdata, {});
         }
         if (notification.customdata?.coodle == true) {
+            this.markAsRead(notification);
             const url = '/main/more/siteplugins/content/local_coodle/' + notification.customdata?.coodleurl;
-             await CoreNavigator.navigate(url, {params: { comingFromCoodle: true }});
+             await CoreNavigator.navigate(url, {params: { comingFromCoodle: true, title: notification.customdata?.title }});
              return;
         }
 

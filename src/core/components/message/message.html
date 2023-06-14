@@ -1,4 +1,7 @@
 <div *ngIf="message" class="message-box" (longPress)="copyMessage()">
+    <div *ngIf="message.isReply">
+        <p>TODO REPLY ANSICHT IM CHATVERLAUF</p>
+    </div>
     <div class="main">
         <!-- User data. -->
         <div class="message-user" *ngIf="message.showUserData">

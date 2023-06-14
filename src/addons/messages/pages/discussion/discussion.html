@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-back-button [text]="'core.back' | translate"></ion-back-button>
         </ion-buttons>
-        <ion-title>
+        <ion-title *ngIf="conversation?.membercount == 2">
             <h1>
                 <img *ngIf="loaded && !otherMember && conversationImage" class="core-bar-button-image" [src]="conversationImage" alt=""
                     onError="this.src='assets/img/group-avatar.svg'" core-external-content role="presentation" [siteId]="siteId || null">
@@ -18,6 +18,10 @@
                     [attr.aria-label]="'addon.messages.mutedconversation' | translate">
                 </ion-icon>
             </h1>
+        </ion-title>
+        <ion-title *ngIf="conversation?.membercount == 1">
+            <core-format-text [text]="'addon.local_coodle.notes' | translate" contextLevel="system"
+                [contextInstanceId]="0"></core-format-text>
         </ion-title>
         <ion-buttons slot="end"></ion-buttons>
     </ion-toolbar>
@@ -83,10 +87,12 @@
 
                 <core-message [message]="message" [user]="members[message.useridfrom]" (afterRender)="last && scrollToBottom()"
                     [text]="message.text" (onDeleteMessage)="deleteMessage(message, index)" [showDelete]="showDelete"
-                    [time]="message.timecreated">
+                    [time]="message.timecreated" (onReplyToThisMessage)="replyToMsg($event)">
                 </core-message>
+
             </ng-container>
         </ion-list>
+
 
         <core-empty-box *ngIf="!messages || messages.length <= 0" icon="far-comments"
             [message]="'addon.messages.nomessagesfound' | translate">
@@ -103,6 +109,15 @@
     </ion-fab>
 </ion-content>
 <ion-footer class="footer-adjustable" *ngIf="loaded && (!conversationId || conversation)">
+    <ion-card *ngIf="currentlyReplying" style="background: #e5e5e5;">
+        <div (click)="closeReply()" style="position: absolute; right: 10px; top: 10px; z-index: 100000"><ion-icon
+                name="close-circle-outline" slot="end"></ion-icon></div>
+        <ion-card-subtitle style="padding: 5px">Replying</ion-card-subtitle>
+        <!-- <div [innerHTML]="sanitize(originalMsg)"></div> -->
+        <ion-card-content [innerHTML]="sanitize(previewText)" class="previewcontent" style="border-left: 8px solid red;">
+            <!-- {{previewText}} -->
+        </ion-card-content>
+    </ion-card>
     <ion-toolbar [color]="footerType == 'message' ? 'contrast' : 'light'">
         <p *ngIf="footerType == 'unable'" class="ion-text-center ion-margin-horizontal">
             {{ 'addon.messages.unabletomessage' | translate }}

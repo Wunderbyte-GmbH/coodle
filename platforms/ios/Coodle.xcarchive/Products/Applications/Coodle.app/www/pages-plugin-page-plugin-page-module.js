@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button *ngIf=\"comingFromCoodle\" [routerLink]=\"'/main/coodlelanding'\" [text]=\"'core.back' | translate\"\n                style=\"display: block;\"></ion-back-button>\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1 *ngIf=\"title\">{{ title | translate }}</h1>\n        </ion-title>\n\n        <ion-buttons slot=\"end\">\n            <!-- If the site plugin defines some buttons using core-nav-buttons, they will be added here. -->\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <ion-refresher slot=\"fixed\" [disabled]=\"!ptrEnabled || !content || !content.dataLoaded\" (ionRefresh)=\"refreshData($event.target)\">\n        <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n    </ion-refresher>\n    <core-site-plugins-plugin-content [component]=\"component\" [method]=\"method\" [args]=\"args\" [preSets]=\"preSets\" [initResult]=\"initResult\"\n        [data]=\"jsData\" [pageTitle]=\"title\">\n    </core-site-plugins-plugin-content>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button *ngIf=\"comingFromCoodle\" [routerLink]=\"'/main/coodlelanding'\" [text]=\"'core.back' | translate\"\n                style=\"display: block;\"></ion-back-button>\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1 *ngIf=\"title\">{{ title | translate }}</h1>\n        </ion-title>\n\n        <ion-buttons slot=\"end\">\n            <!-- If the site plugin defines some buttons using core-nav-buttons, they will be added here. -->\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <ion-refresher slot=\"fixed\" [disabled]=\"!ptrEnabled || !content || !content.dataLoaded\" (ionRefresh)=\"refreshData($event.target)\">\n        <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n    </ion-refresher>\n    <core-site-plugins-plugin-content [component]=\"component\" [method]=\"method\" [args]=\"args\" [preSets]=\"preSets\" [initResult]=\"initResult\"\n        [data]=\"jsData\" [pageTitle]=\"title\">\n    </core-site-plugins-plugin-content>\n</ion-content>\n<ion-fab *ngIf=\"title === 'plugin.local_coodle.dok1' || title === 'plugin.local_coodle.dok3'\" slot=\"fixed\" vertical=\"bottom\"\n    horizontal=\"end\">\n    <ion-fab-button (click)=\"uploadFile()\">\n        <ion-icon name=\"add\"></ion-icon>\n    </ion-fab-button>\n</ion-fab>\n");
 
 /***/ }),
 
@@ -95,6 +95,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_navigator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/navigator */ "./src/core/services/navigator.ts");
 /* harmony import */ var _services_utils_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/utils/utils */ "./src/core/services/utils/utils.ts");
 /* harmony import */ var _components_plugin_content_plugin_content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/plugin-content/plugin-content */ "./src/core/features/siteplugins/components/plugin-content/plugin-content.ts");
+/* harmony import */ var _addons_privatefiles_services_privatefiles_helper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @addons/privatefiles/services/privatefiles-helper */ "./src/addons/privatefiles/services/privatefiles-helper.ts");
+/* harmony import */ var _services_utils_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/utils/dom */ "./src/core/services/utils/dom.ts");
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,6 +110,8 @@ __webpack_require__.r(__webpack_exports__);
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+
 
 
 
@@ -141,6 +145,7 @@ let CoreSitePluginsPluginPage = class CoreSitePluginsPluginPage {
      */
     refreshData(refresher) {
         var _a;
+        console.log('refresh data');
         (_a = this.content) === null || _a === void 0 ? void 0 : _a.refreshContent(false).finally(() => {
             refresher.complete();
         });
@@ -192,6 +197,19 @@ let CoreSitePluginsPluginPage = class CoreSitePluginsPluginPage {
             }
             const result = yield this.content.callComponentFunction('canLeave');
             return result === undefined || result === null ? true : !!result;
+        });
+    }
+    uploadFile() {
+        var _a;
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log('upload');
+            try {
+                yield _addons_privatefiles_services_privatefiles_helper__WEBPACK_IMPORTED_MODULE_5__["AddonPrivateFilesHelper"].uploadPrivateFile(this.filesInfo, this.title);
+                (_a = this.content) === null || _a === void 0 ? void 0 : _a.refreshContent(false);
+            }
+            catch (error) {
+                _services_utils_dom__WEBPACK_IMPORTED_MODULE_6__["CoreDomUtils"].showErrorModalDefault(error, 'core.fileuploader.errorwhileuploading', true);
+            }
         });
     }
 };

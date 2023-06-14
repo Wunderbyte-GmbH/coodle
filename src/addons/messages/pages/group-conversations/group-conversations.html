@@ -46,53 +46,112 @@
 
 <!-- Template to render a list of conversations. -->
 <ng-template #conversationsTemplate let-conversations="conversations">
-    <ion-item class="ion-text-wrap addon-message-discussion" *ngFor="let conversation of conversations" button detail="false"
-        (click)="gotoConversation(conversation.id, conversation.userid)"
-        [attr.aria-current]="((conversation.id &&
-            conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'"
-        id="addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}"
-        [attr.aria-label]="conversation.name">
-        <!-- Group conversation image. -->
-        <ion-avatar slot="start" *ngIf="conversation.type == typeGroup">
-            <img [src]="conversation.imageurl" [alt]="conversation.name" core-external-content
-                onError="this.src='assets/img/group-avatar.svg'">
-        </ion-avatar>
+    <ng-container *ngFor="let conversation of conversations | filterpipe:2">
+        <ion-item class="ion-text-wrap addon-message-discussion" button detail="false"
+            (click)="gotoConversation(conversation.id, conversation.userid)" [attr.aria-current]="((conversation.id &&
+    conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'"
+            id="addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}"
+            [attr.aria-label]="conversation.name">
+            <!-- Group conversation image. -->
+            <ion-avatar slot="start" *ngIf="conversation.type == typeGroup">
+                <img [src]="conversation.imageurl" [alt]="conversation.name" core-external-content
+                    onError="this.src='assets/img/group-avatar.svg'">
+            </ion-avatar>
 
-        <!-- Avatar for individual conversations. -->
-        <core-user-avatar *ngIf="conversation.type != typeGroup" core-user-avatar [user]="conversation.otherUser" [linkProfile]="false"
-            [checkOnline]="conversation.showonlinestatus" slot="start"></core-user-avatar>
+            <!-- Avatar for individual conversations. -->
+            <core-user-avatar *ngIf="conversation.type != typeGroup" core-user-avatar [user]="conversation.otherUser" [linkProfile]="false"
+                [checkOnline]="conversation.showonlinestatus" slot="start"></core-user-avatar>
 
-        <ion-label>
-            <div class="flex-row ion-justify-content-between">
-                <p class="item-heading">
-                    <core-format-text [text]="conversation.name" contextLevel="system" [contextInstanceId]="0"></core-format-text>
-                    <ion-icon name="fas-user-slash" *ngIf="conversation.isblocked" [title]="'addon.messages.contactblocked' | translate">
-                    </ion-icon>
-                    <ion-icon *ngIf="conversation.ismuted" name="fas-volume-mute" [title]="'addon.messages.mutedconversation' | translate">
-                    </ion-icon>
+            <ion-label>
+                <div class="flex-row ion-justify-content-between">
+                    <p class="item-heading">
+                        <core-format-text [text]="conversation.name" contextLevel="system" [contextInstanceId]="0"></core-format-text>
+                        <ion-icon name="fas-user-slash" *ngIf="conversation.isblocked"
+                            [title]="'addon.messages.contactblocked' | translate">
+                        </ion-icon>
+                        <ion-icon *ngIf="conversation.ismuted" name="fas-volume-mute"
+                            [title]="'addon.messages.mutedconversation' | translate">
+                        </ion-icon>
+                    </p>
+                    <ion-note *ngIf="conversation.lastmessagedate > 0 || conversation.unreadcount">
+                        <span *ngIf="conversation.lastmessagedate > 0" class="addon-message-last-message-date">
+                            {{conversation.lastmessagedate | coreDateDayOrTime}}
+                        </span>
+                        <ion-badge *ngIf="conversation.unreadcount > 0" aria-label="true">{{ conversation.unreadcount }}</ion-badge>
+                        <span *ngIf="conversation.unreadcount > 0" class="sr-only">
+                            {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}
+                        </span>
+                    </ion-note>
+                </div>
+                <p *ngIf="conversation.subname">
+                    <core-format-text [text]="conversation.subname" contextLevel="system" [contextInstanceId]="0"></core-format-text>
                 </p>
-                <ion-note *ngIf="conversation.lastmessagedate > 0 || conversation.unreadcount">
-                    <span *ngIf="conversation.lastmessagedate > 0" class="addon-message-last-message-date">
-                        {{conversation.lastmessagedate | coreDateDayOrTime}}
+                <p class="addon-message-last-message">
+                    <span *ngIf="conversation.sentfromcurrentuser" class="addon-message-last-message-user">
+                        {{ 'addon.messages.you' | translate }}
                     </span>
-                    <ion-badge *ngIf="conversation.unreadcount > 0" aria-label="true">{{ conversation.unreadcount }}</ion-badge>
-                    <span *ngIf="conversation.unreadcount > 0" class="sr-only">
-                        {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}
+                    <span *ngIf="!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]"
+                        class="addon-message-last-message-user">{{ conversation.members[0].fullname + ':' }}</span>
+                    <core-format-text clean="true" singleLine="true" [text]="conversation.lastmessage"
+                        class="addon-message-last-message-text" contextLevel="system" [contextInstanceId]="0"></core-format-text>
+                </p>
+            </ion-label>
+        </ion-item>
+    </ng-container>
+
+
+    <ng-container *ngFor="let conversation of conversations | filterpipe:1">
+        <ion-item class="ion-text-wrap addon-message-discussion" button detail="false"
+            (click)="gotoConversation(conversation.id, conversation.userid)" [attr.aria-current]="((conversation.id &&
+    conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'"
+            id="addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}"
+            [attr.aria-label]="conversation.name" style="border-top: 1px solid black;
+            margin-top: 20px;">
+            <!-- Group conversation image. -->
+            <ion-avatar slot="start" *ngIf="conversation.type == typeGroup">
+                <img [src]="conversation.imageurl" [alt]="conversation.name" core-external-content
+                    onError="this.src='assets/img/group-avatar.svg'">
+            </ion-avatar>
+
+            <!-- Avatar for individual conversations. -->
+            <!-- <core-user-avatar *ngIf="conversation.type != typeGroup" core-user-avatar [user]="conversation.otherUser" [linkProfile]="false"
+                [checkOnline]="conversation.showonlinestatus" slot="start"></core-user-avatar> -->
+
+            <ion-label>
+                <div class="flex-row ion-justify-content-between">
+                    <p class="item-heading">
+                        <core-format-text [text]="'addon.local_coodle.notes' | translate" contextLevel="system"
+                            [contextInstanceId]="0"></core-format-text>
+                        <ion-icon name="fas-user-slash" *ngIf="conversation.isblocked"
+                            [title]="'addon.messages.contactblocked' | translate">
+                        </ion-icon>
+                        <ion-icon *ngIf="conversation.ismuted" name="fas-volume-mute"
+                            [title]="'addon.messages.mutedconversation' | translate">
+                        </ion-icon>
+                    </p>
+                    <ion-note *ngIf="conversation.lastmessagedate > 0 || conversation.unreadcount">
+                        <span *ngIf="conversation.lastmessagedate > 0" class="addon-message-last-message-date">
+                            {{conversation.lastmessagedate | coreDateDayOrTime}}
+                        </span>
+                        <ion-badge *ngIf="conversation.unreadcount > 0" aria-label="true">{{ conversation.unreadcount }}</ion-badge>
+                        <span *ngIf="conversation.unreadcount > 0" class="sr-only">
+                            {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}
+                        </span>
+                    </ion-note>
+                </div>
+                <p *ngIf="conversation.subname">
+                    <core-format-text [text]="conversation.subname" contextLevel="system" [contextInstanceId]="0"></core-format-text>
+                </p>
+                <p class="addon-message-last-message">
+                    <span *ngIf="conversation.sentfromcurrentuser" class="addon-message-last-message-user">
+                        {{ 'addon.messages.you' | translate }}
                     </span>
-                </ion-note>
-            </div>
-            <p *ngIf="conversation.subname">
-                <core-format-text [text]="conversation.subname" contextLevel="system" [contextInstanceId]="0"></core-format-text>
-            </p>
-            <p class="addon-message-last-message">
-                <span *ngIf="conversation.sentfromcurrentuser" class="addon-message-last-message-user">
-                    {{ 'addon.messages.you' | translate }}
-                </span>
-                <span *ngIf="!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]"
-                    class="addon-message-last-message-user">{{ conversation.members[0].fullname + ':' }}</span>
-                <core-format-text clean="true" singleLine="true" [text]="conversation.lastmessage" class="addon-message-last-message-text"
-                    contextLevel="system" [contextInstanceId]="0"></core-format-text>
-            </p>
-        </ion-label>
-    </ion-item>
+                    <span *ngIf="!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]"
+                        class="addon-message-last-message-user">{{ conversation.members[0].fullname + ':' }}</span>
+                    <core-format-text clean="true" singleLine="true" [text]="conversation.lastmessage"
+                        class="addon-message-last-message-text" contextLevel="system" [contextInstanceId]="0"></core-format-text>
+                </p>
+            </ion-label>
+        </ion-item>
+    </ng-container>
 </ng-template>

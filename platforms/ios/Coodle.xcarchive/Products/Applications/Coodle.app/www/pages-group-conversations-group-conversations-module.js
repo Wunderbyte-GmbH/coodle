@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1>{{ 'addon.messages.messages' | translate }}</h1>\n        </ion-title>\n        <ion-buttons slot=\"end\">\n            <ion-button fill=\"clear\" (click)=\"gotoSearch()\" [attr.aria-label]=\"'addon.messages.searchcombined' | translate\">\n                <ion-icon name=\"fas-search\" slot=\"icon-only\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <ion-button (click)=\"gotoSettings()\" [attr.aria-label]=\"'addon.messages.messagepreferences' | translate\">\n                <ion-icon name=\"fas-cog\" slot=\"icon-only\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <!-- Add an empty context menu so split view pages can add items, otherwise the menu disappears in some cases. -->\n            <core-context-menu></core-context-menu>\n            <core-user-menu-button></core-user-menu-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <core-split-view>\n        <ion-refresher slot=\"fixed\" [disabled]=\"!loaded\" (ionRefresh)=\"refreshData($event.target)\">\n            <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n        </ion-refresher>\n\n        <core-loading [hideUntil]=\"loaded\" [message]=\"loadingMessage\">\n            <ion-list>\n                <ion-item class=\"ion-text-wrap addon-message-discussion\" (click)=\"gotoContacts()\" detail=\"true\" button>\n                    <ion-icon name=\"fas-address-book\" slot=\"start\" aria-hidden=\"true\"></ion-icon>\n                    <ion-label>\n                        <h2>{{ 'addon.messages.contacts' | translate }}</h2>\n                    </ion-label>\n                    <ion-badge *ngIf=\"contactRequestsCount > 0\" slot=\"end\" aria-hidden=\"true\">{{contactRequestsCount}}</ion-badge>\n                    <span *ngIf=\"contactRequestsCount > 0\" class=\"sr-only\">\n                        {{ 'addon.messages.pendingcontactrequests' | translate:{$a: contactRequestsCount} }}\n                    </span>\n                </ion-item>\n                <ng-container *ngTemplateOutlet=\"conversationsTemplate; context: {conversations: allConversations}\">\n                </ng-container>\n            </ion-list>\n        </core-loading>\n    </core-split-view>\n</ion-content>\n\n<!-- Template to render a list of conversations. -->\n<ng-template #conversationsTemplate let-conversations=\"conversations\">\n    <ion-item class=\"ion-text-wrap addon-message-discussion\" *ngFor=\"let conversation of conversations\" button detail=\"false\"\n        (click)=\"gotoConversation(conversation.id, conversation.userid)\"\n        [attr.aria-current]=\"((conversation.id &&\n            conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'\"\n        id=\"addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}\"\n        [attr.aria-label]=\"conversation.name\">\n        <!-- Group conversation image. -->\n        <ion-avatar slot=\"start\" *ngIf=\"conversation.type == typeGroup\">\n            <img [src]=\"conversation.imageurl\" [alt]=\"conversation.name\" core-external-content\n                onError=\"this.src='assets/img/group-avatar.svg'\">\n        </ion-avatar>\n\n        <!-- Avatar for individual conversations. -->\n        <core-user-avatar *ngIf=\"conversation.type != typeGroup\" core-user-avatar [user]=\"conversation.otherUser\" [linkProfile]=\"false\"\n            [checkOnline]=\"conversation.showonlinestatus\" slot=\"start\"></core-user-avatar>\n\n        <ion-label>\n            <div class=\"flex-row ion-justify-content-between\">\n                <p class=\"item-heading\">\n                    <core-format-text [text]=\"conversation.name\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                    <ion-icon name=\"fas-user-slash\" *ngIf=\"conversation.isblocked\" [title]=\"'addon.messages.contactblocked' | translate\">\n                    </ion-icon>\n                    <ion-icon *ngIf=\"conversation.ismuted\" name=\"fas-volume-mute\" [title]=\"'addon.messages.mutedconversation' | translate\">\n                    </ion-icon>\n                </p>\n                <ion-note *ngIf=\"conversation.lastmessagedate > 0 || conversation.unreadcount\">\n                    <span *ngIf=\"conversation.lastmessagedate > 0\" class=\"addon-message-last-message-date\">\n                        {{conversation.lastmessagedate | coreDateDayOrTime}}\n                    </span>\n                    <ion-badge *ngIf=\"conversation.unreadcount > 0\" aria-label=\"true\">{{ conversation.unreadcount }}</ion-badge>\n                    <span *ngIf=\"conversation.unreadcount > 0\" class=\"sr-only\">\n                        {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}\n                    </span>\n                </ion-note>\n            </div>\n            <p *ngIf=\"conversation.subname\">\n                <core-format-text [text]=\"conversation.subname\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n            </p>\n            <p class=\"addon-message-last-message\">\n                <span *ngIf=\"conversation.sentfromcurrentuser\" class=\"addon-message-last-message-user\">\n                    {{ 'addon.messages.you' | translate }}\n                </span>\n                <span *ngIf=\"!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]\"\n                    class=\"addon-message-last-message-user\">{{ conversation.members[0].fullname + ':' }}</span>\n                <core-format-text clean=\"true\" singleLine=\"true\" [text]=\"conversation.lastmessage\" class=\"addon-message-last-message-text\"\n                    contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n            </p>\n        </ion-label>\n    </ion-item>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <ion-title>\n            <h1>{{ 'addon.messages.messages' | translate }}</h1>\n        </ion-title>\n        <ion-buttons slot=\"end\">\n            <ion-button fill=\"clear\" (click)=\"gotoSearch()\" [attr.aria-label]=\"'addon.messages.searchcombined' | translate\">\n                <ion-icon name=\"fas-search\" slot=\"icon-only\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <ion-button (click)=\"gotoSettings()\" [attr.aria-label]=\"'addon.messages.messagepreferences' | translate\">\n                <ion-icon name=\"fas-cog\" slot=\"icon-only\" aria-hidden=\"true\"></ion-icon>\n            </ion-button>\n            <!-- Add an empty context menu so split view pages can add items, otherwise the menu disappears in some cases. -->\n            <core-context-menu></core-context-menu>\n            <core-user-menu-button></core-user-menu-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content>\n    <core-split-view>\n        <ion-refresher slot=\"fixed\" [disabled]=\"!loaded\" (ionRefresh)=\"refreshData($event.target)\">\n            <ion-refresher-content pullingText=\"{{ 'core.pulltorefresh' | translate }}\"></ion-refresher-content>\n        </ion-refresher>\n\n        <core-loading [hideUntil]=\"loaded\" [message]=\"loadingMessage\">\n            <ion-list>\n                <ion-item class=\"ion-text-wrap addon-message-discussion\" (click)=\"gotoContacts()\" detail=\"true\" button>\n                    <ion-icon name=\"fas-address-book\" slot=\"start\" aria-hidden=\"true\"></ion-icon>\n                    <ion-label>\n                        <h2>{{ 'addon.messages.contacts' | translate }}</h2>\n                    </ion-label>\n                    <ion-badge *ngIf=\"contactRequestsCount > 0\" slot=\"end\" aria-hidden=\"true\">{{contactRequestsCount}}</ion-badge>\n                    <span *ngIf=\"contactRequestsCount > 0\" class=\"sr-only\">\n                        {{ 'addon.messages.pendingcontactrequests' | translate:{$a: contactRequestsCount} }}\n                    </span>\n                </ion-item>\n                <ng-container *ngTemplateOutlet=\"conversationsTemplate; context: {conversations: allConversations}\">\n                </ng-container>\n            </ion-list>\n        </core-loading>\n    </core-split-view>\n</ion-content>\n\n<!-- Template to render a list of conversations. -->\n<ng-template #conversationsTemplate let-conversations=\"conversations\">\n    <ng-container *ngFor=\"let conversation of conversations | filterpipe:2\">\n        <ion-item class=\"ion-text-wrap addon-message-discussion\" button detail=\"false\"\n            (click)=\"gotoConversation(conversation.id, conversation.userid)\" [attr.aria-current]=\"((conversation.id &&\n    conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'\"\n            id=\"addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}\"\n            [attr.aria-label]=\"conversation.name\">\n            <!-- Group conversation image. -->\n            <ion-avatar slot=\"start\" *ngIf=\"conversation.type == typeGroup\">\n                <img [src]=\"conversation.imageurl\" [alt]=\"conversation.name\" core-external-content\n                    onError=\"this.src='assets/img/group-avatar.svg'\">\n            </ion-avatar>\n\n            <!-- Avatar for individual conversations. -->\n            <core-user-avatar *ngIf=\"conversation.type != typeGroup\" core-user-avatar [user]=\"conversation.otherUser\" [linkProfile]=\"false\"\n                [checkOnline]=\"conversation.showonlinestatus\" slot=\"start\"></core-user-avatar>\n\n            <ion-label>\n                <div class=\"flex-row ion-justify-content-between\">\n                    <p class=\"item-heading\">\n                        <core-format-text [text]=\"conversation.name\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                        <ion-icon name=\"fas-user-slash\" *ngIf=\"conversation.isblocked\"\n                            [title]=\"'addon.messages.contactblocked' | translate\">\n                        </ion-icon>\n                        <ion-icon *ngIf=\"conversation.ismuted\" name=\"fas-volume-mute\"\n                            [title]=\"'addon.messages.mutedconversation' | translate\">\n                        </ion-icon>\n                    </p>\n                    <ion-note *ngIf=\"conversation.lastmessagedate > 0 || conversation.unreadcount\">\n                        <span *ngIf=\"conversation.lastmessagedate > 0\" class=\"addon-message-last-message-date\">\n                            {{conversation.lastmessagedate | coreDateDayOrTime}}\n                        </span>\n                        <ion-badge *ngIf=\"conversation.unreadcount > 0\" aria-label=\"true\">{{ conversation.unreadcount }}</ion-badge>\n                        <span *ngIf=\"conversation.unreadcount > 0\" class=\"sr-only\">\n                            {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}\n                        </span>\n                    </ion-note>\n                </div>\n                <p *ngIf=\"conversation.subname\">\n                    <core-format-text [text]=\"conversation.subname\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                </p>\n                <p class=\"addon-message-last-message\">\n                    <span *ngIf=\"conversation.sentfromcurrentuser\" class=\"addon-message-last-message-user\">\n                        {{ 'addon.messages.you' | translate }}\n                    </span>\n                    <span *ngIf=\"!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]\"\n                        class=\"addon-message-last-message-user\">{{ conversation.members[0].fullname + ':' }}</span>\n                    <core-format-text clean=\"true\" singleLine=\"true\" [text]=\"conversation.lastmessage\"\n                        class=\"addon-message-last-message-text\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                </p>\n            </ion-label>\n        </ion-item>\n    </ng-container>\n\n\n    <ng-container *ngFor=\"let conversation of conversations | filterpipe:1\">\n        <ion-item class=\"ion-text-wrap addon-message-discussion\" button detail=\"false\"\n            (click)=\"gotoConversation(conversation.id, conversation.userid)\" [attr.aria-current]=\"((conversation.id &&\n    conversation.id == selectedConversationId) || (conversation.userid && conversation.userid == selectedUserId)) ? 'page': 'false'\"\n            id=\"addon-message-conversation-{{ conversation.id ? conversation.id : 'user-' + conversation.userid }}\"\n            [attr.aria-label]=\"conversation.name\" style=\"border-top: 1px solid black;\n            margin-top: 20px;\">\n            <!-- Group conversation image. -->\n            <ion-avatar slot=\"start\" *ngIf=\"conversation.type == typeGroup\">\n                <img [src]=\"conversation.imageurl\" [alt]=\"conversation.name\" core-external-content\n                    onError=\"this.src='assets/img/group-avatar.svg'\">\n            </ion-avatar>\n\n            <!-- Avatar for individual conversations. -->\n            <!-- <core-user-avatar *ngIf=\"conversation.type != typeGroup\" core-user-avatar [user]=\"conversation.otherUser\" [linkProfile]=\"false\"\n                [checkOnline]=\"conversation.showonlinestatus\" slot=\"start\"></core-user-avatar> -->\n\n            <ion-label>\n                <div class=\"flex-row ion-justify-content-between\">\n                    <p class=\"item-heading\">\n                        <core-format-text [text]=\"'addon.local_coodle.notes' | translate\" contextLevel=\"system\"\n                            [contextInstanceId]=\"0\"></core-format-text>\n                        <ion-icon name=\"fas-user-slash\" *ngIf=\"conversation.isblocked\"\n                            [title]=\"'addon.messages.contactblocked' | translate\">\n                        </ion-icon>\n                        <ion-icon *ngIf=\"conversation.ismuted\" name=\"fas-volume-mute\"\n                            [title]=\"'addon.messages.mutedconversation' | translate\">\n                        </ion-icon>\n                    </p>\n                    <ion-note *ngIf=\"conversation.lastmessagedate > 0 || conversation.unreadcount\">\n                        <span *ngIf=\"conversation.lastmessagedate > 0\" class=\"addon-message-last-message-date\">\n                            {{conversation.lastmessagedate | coreDateDayOrTime}}\n                        </span>\n                        <ion-badge *ngIf=\"conversation.unreadcount > 0\" aria-label=\"true\">{{ conversation.unreadcount }}</ion-badge>\n                        <span *ngIf=\"conversation.unreadcount > 0\" class=\"sr-only\">\n                            {{ 'addon.messages.unreadmessages' | translate:{$a: conversation.unreadcount} }}\n                        </span>\n                    </ion-note>\n                </div>\n                <p *ngIf=\"conversation.subname\">\n                    <core-format-text [text]=\"conversation.subname\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                </p>\n                <p class=\"addon-message-last-message\">\n                    <span *ngIf=\"conversation.sentfromcurrentuser\" class=\"addon-message-last-message-user\">\n                        {{ 'addon.messages.you' | translate }}\n                    </span>\n                    <span *ngIf=\"!conversation.sentfromcurrentuser && conversation.type == typeGroup && conversation.members[0]\"\n                        class=\"addon-message-last-message-user\">{{ conversation.members[0].fullname + ':' }}</span>\n                    <core-format-text clean=\"true\" singleLine=\"true\" [text]=\"conversation.lastmessage\"\n                        class=\"addon-message-last-message-text\" contextLevel=\"system\" [contextInstanceId]=\"0\"></core-format-text>\n                </p>\n            </ion-label>\n        </ion-item>\n    </ng-container>\n</ng-template>\n");
 
 /***/ }),
 
@@ -33,6 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _group_conversations_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./group-conversations.page */ "./src/addons/messages/pages/group-conversations/group-conversations.page.ts");
 /* harmony import */ var _addons_messages_services_handlers_mainmenu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @addons/messages/services/handlers/mainmenu */ "./src/addons/messages/services/handlers/mainmenu.ts");
 /* harmony import */ var _features_mainmenu_components_components_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @features/mainmenu/components/components.module */ "./src/core/features/mainmenu/components/components.module.ts");
+/* harmony import */ var _app_pipes_filterpipe_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/app/pipes/filterpipe.pipe */ "./src/app/pipes/filterpipe.pipe.ts");
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,6 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 
 
 
@@ -90,6 +92,7 @@ AddonMessagesGroupConversationsPageModule = Object(tslib__WEBPACK_IMPORTED_MODUL
             _features_mainmenu_components_components_module__WEBPACK_IMPORTED_MODULE_9__["CoreMainMenuComponentsModule"],
         ],
         declarations: [
+            _app_pipes_filterpipe_pipe__WEBPACK_IMPORTED_MODULE_10__["FilterpipePipe"],
             _group_conversations_page__WEBPACK_IMPORTED_MODULE_7__["AddonMessagesGroupConversationsPage"],
         ],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
@@ -195,6 +198,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         // Update conversations when new message is received.
         this.newMessagesObserver = _singletons_events__WEBPACK_IMPORTED_MODULE_3__["CoreEvents"].on(_services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessagesProvider"].NEW_MESSAGE_EVENT, (data) => {
             var _a;
+            console.log('update chat');
             // Check if the new message belongs to the option that is currently expanded.
             const expandedOption = this.getExpandedOption();
             // const messageOption = this.getConversationOption(data);
@@ -228,6 +232,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         }, this.siteId);
         // Update conversations when a message is read.
         this.readChangedObserver = _singletons_events__WEBPACK_IMPORTED_MODULE_3__["CoreEvents"].on(_services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessagesProvider"].READ_CHANGED_EVENT, (data) => {
+            console.log('update chat');
             if (data.conversationId) {
                 const conversation = this.findConversation(data.conversationId);
                 if (conversation !== undefined) {
@@ -242,6 +247,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         }, this.siteId);
         // Load a discussion if we receive an event to do so.
         this.openConversationObserver = _singletons_events__WEBPACK_IMPORTED_MODULE_3__["CoreEvents"].on(_services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessagesProvider"].OPEN_CONVERSATION_EVENT, (data) => {
+            console.log('update chat');
             if (data.conversationId || data.userId) {
                 this.gotoConversation(data.conversationId, data.userId);
             }
@@ -249,6 +255,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         }, this.siteId);
         // Refresh the view when the app is resumed.
         this.appResumeSubscription = _services_platform__WEBPACK_IMPORTED_MODULE_16__["CorePlatform"].resume.subscribe(() => {
+            console.log('update chat');
             if (!this.loaded) {
                 return;
             }
@@ -259,6 +266,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         });
         // Update conversations if we receive an event to do so.
         this.updateConversationListObserver = _singletons_events__WEBPACK_IMPORTED_MODULE_3__["CoreEvents"].on(_services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessagesProvider"].UPDATE_CONVERSATION_LIST_EVENT, (data) => {
+            console.log('update chat');
             if (data && data.action == 'mute') {
                 // If the conversation is displayed, change its muted value.
                 const expandedOption = this.getExpandedOption();
@@ -275,6 +283,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
         // If a message push notification is received, refresh the view.
         this.pushObserver = _features_pushnotifications_services_push_delegate__WEBPACK_IMPORTED_MODULE_9__["CorePushNotificationsDelegate"].on('receive')
             .subscribe((notification) => {
+            console.log('update chat');
             // New message received. If it's from current site, refresh the data.
             if (_services_utils_utils__WEBPACK_IMPORTED_MODULE_12__["CoreUtils"].isFalseOrZero(notification.notif) && notification.site == this.siteId) {
                 // Don't refresh unread counts, it's refreshed from the main menu handler in this case.
@@ -354,6 +363,7 @@ let AddonMessagesGroupConversationsPage = class AddonMessagesGroupConversationsP
             const temp = _services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessages"].sortConversations(this.favourites.conversations.concat(this.group.conversations)
                 .concat(this.individual.conversations));
             this.allConversations = [...temp];
+            console.warn('convos', this.allConversations);
         });
     }
     /**
@@ -825,6 +835,38 @@ AddonMessagesGroupConversationsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__[
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ../../messages-common.scss */ "./src/addons/messages/messages-common.scss")).default]
     })
 ], AddonMessagesGroupConversationsPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/filterpipe.pipe.ts":
+/*!******************************************!*\
+  !*** ./src/app/pipes/filterpipe.pipe.ts ***!
+  \******************************************/
+/*! exports provided: FilterpipePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterpipePipe", function() { return FilterpipePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+let FilterpipePipe = class FilterpipePipe {
+    transform(items, count) {
+        if (!items || !count) {
+            return items;
+        }
+        return items.filter(item => item.membercount == count);
+    }
+};
+FilterpipePipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'filterpipe'
+    })
+], FilterpipePipe);
 
 
 

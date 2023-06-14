@@ -150,9 +150,8 @@ export class AddonNotificationsHelperProvider {
             notification.read = true;
             notification.timeread = time;
         }
-
         await CoreUtils.ignoreErrors(AddonNotifications.invalidateNotificationsList());
-
+        console.log('marknotificationread', notification, notifId, time);
         CoreEvents.trigger(AddonNotificationsProvider.READ_CHANGED_EVENT, {
             id: notifId,
             time,

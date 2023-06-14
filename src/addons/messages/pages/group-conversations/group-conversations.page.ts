@@ -116,6 +116,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         this.newMessagesObserver = CoreEvents.on(
             AddonMessagesProvider.NEW_MESSAGE_EVENT,
             (data) => {
+                console.log('update chat');
             // Check if the new message belongs to the option that is currently expanded.
                 const expandedOption = this.getExpandedOption();
                 // const messageOption = this.getConversationOption(data);
@@ -159,6 +160,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
 
         // Update conversations when a message is read.
         this.readChangedObserver = CoreEvents.on(AddonMessagesProvider.READ_CHANGED_EVENT, (data) => {
+            console.log('update chat');
             if (data.conversationId) {
                 const conversation = this.findConversation(data.conversationId);
 
@@ -178,6 +180,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         this.openConversationObserver = CoreEvents.on(
             AddonMessagesProvider.OPEN_CONVERSATION_EVENT,
             (data) => {
+                console.log('update chat');
                 if (data.conversationId || data.userId) {
                     this.gotoConversation(data.conversationId, data.userId);
                 }
@@ -188,6 +191,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
 
         // Refresh the view when the app is resumed.
         this.appResumeSubscription = CorePlatform.resume.subscribe(() => {
+            console.log('update chat');
             if (!this.loaded) {
                 return;
             }
@@ -201,6 +205,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         this.updateConversationListObserver = CoreEvents.on(
             AddonMessagesProvider.UPDATE_CONVERSATION_LIST_EVENT,
             (data) => {
+                console.log('update chat');
                 if (data && data.action == 'mute') {
                 // If the conversation is displayed, change its muted value.
                     const expandedOption = this.getExpandedOption();
@@ -224,6 +229,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         // If a message push notification is received, refresh the view.
         this.pushObserver = CorePushNotificationsDelegate.on<CorePushNotificationsNotificationBasicData>('receive')
             .subscribe((notification) => {
+                console.log('update chat');
                 // New message received. If it's from current site, refresh the data.
                 if (CoreUtils.isFalseOrZero(notification.notif) && notification.site == this.siteId) {
                 // Don't refresh unread counts, it's refreshed from the main menu handler in this case.
@@ -327,6 +333,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         const temp = AddonMessages.sortConversations(this.favourites.conversations.concat(this.group.conversations)
             .concat(this.individual.conversations));
         this.allConversations = [...temp];
+        console.warn('convos', this.allConversations)
 
     }
 
