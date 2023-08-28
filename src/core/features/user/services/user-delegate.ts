@@ -321,6 +321,7 @@ export class CoreUserDelegateService extends CoreDelegate<CoreUserProfileHandler
 
         const handlersData = this.getHandlersData(user.id, context, contextId);
         handlersData.handlers = [];
+        console.log('userhandlers', handlersData);
 
         await CoreUtils.allPromises(Object.keys(this.enabledHandlers).map(async (name) => {
             // Checks if the handler is enabled for the user.

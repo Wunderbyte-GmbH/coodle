@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <h1>{{'addon.local_coodle.landingpage' | translate}}</h1>\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <core-user-menu-button></core-user-menu-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ng-container *ngFor=\"let button of buttons\">\n        <ion-col [ngStyle]=\"{'background' : button.color}\" class=\"landingcol\" size=\"12\">\n          <ion-button class=\"gridbutton\" (click)=\"openHandler(button)\">\n            <ion-icon slot=\"start\" name=\"{{button.icon}}\"></ion-icon>\n            <!-- <ion-grid class=\"innergrid\"> -->\n            <!-- <ion-row>\n                <ion-col> -->\n            <ion-label>{{button.title | translate}}</ion-label>\n            <!-- </ion-col>\n              </ion-row> -->\n            <!-- <ion-row>\n                <ion-icon name=\"{{button.icon}}\"></ion-icon>\n              </ion-row> -->\n            <!-- </ion-grid> -->\n          </ion-button>\n        </ion-col>\n      </ng-container>\n    </ion-row>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <h1>{{'addon.local_coodle.landingpage' | translate}}</h1>\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <core-user-menu-button></core-user-menu-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content *ngIf=\"isInit\">\n  <ion-grid *ngIf=\"!isAdvisor\">\n    <ion-row>\n      <ng-container *ngFor=\"let button of buttons\">\n        <ion-col [ngStyle]=\"{'background' : button.color}\" class=\"landingcol\" size=\"12\">\n          <ion-button class=\"gridbutton\" (click)=\"openHandler(button)\">\n            <ion-icon slot=\"start\" name=\"{{button.icon}}\"></ion-icon>\n            <!-- <ion-grid class=\"innergrid\"> -->\n            <!-- <ion-row>\n                <ion-col> -->\n            <ion-label>{{button.title | translate}}</ion-label>\n            <!-- </ion-col>\n              </ion-row> -->\n            <!-- <ion-row>\n                <ion-icon name=\"{{button.icon}}\"></ion-icon>\n              </ion-row> -->\n            <!-- </ion-grid> -->\n          </ion-button>\n        </ion-col>\n      </ng-container>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf=\"isAdvisor\" class=\"advisorgrid\">\n    <ion-row>\n      <ng-container *ngFor=\"let button of advisorButtons\">\n        <ion-col [ngStyle]=\"{'background' : button.color}\" class=\"landingcol\" size=\"12\">\n          <ion-button class=\"gridbutton\" (click)=\"openHandler(button)\">\n            <ion-icon slot=\"start\" name=\"{{button.icon}}\"></ion-icon>\n            <!-- <ion-grid class=\"innergrid\"> -->\n            <!-- <ion-row>\n                <ion-col> -->\n            <ion-label>{{button.title | translate}}</ion-label>\n            <!-- </ion-col>\n              </ion-row> -->\n            <!-- <ion-row>\n                <ion-icon name=\"{{button.icon}}\"></ion-icon>\n              </ion-row> -->\n            <!-- </ion-grid> -->\n          </ion-button>\n        </ion-col>\n      </ng-container>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ CoodlelandingPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".landingcol {\n  height: 14vh;\n  margin: 10px;\n  overflow: auto;\n}\n\n.gridbutton {\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  --background: transparent;\n  margin: 0;\n}\n\nion-icon {\n  font-size: 1.9em;\n}\n\nion-row {\n  justify-content: center;\n  margin-bottom: 10px;\n}\n\nion-label {\n  font-size: 4.7vw;\n  white-space: normal;\n  line-height: initial;\n}\n\nion-grid {\n  overflow: visible;\n}\n\n.innergrid {\n  display: flex;\n  justify-content: space-around;\n  /* align-items: flex-end; */\n  flex-direction: column;\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jdXN0b21wYWdlcy9jb29kbGVsYW5kaW5nL2Nvb2RsZWxhbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0FBQ0o7O0FBMEJBO0VBQ0ksWUFBQTtFQUNKLFdBQUE7RUFDQSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsU0FBQTtBQXZCQTs7QUEwQkE7RUFDSSxnQkFBQTtBQXZCSjs7QUEwQkE7RUFDSSx1QkFBQTtFQUNBLG1CQUFBO0FBdkJKOztBQTBCQTtFQUNJLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtBQXZCSjs7QUEyQkE7RUFDRSxpQkFBQTtBQXhCRjs7QUE0QkE7RUFDSSxhQUFBO0VBQ0EsNkJBQUE7RUFDQSwyQkFBQTtFQUNBLHNCQUFBO0VBQ0EsV0FBQTtBQXpCSiIsImZpbGUiOiJzcmMvY3VzdG9tcGFnZXMvY29vZGxlbGFuZGluZy9jb29kbGVsYW5kaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYW5kaW5nY29sIHtcbiAgICBoZWlnaHQ6IDE0dmg7XG4gICAgbWFyZ2luOiAxMHB4O1xuICAgIG92ZXJmbG93OiBhdXRvO1xufVxuXG4vLyAuY29sMSB7XG4vLyAgIGJhY2tncm91bmQ6ICMyNjQ2NTM7XG4vLyB9XG5cbi8vIC5jb2wyIHtcbi8vICAgYmFja2dyb3VuZDogIzJBOUQ4Rjtcbi8vIH1cblxuLy8gLmNvbDMge1xuLy8gICAgIGJhY2tncm91bmQ6ICNFOUM0NkFcbi8vIH1cblxuLy8gLmNvbDQge1xuLy8gICAgIGJhY2tncm91bmQ6ICNGNEEyNjE7XG4vLyAgIH1cblxuLy8gLmNvbDUge1xuLy8gICBiYWNrZ3JvdW5kOiAjRTc2RjUxO1xuLy8gfVxuXG4vLyAuY29sNiB7XG4vLyAgICAgYmFja2dyb3VuZDogI2U3NTE1MTtcbi8vIH1cblxuLmdyaWRidXR0b24ge1xuICAgIGhlaWdodDogMTAwJTtcbndpZHRoOiAxMDAlO1xuYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4tLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xubWFyZ2luOiAwO1xufVxuXG5pb24taWNvbiB7XG4gICAgZm9udC1zaXplOiAxLjllbTtcbn1cblxuaW9uLXJvdyB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cblxuaW9uLWxhYmVsIHtcbiAgICBmb250LXNpemU6IDQuN3Z3O1xuICAgIHdoaXRlLXNwYWNlOiBub3JtYWw7XG4gICAgbGluZS1oZWlnaHQ6IGluaXRpYWw7XG4gICAgLy8gb3ZlcmZsb3ctd3JhcDogYW55d2hlcmU7XG59XG5cbmlvbi1ncmlkIHtcbiAgb3ZlcmZsb3c6IHZpc2libGU7XG5cbn1cblxuLmlubmVyZ3JpZCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICAvKiBhbGlnbi1pdGVtczogZmxleC1lbmQ7ICovXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBoZWlnaHQ6IDgwJTtcbn1cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".landingcol {\n  height: 14vh;\n  margin: 10px;\n  overflow: auto;\n}\n\n.gridbutton {\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  --background: transparent;\n  margin: 0;\n}\n\nion-icon {\n  font-size: 1.9em;\n}\n\nion-row {\n  justify-content: center;\n  margin-bottom: 10px;\n}\n\nion-label {\n  font-size: 4.7vw;\n  white-space: normal;\n  line-height: initial;\n}\n\nion-grid {\n  overflow: visible;\n}\n\n.advisorgrid {\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\n.innergrid {\n  display: flex;\n  justify-content: space-around;\n  /* align-items: flex-end; */\n  flex-direction: column;\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jdXN0b21wYWdlcy9jb29kbGVsYW5kaW5nL2Nvb2RsZWxhbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0FBQ0o7O0FBMEJBO0VBQ0ksWUFBQTtFQUNKLFdBQUE7RUFDQSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsU0FBQTtBQXZCQTs7QUEwQkE7RUFDSSxnQkFBQTtBQXZCSjs7QUEwQkE7RUFDSSx1QkFBQTtFQUNBLG1CQUFBO0FBdkJKOztBQTBCQTtFQUNJLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtBQXZCSjs7QUEyQkE7RUFDRSxpQkFBQTtBQXhCRjs7QUE0QkE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0FBekJKOztBQTRCQTtFQUNJLGFBQUE7RUFDQSw2QkFBQTtFQUNBLDJCQUFBO0VBQ0Esc0JBQUE7RUFDQSxXQUFBO0FBekJKIiwiZmlsZSI6InNyYy9jdXN0b21wYWdlcy9jb29kbGVsYW5kaW5nL2Nvb2RsZWxhbmRpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxhbmRpbmdjb2wge1xuICAgIGhlaWdodDogMTR2aDtcbiAgICBtYXJnaW46IDEwcHg7XG4gICAgb3ZlcmZsb3c6IGF1dG87XG59XG5cbi8vIC5jb2wxIHtcbi8vICAgYmFja2dyb3VuZDogIzI2NDY1Mztcbi8vIH1cblxuLy8gLmNvbDIge1xuLy8gICBiYWNrZ3JvdW5kOiAjMkE5RDhGO1xuLy8gfVxuXG4vLyAuY29sMyB7XG4vLyAgICAgYmFja2dyb3VuZDogI0U5QzQ2QVxuLy8gfVxuXG4vLyAuY29sNCB7XG4vLyAgICAgYmFja2dyb3VuZDogI0Y0QTI2MTtcbi8vICAgfVxuXG4vLyAuY29sNSB7XG4vLyAgIGJhY2tncm91bmQ6ICNFNzZGNTE7XG4vLyB9XG5cbi8vIC5jb2w2IHtcbi8vICAgICBiYWNrZ3JvdW5kOiAjZTc1MTUxO1xuLy8gfVxuXG4uZ3JpZGJ1dHRvbiB7XG4gICAgaGVpZ2h0OiAxMDAlO1xud2lkdGg6IDEwMCU7XG5iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbi0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG5tYXJnaW46IDA7XG59XG5cbmlvbi1pY29uIHtcbiAgICBmb250LXNpemU6IDEuOWVtO1xufVxuXG5pb24tcm93IHtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufVxuXG5pb24tbGFiZWwge1xuICAgIGZvbnQtc2l6ZTogNC43dnc7XG4gICAgd2hpdGUtc3BhY2U6IG5vcm1hbDtcbiAgICBsaW5lLWhlaWdodDogaW5pdGlhbDtcbiAgICAvLyBvdmVyZmxvdy13cmFwOiBhbnl3aGVyZTtcbn1cblxuaW9uLWdyaWQge1xuICBvdmVyZmxvdzogdmlzaWJsZTtcblxufVxuXG4uYWR2aXNvcmdyaWQge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbi5pbm5lcmdyaWQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gICAgLyogYWxpZ24taXRlbXM6IGZsZXgtZW5kOyAqL1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgaGVpZ2h0OiA4MCU7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -184,8 +184,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _services_navigator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/navigator */ "./src/core/services/navigator.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu-delegate */ "./src/core/features/mainmenu/services/mainmenu-delegate.ts");
-/* harmony import */ var _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu */ "./src/core/features/mainmenu/services/mainmenu.ts");
+/* harmony import */ var _services_sites__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @services/sites */ "./src/core/services/sites.ts");
+/* harmony import */ var _features_user_services_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @features/user/services/user */ "./src/core/features/user/services/user.ts");
+/* harmony import */ var _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu-delegate */ "./src/core/features/mainmenu/services/mainmenu-delegate.ts");
+/* harmony import */ var _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu */ "./src/core/features/mainmenu/services/mainmenu.ts");
 
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
@@ -205,9 +207,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let CoodlelandingPage = class CoodlelandingPage {
     constructor(router) {
         this.router = router;
+        this.isAdvisor = false;
+        this.isInit = false;
         this.buttons = [
             //! TODOS
             { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
@@ -227,10 +233,37 @@ let CoodlelandingPage = class CoodlelandingPage {
             { title: 'addon.local_coodle.viewinfo', icon: 'globe-outline',
                 url: 'siteplugins/content/local_coodle/view_info/0', color: 'rgb(251, 135, 66)' },
         ];
+        this.advisorButtons = [
+            //! TODOS
+            { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
+                url: 'siteplugins/content/local_coodle/view_todos/0', color: 'rgb(238, 58, 47)' },
+            //! WEGE
+            { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
+                url: 'siteplugins/content/local_coodle/view_address/0',
+                color: 'rgb(163, 96, 239)' },
+            //! Beratung
+            { title: 'addon.local_coodle.dok3', icon: 'people-outline',
+                url: 'siteplugins/content/local_coodle/view_files3/0', color: 'rgb(33, 181, 98)' },
+        ];
     }
     ngOnInit() {
         // Load the handlers.
-        this.subscription = _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_4__["CoreMainMenuDelegate"].getHandlersObservable().subscribe((handlers) => {
+        const site = _services_sites__WEBPACK_IMPORTED_MODULE_4__["CoreSites"].getSite().then((site) => {
+            console.warn('site', site);
+        });
+        // const user = CoreUser.setUserPreference('isCoodleAdmin', 'true');
+        const usersetting = _features_user_services_user__WEBPACK_IMPORTED_MODULE_5__["CoreUser"].getUserPreference('coodle_settings').then((setting) => {
+            console.warn('setting', setting);
+            if (setting) {
+                const settings = JSON.parse(setting);
+                if (settings.isadvisor === true) {
+                    this.isAdvisor = true;
+                }
+            }
+            this.isInit = true;
+        });
+        // const userPref = CoreUser.get
+        this.subscription = _features_mainmenu_services_mainmenu_delegate__WEBPACK_IMPORTED_MODULE_6__["CoreMainMenuDelegate"].getHandlersObservable().subscribe((handlers) => {
             this.allHandlers = handlers;
             console.log('allHandlersCoodle', this.allHandlers);
             // this.initHandlers();
@@ -240,7 +273,7 @@ let CoodlelandingPage = class CoodlelandingPage {
     initHandlers() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             // CoreNavigator.navigateToSitePath('siteplugins/content/local_coodle/view_files1/0', { params });
-            this.customItems = yield _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_5__["CoreMainMenu"].getCustomMenuItems();
+            this.customItems = yield _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_7__["CoreMainMenu"].getCustomMenuItems();
             console.log('custom Items', this.customItems);
         });
     }

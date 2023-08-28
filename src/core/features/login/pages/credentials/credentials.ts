@@ -282,6 +282,9 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
 
             const id = await CoreSites.newSite(data.siteUrl, data.token, data.privateToken);
 
+            //Get User Setting
+            // const coodleSettings = await CoreUser.set
+
             // Reset fields so the data is not in the view anymore.
             this.credForm.controls['username'].reset();
             this.credForm.controls['password'].reset();

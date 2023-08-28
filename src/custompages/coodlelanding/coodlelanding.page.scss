@@ -1,6 +1,6 @@
 .landingcol {
     height: 14vh;
-    margin: 10px;
+    margin: 7px;
     overflow: auto;
 }
 
@@ -46,15 +46,24 @@ ion-row {
 }
 
 ion-label {
-    font-size: 4.7vw;
+    font-size: 5.7vw;
     white-space: normal;
     line-height: initial;
+    width: 80%;
+    text-align: start;
+    text-transform: none !important;
     // overflow-wrap: anywhere;
 }
 
 ion-grid {
   overflow: visible;
 
+}
+
+.advisorgrid {
+    height: 100%;
+    // display: flex;
+    align-items: center;
 }
 
 .innergrid {

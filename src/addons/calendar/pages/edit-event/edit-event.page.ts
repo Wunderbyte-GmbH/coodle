@@ -85,6 +85,7 @@ export class AddonCalendarEditEventPage implements OnInit, OnDestroy, CanLeave {
     form: FormGroup;
     typeControl: FormControl;
     groupControl: FormControl;
+    courseControl: FormControl;
     descriptionControl: FormControl;
 
     // Reminders.
@@ -118,11 +119,12 @@ export class AddonCalendarEditEventPage implements OnInit, OnDestroy, CanLeave {
         // Initialize form variables.
         this.typeControl = this.fb.control('', Validators.required);
         this.groupControl = this.fb.control('');
+        this.courseControl = this.fb.control('');
         this.descriptionControl = this.fb.control('');
         this.form.addControl('name', this.fb.control('', Validators.required));
         this.form.addControl('eventtype', this.typeControl);
         this.form.addControl('categoryid', this.fb.control(''));
-        this.form.addControl('groupcourseid', this.fb.control(''));
+        this.form.addControl('groupcourseid', this.courseControl);
         this.form.addControl('groupid', this.groupControl);
         this.form.addControl('description', this.descriptionControl);
         this.form.addControl('location', this.fb.control(''));
@@ -247,15 +249,20 @@ export class AddonCalendarEditEventPage implements OnInit, OnDestroy, CanLeave {
             await Promise.all(promises);
 
             if (!this.typeControl.value) {
-                // Initialize event type value. If course is allowed, select it first.
+                // SELECT GRP
                 if (this.types.course) {
-                    this.typeControl.setValue(AddonCalendarEventType.COURSE);
+                    this.typeControl.setValue(AddonCalendarEventType.GROUP);
+                    console.log('test',AddonCalendarEventType.GROUP, this.courses[0].id );
+                    this.courseControl.setValue(this.courses[0].id);
+                    this.groupCourseSelected();
+
                 } else {
                     this.typeControl.setValue(eventTypes[0].value);
                 }
             }
 
             this.eventTypes = eventTypes;
+            //set grp as default
         } catch (error) {
             CoreDomUtils.showErrorModalDefault(error, 'Error getting data.');
             this.error = true;
@@ -424,6 +431,10 @@ export class AddonCalendarEditEventPage implements OnInit, OnDestroy, CanLeave {
             await this.loadGroups(courseId);
 
             this.groupControl.setValue('');
+
+            //Select first GRP
+            console.log('grps', this.groups);
+            // this.groupControl.setValue()
         } catch (error) {
             CoreDomUtils.showErrorModalDefault(error, 'Error getting data.');
         }

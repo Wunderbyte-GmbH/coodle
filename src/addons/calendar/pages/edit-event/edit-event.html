@@ -37,18 +37,20 @@
             </ion-item>
 
             <!-- Type. -->
-            <ion-item class="ion-text-wrap addon-calendar-eventtype-container">
-                <ion-label>
-                    <p class="item-heading" [core-mark-required]="true">{{ 'addon.calendar.eventkind' | translate }}</p>
-                </ion-label>
-                <p *ngIf="eventTypes.length == 1" slot="end">{{eventTypes[0].name | translate }}</p>
-                <ion-select *ngIf="eventTypes.length > 1" formControlName="eventtype" interface="action-sheet"
-                    [interfaceOptions]="{header: 'addon.calendar.eventkind' | translate}">
-                    <ion-select-option *ngFor="let type of eventTypes" [value]="type.value">
-                        {{ type.name | translate }}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
+            <ng-container *ngIf="eventTypes.length > 1">
+                <ion-item class="ion-text-wrap addon-calendar-eventtype-container">
+                    <ion-label>
+                        <p class="item-heading" [core-mark-required]="true">{{ 'addon.calendar.eventkind' | translate }}</p>
+                    </ion-label>
+                    <p *ngIf="eventTypes.length == 1" slot="end">{{eventTypes[0].name | translate }}</p>
+                    <ion-select *ngIf="eventTypes.length > 1" formControlName="eventtype" interface="action-sheet"
+                        [interfaceOptions]="{header: 'addon.calendar.eventkind' | translate}">
+                        <ion-select-option *ngFor="let type of eventTypes" [value]="type.value">
+                            {{ type.name | translate }}
+                        </ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ng-container>
 
             <!-- Category. -->
             <ion-item class="ion-text-wrap" *ngIf="typeControl.value == 'category'">
@@ -79,10 +81,10 @@
                 <!-- Select the course. -->
                 <ion-item class="ion-text-wrap">
                     <ion-label>
-                        <p class="item-heading" [core-mark-required]="true">{{ 'core.course' | translate }}</p>
+                        <p class="item-heading" [core-mark-required]="true">{{ 'core.group' | translate }}</p>
                     </ion-label>
-                    <ion-select formControlName="groupcourseid" interface="action-sheet" [placeholder]="'core.noselection' | translate"
-                        (ionChange)="groupCourseSelected()" [interfaceOptions]="{header: 'core.course' | translate}">
+                    <ion-select formControlName="groupcourseid" interface="action-sheet" (ionChange)="groupCourseSelected()"
+                        [interfaceOptions]="{header: 'core.course' | translate}">
                         <ion-select-option *ngFor="let course of courses" [value]="course.id">
                             {{ course.fullname }}
                         </ion-select-option>
@@ -97,7 +99,7 @@
                 <!-- Select the group. -->
                 <ion-item class="ion-text-wrap core-edit-set-group" *ngIf="!loadingGroups && groups.length > 0">
                     <ion-label>
-                        <p class="item-heading" [core-mark-required]="true">{{ 'core.group' | translate }}</p>
+                        <p class="item-heading" [core-mark-required]="true">CoodleUser</p>
                     </ion-label>
                     <ion-select formControlName="groupid" interface="action-sheet" [placeholder]="'core.noselection' | translate"
                         [interfaceOptions]="{header: 'core.group' | translate}">
@@ -175,7 +177,7 @@
             </div>
 
             <!-- Repeat (for new events). -->
-            <ng-container *ngIf="!eventId || eventId < 0">
+            <!-- <ng-container *ngIf="!eventId || eventId < 0">
                 <ion-item class="ion-text-wrap divider">
                     <ion-label>
                         <p class="item-heading">{{ 'addon.calendar.repeatevent' | translate }}</p>
@@ -189,10 +191,10 @@
                     <ion-input type="number" name="repeats" formControlName="repeats" [disabled]="!form.controls.repeat.value">
                     </ion-input>
                 </ion-item>
-            </ng-container>
+            </ng-container> -->
 
             <!-- Apply to all events or just this one (editing repeated events). -->
-            <div *ngIf="eventRepeatId" class="ion-text-wrap addon-calendar-radio-container">
+            <!-- <div *ngIf="eventRepeatId" class="ion-text-wrap addon-calendar-radio-container">
                 <ion-radio-group formControlName="repeateditall">
                     <ion-item-divider class="addon-calendar-radio-title">
                         <ion-label>
@@ -212,7 +214,16 @@
                         <ion-radio slot="end" value="0"></ion-radio>
                     </ion-item>
                 </ion-radio-group>
-            </div>
+            </div> -->
+
+            <!-- Location. -->
+            <ion-item class="ion-text-wrap">
+                <ion-label position="stacked">
+                    <p class="item-heading">{{ 'core.location' | translate }}</p>
+                </ion-label>
+                <ion-input type="text" name="location" [placeholder]="'core.location' | translate" formControlName="location">
+                </ion-input>
+            </ion-item>
 
             <!-- Description. -->
             <ion-item class="ion-text-wrap">
@@ -224,14 +235,7 @@
                     [autoSave]="false"></core-rich-text-editor>
             </ion-item>
 
-            <!-- Location. -->
-            <ion-item class="ion-text-wrap">
-                <ion-label position="stacked">
-                    <p class="item-heading">{{ 'core.location' | translate }}</p>
-                </ion-label>
-                <ion-input type="text" name="location" [placeholder]="'core.location' | translate" formControlName="location">
-                </ion-input>
-            </ion-item>
+
         </form>
         <div collapsible-footer appearOnBottom *ngIf="loaded && !error" slot="fixed">
             <div class="list-item-limited-width adaptable-buttons-row">

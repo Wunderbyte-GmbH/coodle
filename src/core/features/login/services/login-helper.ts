@@ -1356,11 +1356,13 @@ export class CoreLoginHelperProvider {
 
             const userId = Number(results[1]);
             const privatekey = results[0];
+            const wwwroot = results[2] + '/';
 
-            this.ws.loginUserWithQRCode(userId, privatekey).subscribe(async res => {
+            console.log('logincreds', userId, privatekey, wwwroot);
+            this.ws.loginUserWithQRCode(wwwroot, userId, privatekey).subscribe(async res => {
 
                 await CoreSites.newSite(
-                    'https://wuk.wunderbyte.at/',
+                    wwwroot,
                     res.token,
                     res.privateToken,
                 );

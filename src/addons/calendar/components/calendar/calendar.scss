@@ -61,16 +61,16 @@
         }
 
         &.today .addon-calendar-day-number span {
-            border: 2px solid var(--addon-calendar-today-border-color);
-            line-height: 20px;
-            border-radius: 50%;
+            // border: 2px solid var(--addon-calendar-today-border-color);
+            // line-height: 20px;
+            // border-radius: 50%;
         }
-        // &.today{
-        //     background: var(--addon-calendar-today-border-color)
-        // }
+        &.today{
+            border: 2px solid var(--addon-calendar-today-border-color);
+        }
         &.hasevents {
-            background-color: $blue;
-            --background: $blue;
+            background-color: rgba(0, 134, 255, 0.9);
+            --background: rgba(0, 134, 255, 0.9);
         }
         &.dayblank {
             cursor: auto;

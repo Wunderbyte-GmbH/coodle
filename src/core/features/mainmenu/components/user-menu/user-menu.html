@@ -85,8 +85,19 @@
         </ion-label>
     </ion-item>
     <div class="ion-padding">
-        <ion-button (click)="logout($event)" expand="block" color="danger" [attr.aria-label]="'core.mainmenu.logout' | translate"
-            class="ion-text-wrap">
+        <ion-button *ngIf="!disableLogout" (click)="logout($event)" expand="block" color="danger"
+            [attr.aria-label]="'core.mainmenu.logout' | translate" class="ion-text-wrap">
+            <ng-container *ngIf="!removeAccountOnLogout">
+                <ion-icon name="fas-sign-out-alt" slot="start" aria-hidden="true"></ion-icon>
+                {{ 'core.mainmenu.logout' | translate }}
+            </ng-container>
+            <ng-container *ngIf="removeAccountOnLogout">
+                <ion-icon name="fas-trash" slot="start" aria-hidden="true"></ion-icon>
+                {{ 'core.login.removeaccount' | translate }}
+            </ng-container>
+        </ion-button>
+        <ion-button *ngIf="disableLogout" (longPress)="enableLogout()" expand="block" color="danger" style="opacity: 0.5;"
+            [attr.aria-label]="'core.mainmenu.logout' | translate" class="ion-text-wrap">
             <ng-container *ngIf="!removeAccountOnLogout">
                 <ion-icon name="fas-sign-out-alt" slot="start" aria-hidden="true"></ion-icon>
                 {{ 'core.mainmenu.logout' | translate }}

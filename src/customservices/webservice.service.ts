@@ -48,14 +48,14 @@ export class WebserviceService {
 
     constructor() {}
 
-    loginUserWithQRCode(userId: number, privatekey: string): Observable<any> {
+    loginUserWithQRCode(root: string, userId: number, privatekey: string): Observable<any> {
 
         const params = {};
-        console.log('das ist url', 'https://wuk.wunderbyte.at/local/coodle/token.php?service=moodle_mobile_app&userid=' + userId +
-        '&moodlewsrestformat=json&coodlesessionkey=' + privatekey);
+        // console.log('das ist url', root + 'local/coodle/token.php?service=moodle_mobile_app&userid=' + userId +
+        // '&moodlewsrestformat=json&coodlesessionkey=' + privatekey);
 
         return Http
-            .post('https://wuk.wunderbyte.at/local/coodle/token.php?service=moodle_mobile_app&userid=' + userId +
+            .post(root + 'local/coodle/token.php?service=moodle_mobile_app&userid=' + userId +
             '&moodlewsrestformat=json&coodlesessionkey=' + privatekey, params);
     }
 

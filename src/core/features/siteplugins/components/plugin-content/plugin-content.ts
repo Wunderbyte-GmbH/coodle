@@ -23,6 +23,9 @@ import { CoreNavigator } from '@services/navigator';
 import { CoreDomUtils } from '@services/utils/dom';
 import { CoreEvents } from '@singletons/events';
 
+
+import { CoreSites } from '@services/sites';
+import { CoreSettingsHelper } from '@features/settings/services/settings-helper';
 /**
  * Component to render a site plugin content.
  */
@@ -101,6 +104,7 @@ export class CoreSitePluginsPluginContentComponent implements OnInit, DoCheck {
 
             this.content = result.templates.length ? result.templates[0].html : ''; // Load first template.
             this.javascript = result.javascript;
+            console.warn('js', this,this.javascript);
             this.otherData = result.otherdata;
             this.data = this.data || {};
             this.forceCompile = true;
@@ -108,6 +112,7 @@ export class CoreSitePluginsPluginContentComponent implements OnInit, DoCheck {
             this.jsData = Object.assign(this.data, CoreSitePlugins.createDataForJS(this.initResult, result));
 
             // Pass some methods as jsData so they can be called from the template too.
+            // this.jsData.syncData = () => this.syncData();
             this.jsData.fetchContent = refresh => this.fetchContent(refresh);
             this.jsData.openContent = (title, args, component, method, jsData, preSets, ptrEnabled) =>
                 this.openContent(title, args, component, method, jsData, preSets, ptrEnabled);
@@ -117,6 +122,8 @@ export class CoreSitePluginsPluginContentComponent implements OnInit, DoCheck {
             this.jsData.updateModuleCourseContent = (cmId, alreadyFetched) => this.updateModuleCourseContent(cmId, alreadyFetched);
 
             this.onContentLoaded.emit({ refresh: !!refresh, success: true });
+
+            console.warn('JSDATA', this.jsData);
         } catch (error) {
             // Make it think it's loaded - otherwise it sticks on 'loading' and stops navigation working.
             this.content = '<div></div>';
@@ -169,6 +176,20 @@ export class CoreSitePluginsPluginContentComponent implements OnInit, DoCheck {
             },
         });
     }
+
+
+    // async syncData() {
+    //     const currentSiteId = CoreSites.getCurrentSiteId();
+    //     console.warn('my sync');
+    //             // Using syncOnlyOnWifi false to force manual sync.
+    //             try {
+    //                 await CoreSettingsHelper.synchronizeSite(false, currentSiteId);
+    //             } catch (error) {
+    //                 CoreDomUtils.showErrorModalDefault(error, 'core.settings.sitesyncfailed', true);
+    //             }
+    //             this.refreshContent();
+    // }
+
 
     /**
      * Refresh the data.

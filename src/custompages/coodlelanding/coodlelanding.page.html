@@ -12,8 +12,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
+<ion-content *ngIf="isInit">
+  <ion-grid *ngIf="!isAdvisor">
     <ion-row>
       <ng-container *ngFor="let button of buttons">
         <ion-col [ngStyle]="{'background' : button.color}" class="landingcol" size="12">
@@ -33,3 +33,26 @@
         </ion-col>
       </ng-container>
     </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="isAdvisor" class="advisorgrid">
+    <ion-row>
+      <ng-container *ngFor="let button of advisorButtons">
+        <ion-col [ngStyle]="{'background' : button.color}" class="landingcol" size="12">
+          <ion-button class="gridbutton" (click)="openHandler(button)">
+            <ion-icon slot="start" name="{{button.icon}}"></ion-icon>
+            <!-- <ion-grid class="innergrid"> -->
+            <!-- <ion-row>
+                <ion-col> -->
+            <ion-label>{{button.title | translate}}</ion-label>
+            <!-- </ion-col>
+              </ion-row> -->
+            <!-- <ion-row>
+                <ion-icon name="{{button.icon}}"></ion-icon>
+              </ion-row> -->
+            <!-- </ion-grid> -->
+          </ion-button>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>

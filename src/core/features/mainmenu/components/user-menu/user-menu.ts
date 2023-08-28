@@ -55,6 +55,7 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
     displaySwitchAccount = true;
     displayContactSupport = false;
     removeAccountOnLogout = false;
+    disableLogout = true;
 
     protected subscription!: Subscription;
 
@@ -83,13 +84,12 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
                     fullname: this.siteInfo.fullname,
                 };
             }
-
             this.subscription = CoreUserDelegate.getProfileHandlersFor(this.user, CoreUserDelegateContext.USER_MENU)
                 .subscribe((handlers) => {
                     if (!handlers || !this.user) {
                         return;
                     }
-
+                    console.log('profilehandlers all', this.handlers);
                     const newHandlers = handlers
                         .filter((handler) => handler.type === CoreUserDelegateService.TYPE_NEW_PAGE)
                         .map((handler) => handler.data);
@@ -98,6 +98,7 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
                     if (newHandlers.length !== this.handlers.length ||
                             JSON.stringify(newHandlers) !== JSON.stringify(this.handlers)) {
                         this.handlers = newHandlers;
+                        console.log('profilehandlers', this.handlers);
                     }
 
                     this.handlersLoaded = CoreUserDelegate.areHandlersLoaded(this.user.id, CoreUserDelegateContext.USER_MENU);
@@ -199,7 +200,7 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
             return;
         }
 
-        if (this.removeAccountOnLogout) {
+        if (1 == 1) {
             // Ask confirm.
             const siteName = this.siteName ?
                 await CoreFilter.formatText(this.siteName, { clean: true, singleLine: true, filter: false }, [], this.siteId) :
@@ -246,6 +247,11 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
         if (closeAll) {
             await ModalController.dismiss(undefined, undefined, thisModal.id);
         }
+    }
+
+    enableLogout() {
+        this.disableLogout = !this.disableLogout;
+
     }
 
     /**
