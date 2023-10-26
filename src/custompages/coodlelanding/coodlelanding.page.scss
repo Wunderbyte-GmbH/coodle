@@ -73,3 +73,31 @@ ion-grid {
     flex-direction: column;
     height: 80%;
 }
+
+.headertext {
+    display: inline-flex;
+    padding-left: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      .coodlelogo {
+        display: none;
+      }
+
+      }
+  }
+
+.coodlelogo.dark {
+   filter: invert(1);
+}
+
+
+// core-menu-user-button {
+//     img {
+//         min-width: 60px;
+//         min-height: 60px !important;
+//         width: 60px;
+//         height: 60px !important;
+//     }
+// }

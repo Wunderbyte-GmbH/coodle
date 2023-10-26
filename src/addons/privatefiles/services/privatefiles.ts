@@ -86,6 +86,7 @@ export class AddonPrivateFilesProvider {
         };
 
         // !! Hardcode area to test.
+        // TODO: DO IT
         // params.component = 'local_coodle';
         // params.filearea = 'coodle';
         // const result: AddonPrivateFilesGetFilesWSResult = await site.read('core_files_get_files', params, preSets);

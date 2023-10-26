@@ -28,11 +28,12 @@ import { CoreTimeUtils } from '@services/utils/time';
 import { CoreEvents } from '@singletons/events';
 import { CoreSite, CoreSiteWSPreSets } from '@classes/site';
 import { CoreWSExternalWarning } from '@services/ws';
-import { makeSingleton } from '@singletons';
+import { Translate, makeSingleton } from '@singletons';
 import { CoreError } from '@classes/errors/error';
 import { AddonMessagesSyncEvents, AddonMessagesSyncProvider } from './messages-sync';
 import { CoreWSError } from '@classes/errors/wserror';
 import { AddonNotificationsPreferencesNotificationProcessorState } from '@addons/notifications/services/notifications';
+import { CoreLang } from '@services/lang';
 
 const ROOT_CACHE_KEY = 'mmaMessages:';
 
@@ -347,6 +348,21 @@ export class AddonMessagesProvider {
         await this.invalidateDiscussionCache(userId);
     }
 
+    async isImageOrVideo(text) {
+        const lang = await CoreLang.getCurrentLanguage();
+        const regeximg = /<img\b[^>]*>/;
+        const regexvdieo = /<video\b[^>]*>/;
+        if (regeximg.test(text)) {
+            const imagestring = await CoreLang.getMessage('addon.local_coodle.image', lang);
+            return 'Image'
+        } else if (regexvdieo.test(text)) {
+            const videostring = await CoreLang.getMessage('addon.local_coodle.video', lang);
+            return 'Video'
+        } else {
+            return undefined
+        }
+    }
+
     /**
      * Format a conversation.
      *
@@ -363,6 +379,12 @@ export class AddonMessagesProvider {
         const lastMessage = numMessages ? conversation.messages[numMessages - 1] : null;
 
         conversation.lastmessage = lastMessage ? lastMessage.text : undefined;
+        this.isImageOrVideo(conversation.lastmessage).then(msgContent => {
+            if (msgContent !== undefined) {
+                conversation.lastmessage = msgContent;
+            }
+        });
+
         conversation.lastmessagedate = lastMessage ? lastMessage.timecreated : undefined;
         conversation.sentfromcurrentuser = lastMessage ? lastMessage.useridfrom == userId : undefined;
 

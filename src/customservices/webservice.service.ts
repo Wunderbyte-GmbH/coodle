@@ -40,13 +40,23 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@singletons';
 import { Observable } from 'rxjs';
+import { CoreUser, CoreUserProfile } from '@features/user/services/user';
+import { Component, EventEmitter, Output} from '@angular/core';
 
 @Injectable({
     providedIn: 'root',
 })
 export class WebserviceService {
 
+    selectedUser = "";
+    isAdvisor: any;
+
     constructor() {}
+
+
+    setUser(user) {
+        this.selectedUser = user;
+    }
 
     loginUserWithQRCode(root: string, userId: number, privatekey: string): Observable<any> {
 
@@ -57,6 +67,6 @@ export class WebserviceService {
         return Http
             .post(root + 'local/coodle/token.php?service=moodle_mobile_app&userid=' + userId +
             '&moodlewsrestformat=json&coodlesessionkey=' + privatekey, params);
-    }
+        }
 
 }

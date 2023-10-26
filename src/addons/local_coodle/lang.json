@@ -1,11 +1,14 @@
 {
+    "image": "Photo",
+    "video": "Video",
     "viewtodos": "Todo's",
     "dok1": "Documents",
     "dok2": "Documents",
-    "dok3": "Contents",
+    "dok3": "Advisory service",
     "viewaddress": "Address",
     "landingpage": "COOdLe",
     "viewinfo": "Info",
     "notes": "Notes",
-    "selectuser": "Select User"
+    "selectuser": "Select User",
+    "viewdates": "Dates"
 }

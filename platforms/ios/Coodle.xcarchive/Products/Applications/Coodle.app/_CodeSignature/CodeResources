@@ -6,15 +6,15 @@
 	<dict>
 		<key>AppIcon60x60@2x.png</key>
 		<data>
-		+mjyd+YuNu5MIfRiElWM4n8ZFe4=
+		TwWxyOadHis4cuosf2WK6FclOUo=
 		</data>
 		<key>AppIcon76x76@2x~ipad.png</key>
 		<data>
-		ocLm7PuR3N9KEAQBlEg7XWXoXXw=
+		M2u0KCuwaQrRFk8w7tXiMJLrR3Q=
 		</data>
 		<key>Assets.car</key>
 		<data>
-		3o5EpKZjmhi9xYcqMC8F+1/R278=
+		nqQ3OYFkzoFcGTSUMBuxuSCFGQg=
 		</data>
 		<key>CDVCapture.bundle/controls_bg.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Frameworks/FBLPromises.framework/FBLPromises</key>
 		<data>
-		vfAn9HXa2S2w8bjd2KpbgHPks14=
+		xbKiurF5HYjbFxhHchhOYgNKrtY=
 		</data>
 		<key>Frameworks/FBLPromises.framework/Info.plist</key>
 		<data>
@@ -170,7 +170,7 @@
 		</data>
 		<key>Frameworks/FirebaseCore.framework/FirebaseCore</key>
 		<data>
-		ecDNskE5O0zIWsqila8WSyg62Ws=
+		U8yci4S9w6Lze6i6pyalQM2sVkk=
 		</data>
 		<key>Frameworks/FirebaseCore.framework/Info.plist</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Frameworks/FirebaseCoreDiagnostics.framework/FirebaseCoreDiagnostics</key>
 		<data>
-		KjQCg9eBj8nVZ7kFUH18tw66o84=
+		hh7XqMoB4mItWcBunyu2y0AfaKY=
 		</data>
 		<key>Frameworks/FirebaseCoreDiagnostics.framework/Info.plist</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Frameworks/FirebaseInstallations.framework/FirebaseInstallations</key>
 		<data>
-		4o0iQkRlxir+dZLpRoLJ+bt0nBk=
+		QQFbhgwVCC+qGpfMNgNz0x6/75k=
 		</data>
 		<key>Frameworks/FirebaseInstallations.framework/Info.plist</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Frameworks/FirebaseMessaging.framework/FirebaseMessaging</key>
 		<data>
-		0ESAZzvWdjZvGEF9XIzGtGJebso=
+		NbnddaJZQuGiPVLArLtwssbIgDY=
 		</data>
 		<key>Frameworks/FirebaseMessaging.framework/Info.plist</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>Frameworks/GoogleDataTransport.framework/GoogleDataTransport</key>
 		<data>
-		rh/KXWXBIaSN07jzuUtA8tHG+7w=
+		r1EceMIEMsLrTrakooPawxThCWU=
 		</data>
 		<key>Frameworks/GoogleDataTransport.framework/Info.plist</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/GoogleUtilities</key>
 		<data>
-		5aYN0ncovjJERk6sOAYdz2NWhLs=
+		P+JwVUJB/sTRmegvcBLGu0LzQ2g=
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
 		<data>
@@ -242,67 +242,67 @@
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
-		NMOb4agpsOJ5SSGKvd4DYCropz0=
+		etboENnXU4yI/YDV+W9O0nNjUgc=
 		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
-		9fWaXtSovWGcsdzZwQcG6SQjHQA=
+		pukJYeeg51cGanf1AS76QYf21SU=
 		</data>
 		<key>Frameworks/libswiftCoreAudio.dylib</key>
 		<data>
-		gIR8jo4mUWHgBWAHhVVEe1fvr7g=
+		kZxccvFpMl6f8J8iDxAqxy6R8EA=
 		</data>
 		<key>Frameworks/libswiftCoreFoundation.dylib</key>
 		<data>
-		T+uq+fc3B7FodmdUkEkOFCOddxE=
+		IjSMKEyQ7xeEEhILqSlPPpt3JKE=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
-		Qc5ZK+DAZ+RtE1WJxQCWezL/jCw=
+		xv+V1OBjsVBKzzBZruwUJnD2IY8=
 		</data>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
-		28IhQ8SupHDakatLicl8VJowHdk=
+		56EQsyxyU6EHeAlMBwcqQuf0PTc=
 		</data>
 		<key>Frameworks/libswiftCoreMedia.dylib</key>
 		<data>
-		fuqAlkMFHshLZxkVVcizavGQtWo=
+		2aBXgBgupVJJ3kXLoR6NkIj4UDM=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
-		EQ4n4DTSH0xUDNbt2Ct6P9Fjprw=
+		gRdt74GSLjnX5Omos7vVLX1oUzM=
 		</data>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<data>
-		hUSWEsAYNHtaq5cZEKJZkGXGVPY=
+		QMhBjAph+fFBJO+xUjJlREM9m48=
 		</data>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<data>
-		bYgC/bA33fLaJopUY6+szoifwJs=
+		tx/HHCE0mcrCFevPlL1H6hAAGZY=
 		</data>
 		<key>Frameworks/libswiftMetal.dylib</key>
 		<data>
-		PeRZmC3xXeElGA+UFcREQT/Gf28=
+		/b9vxF90Ean4zCYE/xbRAtND1VM=
 		</data>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<data>
-		VFbvfVqRLA0MW1cOsFAp0zIDEM8=
+		4kioskc/y6MR1pP1jO2n52Qw5qg=
 		</data>
 		<key>Frameworks/libswiftQuartzCore.dylib</key>
 		<data>
-		mLas4/zUrCIN74hMvzYpB0cj+Ck=
+		xzfmgpb3BuK3fhdKWyh6c+dqkSQ=
 		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
-		/kOivEQSFJdc4IQAzE5MUuXwnls=
+		IX64bwwe/95UzuJSqvc8AnRped4=
 		</data>
 		<key>Frameworks/libswiftos.dylib</key>
 		<data>
-		4zvZufjnY8q4DWBgOnf7ZwYP9Yk=
+		Pn13bwb5vdU19OLQ+LEvfR9gACk=
 		</data>
 		<key>Frameworks/libswiftsimd.dylib</key>
 		<data>
-		9ByBXwuEAQkCfHkPs1lkVPbyIrc=
+		Kd4kJoFthHdjkQO5nzL6S8VhlhQ=
 		</data>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Frameworks/nanopb.framework/nanopb</key>
 		<data>
-		lbVQrLmVZcISLtYraAE0gAunpXQ=
+		KrxYC7uuxRKNYPINIrNt5R9jFiY=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -322,7 +322,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FcenyQUbkBvOJEiEfTpbajep5bE=
+		BcEHHpsGJafQs5TlEKC0Kd2v1nw=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
@@ -334,11 +334,11 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		1MTKhWV1lnTCpgviQDObJydd2jQ=
+		UCrz9laOfY5Wl+rqxmViYqFBlwM=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		3c8bhC/QmT7Nn8iGQdYU33P1i5U=
+		RVjwPa6CVQXpBx2cTR06bgxQBNA=
 		</data>
 		<key>www/0.js</key>
 		<data>
@@ -710,11 +710,11 @@
 		</data>
 		<key>www/addons-calendar-pages-edit-event-edit-event-module.js</key>
 		<data>
-		Jnc8wufFWADaSfT4oYeDe/R6aWE=
+		vHJIT9BLZrflNCkEsqhP5u+frZ4=
 		</data>
 		<key>www/addons-calendar-pages-edit-event-edit-event-module.js.map</key>
 		<data>
-		+Rl2shnSbyKnOAYFUjk9FOeA3OM=
+		3Xh7I7uMZEjh+NkOpbmEJdYNPWc=
 		</data>
 		<key>www/addons-calendar-pages-event-event-module.js</key>
 		<data>
@@ -774,11 +774,11 @@
 		</data>
 		<key>www/addons-storagemanager-storagemanager-lazy-module.js</key>
 		<data>
-		MSs/+KW5YqwT8fNlvkbswyptObw=
+		XdDAzs/n6C+JlkYnfT9j9nFYUwM=
 		</data>
 		<key>www/addons-storagemanager-storagemanager-lazy-module.js.map</key>
 		<data>
-		d3MUmpDZK5X7mzUyBSx3QrKlfss=
+		NatvA7e2MVtvouEyLtihLHahBnY=
 		</data>
 		<key>www/assets/countries.json</key>
 		<data>
@@ -786,7 +786,7 @@
 		</data>
 		<key>www/assets/env.json</key>
 		<data>
-		wLbBn1d/UQamNjpO3J1ChwuGfNc=
+		BvvpAh0nbnMdAoLtSUKhG6qwjKk=
 		</data>
 		<key>www/assets/exttomime.json</key>
 		<data>
@@ -5588,6 +5588,10 @@
 		<data>
 		wVlCoGVf6U6Gwl3BoEWuFzJZTss=
 		</data>
+		<key>www/assets/img/coodlesvg.svg</key>
+		<data>
+		hsrDqxwbGO0EYz5bs+H8hY5GkqQ=
+		</data>
 		<key>www/assets/img/expired.svg</key>
 		<data>
 		uOjjdizgs0kJ0ojYOAzrdv8NTmU=
@@ -5800,6 +5804,10 @@
 		<data>
 		SzNKKM+NS4/s426tdAKzaXUOOdc=
 		</data>
+		<key>www/assets/img/logo_coodle.png</key>
+		<data>
+		qNAW5pd0ilpTvBgsQ5sGVx5hBP4=
+		</data>
 		<key>www/assets/img/mod/assign.svg</key>
 		<data>
 		/Fr8c9DUfHuz7AHUsoQPyfw+KDg=
@@ -6006,11 +6014,11 @@
 		</data>
 		<key>www/assets/lang/de.json</key>
 		<data>
-		ynb9UgY06eQtI4Ehhdf5MTfrxoc=
+		GOpBRHLnYfSJngU4xt5aBO0Y8ak=
 		</data>
 		<key>www/assets/lang/en.json</key>
 		<data>
-		k+pNcppID2/yt8JP7kDTMi1zx0w=
+		EOm5W6ZGhtfZRHp/6NO1z8vB8Fc=
 		</data>
 		<key>www/assets/lib/h5p/fonts/h5p-core-23.eot</key>
 		<data>
@@ -9298,11 +9306,11 @@
 		</data>
 		<key>www/chat-lazy-module.js</key>
 		<data>
-		UPCLab73ilt1SKRMIjE2ZYaPMKw=
+		NZcpVaGqNZ4OmhBpX5q49LHbxXk=
 		</data>
 		<key>www/chat-lazy-module.js.map</key>
 		<data>
-		7TSeMnaBINVbtB8iX6PnW6rsT0A=
+		ETC1fJJj1tJJ/Z2tcfszyUF+AGI=
 		</data>
 		<key>www/choice-lazy-module.js</key>
 		<data>
@@ -9398,11 +9406,11 @@
 		</data>
 		<key>www/custompages-coodlelanding-coodlelanding-module.js</key>
 		<data>
-		wtK5jkWjS3YO9VQDb0Bbay3e40c=
+		6EKSvzan+7QizrUMMJkxoOAuS+U=
 		</data>
 		<key>www/custompages-coodlelanding-coodlelanding-module.js.map</key>
 		<data>
-		/ltPPxySDDQkgp8KPQzPEFEueFU=
+		BZA+T8a1tP6DwgwvULee7m/0qt0=
 		</data>
 		<key>www/data-lazy-module.js</key>
 		<data>
@@ -9422,19 +9430,19 @@
 		</data>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-login-pages-c~d66fb4f8.js</key>
 		<data>
-		0YZzDIsSrAhU66lNmkRpX5zVRFQ=
+		VxAAgdgwa4utVI8a3IADUe58EEY=
 		</data>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-login-pages-c~d66fb4f8.js.map</key>
 		<data>
-		UvtjSsK/ldz87DhiMNVcJInuAaQ=
+		SAnesvnr+2sW2ODBZZtETNUHj0o=
 		</data>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-tag-pages-sea~fc222c92.js</key>
 		<data>
-		IrA1CmfUQPl5YbwRE4ZzsBIpWpw=
+		BtKS0KGOrlEc4kPTJKPgbgvK0ZM=
 		</data>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-tag-pages-sea~fc222c92.js.map</key>
 		<data>
-		+711KCuxdvWPM4Wg4HYWIFMUrLA=
+		kQ1FroRVTLT0KQW7YSIgjjcaeII=
 		</data>
 		<key>www/default~competency-course-contents-lazy-module~competency-course-details-lazy-module.js</key>
 		<data>
@@ -9454,35 +9462,35 @@
 		</data>
 		<key>www/default~grades-course-lazy-module~grades-courses-lazy-module.js</key>
 		<data>
-		XKF+wpjcHT3O1CUyS1t38bxJ4nM=
+		jj3R6qOeUBOuEfRTe2ftAKRPSPg=
 		</data>
 		<key>www/default~grades-course-lazy-module~grades-courses-lazy-module.js.map</key>
 		<data>
-		lz9SZ+9apB5uHAqUMUUzohWQpms=
+		Dh6yRuTmLtOO5L7qkzPo4fRzzBg=
 		</data>
 		<key>www/default~mainmenu-lazy-module~scorm-lazy-module.js</key>
 		<data>
-		bU5HyZXXznuWGGSx+HMR70d4S7I=
+		hN9fLEgpELQsdw0QyFLCPXEofW0=
 		</data>
 		<key>www/default~mainmenu-lazy-module~scorm-lazy-module.js.map</key>
 		<data>
-		EP0xO9BokeRPw7cQlyba6AqNecY=
+		Tbn8vaIsA622iyBwzj3IP+k4NKc=
 		</data>
 		<key>www/default~pages-contacts-35-contacts-module~pages-contacts-contacts-module~pages-discussions-35-discus~af3981aa.js</key>
 		<data>
-		6cYr4yMgGnqPo8gacxkWd781Oao=
+		ezQNr5Q+Uxo97Tvr5HXAAJXKnig=
 		</data>
 		<key>www/default~pages-contacts-35-contacts-module~pages-contacts-contacts-module~pages-discussions-35-discus~af3981aa.js.map</key>
 		<data>
-		TX7khoO+SzvmRwojFIVrTOQB9mE=
+		sgwcFSEnSuuHTvIgYLSlR4bpc84=
 		</data>
 		<key>www/default~pages-list-list-module~pages-notification-notification-module.js</key>
 		<data>
-		mtBFaA4YcPeTkSj69bhiD6/eqLg=
+		gtN3AvGtZUJ7aOHJMovBmrDXEy8=
 		</data>
 		<key>www/default~pages-list-list-module~pages-notification-notification-module.js.map</key>
 		<data>
-		kSJvJ72hFq8+osQZVGZJOCJmyaQ=
+		/HZbEdmZWCoX0I0RAbaYuSQjHuo=
 		</data>
 		<key>www/features-comments-comments-lazy-module.js</key>
 		<data>
@@ -9502,11 +9510,11 @@
 		</data>
 		<key>www/features-login-pages-credentials-credentials-module.js</key>
 		<data>
-		xdxO7MFsXWylrVKO2oLSbqWvzJE=
+		aKIX74+GF8+CfjIE4H9OLmtWS5k=
 		</data>
 		<key>www/features-login-pages-credentials-credentials-module.js.map</key>
 		<data>
-		agHimo5zSax6T8pNC9tbxXEPyfc=
+		oxj4Lk0ALsT19qQlJsvcLtd21xY=
 		</data>
 		<key>www/features-login-pages-reconnect-reconnect-module.js</key>
 		<data>
@@ -9690,11 +9698,11 @@
 		</data>
 		<key>www/main.js</key>
 		<data>
-		f2iDW2An0/CDeFbqidmrzDOP3JU=
+		Eot3MDxW5/+xei8ldZUbwBgv23w=
 		</data>
 		<key>www/main.js.map</key>
 		<data>
-		MtnpQ0WHmqLLkI47mVOEjM4Ni48=
+		OU8Bp/ZVB22js5bD5RkZZP9QPs8=
 		</data>
 		<key>www/mainmenu-lazy-module.js</key>
 		<data>
@@ -9738,11 +9746,11 @@
 		</data>
 		<key>www/pages-attempt-results-attempt-results-module.js</key>
 		<data>
-		0f73NtoJT7IOgdNg5rYIECf5qok=
+		ufbtuwyI9pq+Mpb1AaOjz2GKZAQ=
 		</data>
 		<key>www/pages-attempt-results-attempt-results-module.js.map</key>
 		<data>
-		7xG5+YA/XYBJJFvPkCaphRHCgRo=
+		MW4KunbXQ4dp8mbCL+IxErMSNUw=
 		</data>
 		<key>www/pages-categories-categories-module.js</key>
 		<data>
@@ -9810,11 +9818,11 @@
 		</data>
 		<key>www/pages-discussion-discussion-module.js</key>
 		<data>
-		bN4j6eLPGX4rwSX7T+WCoLgVKWM=
+		5Y+6GqNw5RZZqAwaievocSiFFz0=
 		</data>
 		<key>www/pages-discussion-discussion-module.js.map</key>
 		<data>
-		Q0fKG/LikrEW9eVm1pX+/L8g2EY=
+		qPZ0D+SUT96RRiMa71P93BuMuwM=
 		</data>
 		<key>www/pages-discussions-35-discussions-module.js</key>
 		<data>
@@ -9890,11 +9898,11 @@
 		</data>
 		<key>www/pages-index-index-module.js</key>
 		<data>
-		4HLBL2wsN6nF7mZxbCJFq7H451U=
+		reIz2wv6LzDpZA1vRtPZQ3ehrIw=
 		</data>
 		<key>www/pages-index-index-module.js.map</key>
 		<data>
-		4/+pnXW9tpqCyLSSvDlwIXNR8+0=
+		7WQV5wTcc04fvIK5GRXHxdonh+s=
 		</data>
 		<key>www/pages-licenses-licenses-module.js</key>
 		<data>
@@ -9906,11 +9914,11 @@
 		</data>
 		<key>www/pages-list-list-module.js</key>
 		<data>
-		duvkApgCHkOUS/RqU0ddgeINhPE=
+		Kxx3aRZ7N/2b2QtaYkbPygkLolY=
 		</data>
 		<key>www/pages-list-list-module.js.map</key>
 		<data>
-		aaNDjbOcHkUxjb0lIwn0kp0XYEw=
+		r8KCdeltSMcBPS9z8F65JT1xBcc=
 		</data>
 		<key>www/pages-list-mod-type-list-mod-type-module.js</key>
 		<data>
@@ -9930,11 +9938,11 @@
 		</data>
 		<key>www/pages-module-preview-module-preview-module.js</key>
 		<data>
-		yGi7BHcYVkr1EgF5S2XpP7lttEY=
+		s4a5pognqplu0OCcEoyhUGHWhno=
 		</data>
 		<key>www/pages-module-preview-module-preview-module.js.map</key>
 		<data>
-		ve5dvIKt+/2bph8mFEztgmK/SBw=
+		m9cpE6/vMAv7QE8XiTQb3QndI/8=
 		</data>
 		<key>www/pages-more-more-module.js</key>
 		<data>
@@ -9954,11 +9962,11 @@
 		</data>
 		<key>www/pages-new-discussion-new-discussion-module.js</key>
 		<data>
-		Fh/m2y2VWFNShcN2IvE3re9wofI=
+		Z7QkJM1yiNmWWD0nNYjYu7kc3uc=
 		</data>
 		<key>www/pages-new-discussion-new-discussion-module.js.map</key>
 		<data>
-		Ym6OZ1wJwfyw/GWn5O04D8Hwylo=
+		phsvFqgZRfHYPGthAKZXGiGV41Y=
 		</data>
 		<key>www/pages-nonrespondents-nonrespondents-module.js</key>
 		<data>
@@ -9970,19 +9978,19 @@
 		</data>
 		<key>www/pages-notification-notification-module.js</key>
 		<data>
-		XfzfCfPo8+qP6Lc9PbKhHoQbZTU=
+		vt8QdqBmpziHzDRXxWJ46tIkTgI=
 		</data>
 		<key>www/pages-notification-notification-module.js.map</key>
 		<data>
-		Y89VSJaV6gIuy3e8cSKsQ5fgRKI=
+		NifaTauuW3Avtc6uKUNJ3+nZ0Z0=
 		</data>
 		<key>www/pages-player-player-module.js</key>
 		<data>
-		GZEscjhqAfYOoGqNsNnr0KbjnzQ=
+		VgbOpNsPRhOECyuY6Y1/QNAuPYM=
 		</data>
 		<key>www/pages-player-player-module.js.map</key>
 		<data>
-		0TqMxDV1A0KsVu9Ol0o+UdT9KZw=
+		BqjENLxazBKUFhltHx0Ll9JneWM=
 		</data>
 		<key>www/pages-plugin-page-plugin-page-module.js</key>
 		<data>
@@ -10042,11 +10050,11 @@
 		</data>
 		<key>www/pages-site-site-module.js</key>
 		<data>
-		R7STitEoHiaC+TC4vTXMpNLEJlE=
+		etiIUwf8IGljgp2dly1Y6+RzDMg=
 		</data>
 		<key>www/pages-site-site-module.js.map</key>
 		<data>
-		UI0whLSARP4ehk2DpXx0xR6QZ5U=
+		RgAWFEpM6Slk6F2XeHAZSNj3q08=
 		</data>
 		<key>www/pages-sites-sites-module.js</key>
 		<data>
@@ -10106,11 +10114,11 @@
 		</data>
 		<key>www/pages-viewer-viewer-module.js</key>
 		<data>
-		VAXEk5vLeqNjlRkCjiLUDJQQ4SU=
+		0ocm0Fi8S0g+mYDl3V1jpHRA5Jc=
 		</data>
 		<key>www/pages-viewer-viewer-module.js.map</key>
 		<data>
-		PZl5yvraUwGyTDiLxuG/m6XSA50=
+		Z2zl44ErZpXSAiKz0UFI18XnRdw=
 		</data>
 		<key>www/plugins/@moodlehq/cordova-plugin-file-opener/www/plugins.FileOpener2.js</key>
 		<data>
@@ -10506,11 +10514,11 @@
 		</data>
 		<key>www/reportbuilder-lazy-module.js</key>
 		<data>
-		34duNc+KY6iWXHXHsUpznxdQsDw=
+		rU3+bA3xc+rYiN8sj4H9H5gPGnA=
 		</data>
 		<key>www/reportbuilder-lazy-module.js.map</key>
 		<data>
-		Nb8vjyw+YrpVZl05jRlg0lv6tnc=
+		8Fl/MjZGMP50L6bwMloZePEETCk=
 		</data>
 		<key>www/resource-lazy-module.js</key>
 		<data>
@@ -10570,11 +10578,11 @@
 		</data>
 		<key>www/styles.js</key>
 		<data>
-		qfq/uZEv2rcjuTe80y7x08gdOCo=
+		G2hBQbhxRYLiCsdCrmU8fBopl4Y=
 		</data>
 		<key>www/styles.js.map</key>
 		<data>
-		4Un4BtU71BV4++L+jh+/tXOpUnU=
+		m4AGO/fZT6zGEZQyAxUosY34C4U=
 		</data>
 		<key>www/survey-lazy-module.js</key>
 		<data>
@@ -15995,21 +16003,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ff0K93ugBZntPnytmsr4qI2NwTRluZbSXmTZe7ag/ao=
+			P2qV0Ebcowqm9voC4g/V/PS9hrBXhYmZV3eKWBCc83s=
 			</data>
 		</dict>
 		<key>AppIcon76x76@2x~ipad.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mBqN12bD0H/fbGEfKERhJIH9GlQQOY6QLRL/Gbt367c=
+			q1SgbsIUp+XJMMQI7Aj6N0lpzLt2pRwtxB6RCZg0l5k=
 			</data>
 		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Udfywu3CvdF2PiLqItHLDkxNFsvOt8Ihd4pgzO1kxBA=
+			QcxIJh+J9uDGhzSwaCeX8HtUZA8GE0Z/DB7gQs1gRdo=
 			</data>
 		</dict>
 		<key>CDVCapture.bundle/controls_bg.png</key>
@@ -16234,7 +16242,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nqmMqr8fxF0nxW8gbeGmkFn5S3cczMfHhHDvamRgqEs=
+			EyLuODBfKcSP9Xf3I6OBx0Lktn1zYdwOY6K6GrIXhXo=
 			</data>
 		</dict>
 		<key>Frameworks/FBLPromises.framework/Info.plist</key>
@@ -16255,7 +16263,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fGKR7wN2OAHBvzItv+HqpsFu8nn7Eijmiunkt2DGoAs=
+			Nb9xQDhoeTPIptAvb559PUbg/y1KnWBXE0KcJCIaSHM=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseCore.framework/Info.plist</key>
@@ -16276,7 +16284,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rd2/VcygHoDptbkmqhQSBLud54EC7RYh9pGLC2ibCNQ=
+			cQIvpLU6DgBr8b9Nd7Gxn2ye4hL1A1eAOnzp+j2xcUU=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseCoreDiagnostics.framework/Info.plist</key>
@@ -16297,7 +16305,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MN+qJkyHjP8Hel5U4MSMInVxJyX4flXarTZyf/5G3hY=
+			zK/NN8R9dtZZOa+eVCeZobNI5D6NDJLMu+ed57r9TZ8=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseInstallations.framework/Info.plist</key>
@@ -16318,7 +16326,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jUaEf29PSkkIorcSqiSh/PDtbfoqn//UJpCFZiAMx/4=
+			7AFuRrhvghVkXUuLuk7Lejhz8DmZQ+YHOtyTCZS62cw=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseMessaging.framework/Info.plist</key>
@@ -16339,7 +16347,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3R+CABFFOkUZKdX1eRxfsS5RQXRPiTAtHBv4taOBICQ=
+			/aPoquFLqzECQdz8OiC22AG4O04dWmRF7VW7E4myq6Y=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleDataTransport.framework/Info.plist</key>
@@ -16360,7 +16368,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fmVqpLBfM40m+70wEF5T+qv7yk7ytC8Q1l7LiM0Himw=
+			e9wOlvNkw/ztuJwO7Eg3S9Ndumn00XVZUSubeg4pt18=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
@@ -16381,112 +16389,112 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/VE3dlZORexSbSGfPZmIEvSzNjXCJYuhoez/5jdz5oA=
+			+7nvjAMyx7BpJ6tLKdtZSQS5Si/bCn1zkvhiqBw09H0=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cp+bPJ1Z4sRJT0gLgZLkpL2NCQT3gXRApsVD/YTdaO0=
+			nb44Oznu7wwXDzUBgrm58+J73tNA/3ID9LAAe2Um824=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreAudio.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LNz4YOZVAXo+H7jQWCdw6BdevL9BEH5KznDngUJzM7Y=
+			PmVpIl2RMEU+5cdYAvSyPTFvSVNn1k1dt6mCuIsY2fo=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreFoundation.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RbgyKruYeN/D8QHVkOgrhONXC1PhuLbIvbycazZ2zi8=
+			9qt/7DN+OcPsHUiZLywqGKgnsZoyz9BHqjyQKED9w/I=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fcVEwp2T1SnyDdr4UPNjwyUeqklBjZ+ujA3sxSOE6Lo=
+			0r885e666ztI4AKQ8jfVtDPEmcz5p49wpLe7tGrS1ag=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DIUvKB3jjbNSR74BnGBXyZC3fgIysqwvSUpRS97/Xg8=
+			qhCYEMeVu/w6at9M4ZUpovvli7FnSHQCJJH8SUk7tvg=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreMedia.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q5K3YB8MBU4+mLZ6Sft3J+wSkN296A1uqGD/pD4pDJU=
+			NSd7b/5WUzYgpsn//HbYcf7ir4Q/u6v7TQqZojGdfio=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1iNU2gPgCzLjdPi4jnJkOuyfLVTC13JOTBkCRNXjCK4=
+			NXfxSYUSKi2Zigbqw8Dgwtn2uQceDv3i7LQXsbFr3Y0=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftDispatch.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DlROpxc3SuxiNEKwtBlTME9f2tS7VaRg4Rn0fNSlqfo=
+			5K1N9FZUJ5xZLp0H0+8962gN42G9JCT9FBuUYXmed3c=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftFoundation.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9/7Je4+YeInNZ5KsACqcb4Up+QQmpmoSneJXUMinB6A=
+			Pb2CV29gfBOQjoJ5ROtf8nNO32ftqPnSy+UkMCNSNHQ=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftMetal.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wzqRIixi4CM4ZG0otMyAniVNZEg2OuCPHr1GTmpOIEs=
+			DWc43OTuYtxA4VQ6nWpu+mlbc4dTEmKcO9BkGAujUWI=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftObjectiveC.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9loHdCnJ5kKlT7TVnvIqPWA3XG79fUk0Kfa7FCiS7u8=
+			l6JUw86ln/Ql8+s9fP4B+IenATuVlmP8t974dnyQoD0=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftQuartzCore.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/WWSVKOTTqYhuwhE1+1NoisE/PilL8hWsv0uDDiP+sw=
+			rkZjJBmEc6xvNo9luZBllmcQBDNm9A1KkCcjgZrgpRc=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xugEnbvdfKC9MZym6M3LbgYrIggnwltAm5vFT5nRRiY=
+			8y+8PAU/2cRnJZfYjzz+wxJjstwiG7fV9eR547UCJvk=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftos.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sLkZ9lHm5gbveHLTvaiAoA/rZHEltGWvbibdkWtg5f4=
+			ynGu97GixpeHrlISfeyZylrow9epgoa+ULw2hRjoshU=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftsimd.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3KF1iLoAwStmjlf8TERZvq8A2cdt9Bkosc8R3zV/8pQ=
+			XXIv/HP2lT+Y7k60P1W84NdkejXf6vzo6YG/4HkTeEE=
 			</data>
 		</dict>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
@@ -16507,7 +16515,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PDWBwQqV928oDFc2Jkpdv4Zj9bGa/iAr9jQDkW173Wc=
+			GEHzkQATeZtX4/65w3k8th9fENccvHxKhGdWacEpaEA=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -16528,14 +16536,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FtBBLRwSMpj7g77yzu/KCmT1pc/wxZ3jR07EFjYBanY=
+			2ZatsTL6w5tSRorUslRJgwNplxgp3vD0BskVvudwVaE=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ttom/jIVD9S/Oguh2r8SJ7EbHTYlYWihdFRp0ZUl6J4=
+			W38PGCpXE8yTHpZrls57o/rx67H+fu5gXYgtU9x6ehU=
 			</data>
 		</dict>
 		<key>www/0.js</key>
@@ -17186,14 +17194,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cww22OGI10jndSSs5rZlV5Vr+BPUjn5FemcUuzGtBSo=
+			qMErydumz+SCTh5mYXj+qO5DuepPvjaxqXuC8s7uVp0=
 			</data>
 		</dict>
 		<key>www/addons-calendar-pages-edit-event-edit-event-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+aE865fwmFGKKyJQbqIAJiSzhkLCPGcA56PxiYfKOkI=
+			xAaUvcspdvOpjR3jEYSmkKjlWWk4n5DdM+TJHuKU9B8=
 			</data>
 		</dict>
 		<key>www/addons-calendar-pages-event-event-module.js</key>
@@ -17298,14 +17306,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yr8p4LAaqclkcutQn/T2K2OxXNKHghGR1Jz7g14dXM8=
+			DhKfGsM8SvfzHHhO3S/DLbO/gj7cpTGWDOt/+08uQwY=
 			</data>
 		</dict>
 		<key>www/addons-storagemanager-storagemanager-lazy-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RdGvYbjd8Yb6z+Kk2gC95mYkfHJfXBSRIA/+rfvP3IU=
+			OtRHXl1LNyNRyeTeyiq+rRj+dp1nswjynaO5bBvkQk4=
 			</data>
 		</dict>
 		<key>www/assets/countries.json</key>
@@ -17319,7 +17327,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2u9NpAkNP/tS/Kct1+wp/P3Kds48tbOAEEy53+rgNHU=
+			E29bo/QqzjUoGVkrQSHBKP875RTRykTDxporkquEGz4=
 			</data>
 		</dict>
 		<key>www/assets/exttomime.json</key>
@@ -25722,6 +25730,13 @@
 			7O2HKuOErOBLGZyzd/jI2s3jzSmZIHZYlv8Ly2I5Lrg=
 			</data>
 		</dict>
+		<key>www/assets/img/coodlesvg.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8DJybOdjvp583H1JRg/QfIkfqDjsE4RqsX40t2YS+NI=
+			</data>
+		</dict>
 		<key>www/assets/img/expired.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -26093,6 +26108,13 @@
 			eGi4sBh3JNfE0zRSFmluF168oaaacxbWnc11plTmTrY=
 			</data>
 		</dict>
+		<key>www/assets/img/logo_coodle.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pkhzT9sMJZ1344hqIbMGmscPIUc0X2M7k0M3V1GXVHc=
+			</data>
+		</dict>
 		<key>www/assets/img/mod/assign.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -26454,14 +26476,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNNCRvwojkna4l1bo58zPamcv5qVszj6XqDU5R4q6Gs=
+			HJYHjqE7XGTHTlaKgIQKW+jqR/6fasKRgO6WVvw9nt4=
 			</data>
 		</dict>
 		<key>www/assets/lang/en.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nhnHgnhxjALXIdE9/AWzWebQ6rdXVi0Gi/6EHk9fJkw=
+			yrGFmVjzdTyTtIN7pIrEYu6kyLQCC3+RUIBR9VpEOMo=
 			</data>
 		</dict>
 		<key>www/assets/lib/h5p/fonts/h5p-core-23.eot</key>
@@ -32215,14 +32237,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			owrKCxKvIzdImhbzs7B1y5sy+E3sjAcpNEQLP9chBoc=
+			yfRyn+ZKQQO7Ox+nGACYMnLrD02bnu2U62aWyiYAt+A=
 			</data>
 		</dict>
 		<key>www/chat-lazy-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tpu0hP9hFp/W5qc4DSniNQVqFHz21Y61aKGRh6vwPdU=
+			Jiu+zYomPIDSoTaEScxt+vXXDtVgO1x6Tz/SsIK6z6I=
 			</data>
 		</dict>
 		<key>www/choice-lazy-module.js</key>
@@ -32390,14 +32412,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hmvXAvz+/UG5/Y62El13QrADm7+r2fD3BlqcKgHFPwQ=
+			hZxSoJBCe3LRuuiqnawIFDCIimZbVSSsuMctNWonBYQ=
 			</data>
 		</dict>
 		<key>www/custompages-coodlelanding-coodlelanding-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OCSWI8PS2xKpdIN7r4mtA2V22dy14R3H0Rq3B8nMcUA=
+			3omOdZK9C5myLr2uOV6cTEDBx0D0anXRIIkRCxEVsbM=
 			</data>
 		</dict>
 		<key>www/data-lazy-module.js</key>
@@ -32432,28 +32454,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Eq5Phe8gjDlOvaHJWasoBG6tltoG0JoGIsjSIG8ZffQ=
+			F8LJxS44R6r5XLcSPJ7NPMjzVpUJEVPJnivr0gqEZSA=
 			</data>
 		</dict>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-login-pages-c~d66fb4f8.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GtBI4Ghwr7eFvQYzVDLJqEWmuZd+9veBxhZHCHET8bg=
+			VzWrviZgQ36DJYeyLcooAQsw76KD3A89oVm6YfmPOPU=
 			</data>
 		</dict>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-tag-pages-sea~fc222c92.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ng638h9lHz04cQAQJ19YNvmUeCsAC+rPh9XQ0olkL/o=
+			igxumSAMKBZjhqWAtxaMmkwqcNuZvs50Dvmt6WFrI+Q=
 			</data>
 		</dict>
 		<key>www/default~addons-blog-blog-lazy-module~addons-calendar-pages-index-index-module~features-tag-pages-sea~fc222c92.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fTFQDcv3onBYPleR6l7hTomBaIo7hdJ8vmEpQoc8Ke8=
+			3z85KM0hpXKuqhK5yD9OR5R9KAkqTrnoY/FhdUgN+x4=
 			</data>
 		</dict>
 		<key>www/default~competency-course-contents-lazy-module~competency-course-details-lazy-module.js</key>
@@ -32488,56 +32510,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/mm8URxQXatF/ShXb9CEBJDVuqsenWbgvTYqXzexfrw=
+			X1i/LYwSJLcK9fgNBkzpUWU+zGaG2Cy5Jr6bFzhh0r4=
 			</data>
 		</dict>
 		<key>www/default~grades-course-lazy-module~grades-courses-lazy-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Edey3bpT6bFu9DrlFhwCSKwbv0vmZFAQrqv/Eu9vcQY=
+			72xO79ksgVGaSR4eluzUQ4KK49FdICkSJef4p5ogFeI=
 			</data>
 		</dict>
 		<key>www/default~mainmenu-lazy-module~scorm-lazy-module.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H/hL5GdBTFrpAC/0xfRwg3WX8PTfTiYQ2L2hUKeQ0qo=
+			vNVWs7HtiPxuCceyt0WXV0BBwA5MxbCfnFGxPLuf0DA=
 			</data>
 		</dict>
 		<key>www/default~mainmenu-lazy-module~scorm-lazy-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m8CdKykCK6nS+cDQ1JXmnR9cimE8qabOYFYQnkldvWU=
+			aEaypSoFEwcG1OtvJTuaawaGZBEQizDGED1vLuMOg7Q=
 			</data>
 		</dict>
 		<key>www/default~pages-contacts-35-contacts-module~pages-contacts-contacts-module~pages-discussions-35-discus~af3981aa.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hbo1oG99d6OAIhrvyfQH1nWtVkbNLNdwkqBsePslqbE=
+			TP9uCv6ugAZ+N7MlucNQj4SIRd8mDzP8hCS4DD5uW/U=
 			</data>
 		</dict>
 		<key>www/default~pages-contacts-35-contacts-module~pages-contacts-contacts-module~pages-discussions-35-discus~af3981aa.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VRPF6dEaMXFyLwe4YkgNVavzSND7s6/Nqv/hx4Tx/fk=
+			menGDcP7lGmIOOBvbrxfuvEdKNjXLS6U+jh+YeyXTgs=
 			</data>
 		</dict>
 		<key>www/default~pages-list-list-module~pages-notification-notification-module.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uTMjTBkHVErHy8aF26vi8qx605JjGdp92DfYm4jvrqg=
+			bmz+aO3EVb7gaAzHMMWE85QtC9w6m5/+q/3ZT7oToPY=
 			</data>
 		</dict>
 		<key>www/default~pages-list-list-module~pages-notification-notification-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vXzVzO3oAQUEzIktJywgR51o04PxVQMXqKsbQQPgHZQ=
+			kHhIVL6BNYXNjbMSVnjRb+hOZxsQnLxE2DQr+4n5+1k=
 			</data>
 		</dict>
 		<key>www/features-comments-comments-lazy-module.js</key>
@@ -32572,14 +32594,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XPaneFuYJgJTN+tNFl3eBEGy98EKBrFcsz7Q0LbqCJw=
+			nPX/DVfDp9XCaaNYShSbQpm5G9nmFERtBhJt5rKRjhs=
 			</data>
 		</dict>
 		<key>www/features-login-pages-credentials-credentials-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H1U+V7klfljS9Uj3XtJkjK9e0XjXhH4ztQ5b817fmS0=
+			MQ2JOu9PzTJHIHBFrNucNwKKg3ZtOO+OkEWCMeVujkM=
 			</data>
 		</dict>
 		<key>www/features-login-pages-reconnect-reconnect-module.js</key>
@@ -32901,14 +32923,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CjnkkiOdSFY/LujApwdyZR14/sDg+nBGGlCNR1GJ8rE=
+			MLpKFXqm51nTFKXM8sqtOcPzltDO3A4ofdnkKsW6AkA=
 			</data>
 		</dict>
 		<key>www/main.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			579dZk9LFjXblsEdD8kPB8B8RGWcjM2MVeRiwVy+kqo=
+			1XuUkn9nCoV3UeVKXHHsORapM/zTonNxQ4+o+b2VM2A=
 			</data>
 		</dict>
 		<key>www/mainmenu-lazy-module.js</key>
@@ -32985,14 +33007,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iNN/2DypJI0wZB52Seuzry+bBzCgyic3sdg8HyiNlk4=
+			EqZpi0Ja3CrkoUaTZZBfcOr3MoADHXguW3Lw/Rfi9EA=
 			</data>
 		</dict>
 		<key>www/pages-attempt-results-attempt-results-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v7QlSYCgQaHMoV8WKX5TIwGsItem/0asfEOJeQKudL8=
+			e25VJrSDK0qU2kuqt21MW6YLQI0c5GOUfXTdTbdSC04=
 			</data>
 		</dict>
 		<key>www/pages-categories-categories-module.js</key>
@@ -33111,14 +33133,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bf00RFnW10CSKxnasyBcPxLjtAH1L4oHUpT65b2y2nM=
+			A8aoB+euWGKLMsIWKPaGCIhhreHZdUD42B7VPxXHJK4=
 			</data>
 		</dict>
 		<key>www/pages-discussion-discussion-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4HNkXUq9HVPwjvvw2/zB8IUcH3SMhQz7StlhUPqtKOA=
+			bLibprryGTrx8zve47LnL52JjSB8gBs1KnR+IUL9GyU=
 			</data>
 		</dict>
 		<key>www/pages-discussions-35-discussions-module.js</key>
@@ -33251,14 +33273,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1zSy43Dr5LxYv9exyW0xGUflXeJHl2caZ6qRkfAvAcY=
+			Wy9xZLL/EfX60A7F6khHb20JIqgDD47EOxiwIE/6XWQ=
 			</data>
 		</dict>
 		<key>www/pages-index-index-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F/fufDpZnFbCODralN/Y1vx0j2Ys1m/9Ha4h4YVES2w=
+			I7ZJiA6//05w35kyU0hytXBn8WSD8GUiK9zYlv8nLpE=
 			</data>
 		</dict>
 		<key>www/pages-licenses-licenses-module.js</key>
@@ -33279,14 +33301,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lzvZWuKQrVTky4Xr1fmT5O/ym+0HLwE6i85J8/y1Zuc=
+			+VPDGwFK+kzNUYVoTaLT+MvJLEnQsRL5tDRgKeaoVFE=
 			</data>
 		</dict>
 		<key>www/pages-list-list-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BPuPQqlpGLhThd1BWPf/3Q8MIBKKUQ7GVgdsP+ajoFg=
+			0dnJ/g+9R+PQ1AJY5+ptZIkqBJlpb4YA/3jaNF2QjdI=
 			</data>
 		</dict>
 		<key>www/pages-list-mod-type-list-mod-type-module.js</key>
@@ -33321,14 +33343,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IGIfVqS77bo6Lcc6vEOQusWfIL9aiyrIR2PrFY+hItU=
+			hIjmXG7UKDohHmEkqH7VtQ/kWV5PAtczPUyw36bnGoQ=
 			</data>
 		</dict>
 		<key>www/pages-module-preview-module-preview-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QomndQ3RlncFAbY7sJywXplyRFtOiz8ATFBhYgnP/hg=
+			88QsMHsWrClYY4RK3u1NrJ5qwk31bkopeqjfQs42Y2g=
 			</data>
 		</dict>
 		<key>www/pages-more-more-module.js</key>
@@ -33363,14 +33385,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HAGXa+s8rM4ZD+d+yRaNembeyhcm+R4Dso8BdyY+ESk=
+			UxoF1y3w3GLRJDWP47mumawFF/1cX0qaYj06R6Vm3NQ=
 			</data>
 		</dict>
 		<key>www/pages-new-discussion-new-discussion-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+tMVzGMtxP8Py6b82qYBxnHf6ffvxy6bU8DqUpPILEg=
+			S4kuraVWY4ympXStDaDPLF6P8zIpIQQhQMbHw/8qc3k=
 			</data>
 		</dict>
 		<key>www/pages-nonrespondents-nonrespondents-module.js</key>
@@ -33391,28 +33413,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MZrQapjVujBmtAfWgnMEIiw/BcGC4qprM+Ebts2NiKU=
+			dZUuPtHb6EodPuumTRM0TtUMFD78IngsGlJWpBKTY5I=
 			</data>
 		</dict>
 		<key>www/pages-notification-notification-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/IZ+5X1kWcJUX58eXUu4aGlYv9Nugqz+I+wo0lqf3dk=
+			I7HJLk8EkIF/jyuq72EEsSlf/IEDWfcTO0QFhdXWvwQ=
 			</data>
 		</dict>
 		<key>www/pages-player-player-module.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9+1LwqDpUUDZIdLeGMRz7vl79ZEct3CNDV5FoEVQ2Bs=
+			uulM2RdqFDWEiT5sSQ4v4zOnzOBg/8Z9XYTkKgh6Fvs=
 			</data>
 		</dict>
 		<key>www/pages-player-player-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aEobAXTI/f4m3eLqup+kuMrAIAbavt+Ze6jDHn7KbZE=
+			N7AUivCJyJsgpkwWcEJHL41K7VXLnwmM1PAjslOF1+0=
 			</data>
 		</dict>
 		<key>www/pages-plugin-page-plugin-page-module.js</key>
@@ -33517,14 +33539,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			U35cvHXS0cZv5m0xo7hzPKIG164UWOBW3Rs5FFFxT3Q=
+			kjAqO9kWCgUK/3096k6rrbfwk9GURP/r7Pb70kBhkFA=
 			</data>
 		</dict>
 		<key>www/pages-site-site-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PvySXzVfFkqomBTPipFQOaoheIVux5Wd66b1AGBg/30=
+			DGf1Axb9kKbixZJcs5HPn3K9eLmvQLAJWxHfBF71jCA=
 			</data>
 		</dict>
 		<key>www/pages-sites-sites-module.js</key>
@@ -33629,14 +33651,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8CUSVeuaKDHmYHPLbAIndl4MRZ836JgIICSVnHT0XBM=
+			M9bBqa2u1U+Jw0qqq4Yiz30g/bcu3+UFgDxoF3ymbAM=
 			</data>
 		</dict>
 		<key>www/pages-viewer-viewer-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W/wetsvHo6vG1ysaR20ONd1ZOdg1F3v76KD7gpI/mjI=
+			y/pa6jd8xNjTnK+tf2G7X7BnfdvzzsfEWFOOOYZiuWQ=
 			</data>
 		</dict>
 		<key>www/plugins/@moodlehq/cordova-plugin-file-opener/www/plugins.FileOpener2.js</key>
@@ -34329,14 +34351,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6a5Y+jwSgR6HADHev/ZKpL38fiAR3oOEXtpfjkm6CdQ=
+			EDZRKBRueqiz7m5gewnOcd6Hm/phE1lpG+HRKipciCs=
 			</data>
 		</dict>
 		<key>www/reportbuilder-lazy-module.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U+jVJlzOhGFzE4tnGm1Bx9PW3DcZ44ZEiS2gymCTieo=
+			l5dG057FBZ/W+gAAiCrHqRm+pTR/i5MMspfaXLxAS+0=
 			</data>
 		</dict>
 		<key>www/resource-lazy-module.js</key>
@@ -34441,14 +34463,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AZ3K9FXkh0UTBqR3W0mFOFGWeL2uBNpgxvIfuLvyWa0=
+			yYSpqlcr8EznENr9LG+23oyxgXCTjiB3Vo0Ht2AHJRM=
 			</data>
 		</dict>
 		<key>www/styles.js.map</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TBe9h+Z172UfauR7thqD4/exT/2iQ/2l9sQcKdg0IaQ=
+			fgNP0xzjhraew5isbosMxbvb7aUbviW1Tp+kPQg0SxA=
 			</data>
 		</dict>
 		<key>www/survey-lazy-module.js</key>

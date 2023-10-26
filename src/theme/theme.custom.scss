@@ -17,5 +17,8 @@ html {
  * -------------------------------------------
  */
 html.dark {
+    .coodlelogo {
+        filter: invert(1);
+    }
 
 }

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="106" id="at.wunderbyte.coodle" ios-CFBundleVersion="1.0.1" version="1.0.6" versionCode="106" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="110" id="at.wunderbyte.coodle" ios-CFBundleVersion="1.0.1" version="1.1.0" versionCode="110" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="CDVWebViewEngine">
         <param name="ios-package" value="CDVWebViewEngine" />
     </feature>
@@ -153,7 +153,7 @@
     <name>Coodle</name>
     <description>Coodle App</description>
     <author email="info@wunderbyte.at" href="http://wunderbyte.at">Wunderbyte Mobile team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.74:8100" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -168,25 +168,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
-    <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
-    <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
-    <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
-    <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
-    <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
-    <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
-    <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
-    <icon height="57" src="resources/ios/icon/icon.png" width="57" />
-    <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
-    <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
-    <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
-    <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
-    <icon height="72" src="resources/ios/icon/icon-72.png" width="72" />
-    <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144" />
-    <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
-    <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
-    <icon height="167" src="resources/ios/icon/icon-167.png" width="167" />
-    <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167" />
+    <allow-navigation href="http://192.168.0.74:8100" sessionid="84553bc9" />
     <resource-file src="GoogleService-Info.plist" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>We need your location so you can attach it as part of your submissions.</string>
@@ -371,6 +353,38 @@
             </dict>
         </array>
     </config-file>
+    <icon height="20" src="resources/ios/icon/icon-20.png" width="20" />
+    <icon height="40" src="resources/ios/icon/icon-20@2x.png" width="40" />
+    <icon height="60" src="resources/ios/icon/icon-20@3x.png" width="60" />
+    <icon height="29" src="resources/ios/icon/icon-29.png" width="29" />
+    <icon height="58" src="resources/ios/icon/icon-29@2x.png" width="58" />
+    <icon height="87" src="resources/ios/icon/icon-29@3x.png" width="87" />
+    <icon height="48" src="resources/ios/icon/icon-24@2x.png" width="48" />
+    <icon height="55" src="resources/ios/icon/icon-27.5@2x.png" width="55" />
+    <icon height="88" src="resources/ios/icon/icon-44@2x.png" width="88" />
+    <icon height="172" src="resources/ios/icon/icon-86@2x.png" width="172" />
+    <icon height="196" src="resources/ios/icon/icon-98@2x.png" width="196" />
+    <icon height="216" src="resources/ios/icon/icon-108@2x.png" width="216" />
+    <icon height="120" src="resources/ios/icon/icon-40@3x.png" width="120" />
+    <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
+    <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
+    <splash height="2688" src="resources/ios/splash/Default-2688h~iphone.png" width="1242" />
+    <splash height="1242" src="resources/ios/splash/Default-Landscape-2688h~iphone.png" width="2688" />
+    <splash height="1792" src="resources/ios/splash/Default-1792h~iphone.png" width="828" />
+    <splash height="828" src="resources/ios/splash/Default-Landscape-1792h~iphone.png" width="1792" />
+    <splash height="2436" src="resources/ios/splash/Default-2436h.png" width="1125" />
+    <splash height="1125" src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" />
+    <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
+    <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+    <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+    <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
+    <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+    <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+    <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
+    <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
+    <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
+    <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+    <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />
@@ -390,14 +404,14 @@
     <preference name="deployment-target" value="11.0" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="permissions" value="none" />
-    <preference name="orientation" value="default" />
+    <preference name="Orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
     <preference name="stay-in-webview" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="prerendered-icon" value="false" />
-    <preference name="AppendUserAgent" value="Coodle 1.0.6 (106)" />
+    <preference name="AppendUserAgent" value="Coodle 1.1.0 (110)" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="HideKeyboardFormAccessoryBar" value="false" />
     <preference name="LoadUrlTimeoutValue" value="60000" />

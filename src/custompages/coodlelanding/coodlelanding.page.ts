@@ -21,6 +21,12 @@ import { CoreMainMenu } from '@features/mainmenu/services/mainmenu';
 import { CoreModalsService } from '@services/modals';
 import { AlertController } from '@singletons';
 import { CoreDomUtilsProvider } from '@services/utils/dom';
+import { WebserviceService } from '@/customservices/webservice.service';
+import { CoreSettingsHandlersSource } from '@features/settings/classes/settings-handlers-source';
+import { CoreSettingsHelper } from '@features/settings/services/settings-helper';
+import { CoreEvents } from '@singletons/events';
+import { CoreUtils } from '@services/utils/utils';
+import { AddonNotifications } from '@addons/notifications/services/notifications';
 
 @Component({
     selector: 'app-coodlelanding',
@@ -29,64 +35,71 @@ import { CoreDomUtilsProvider } from '@services/utils/dom';
 })
 export class CoodlelandingPage implements OnInit {
 
-
     protected allHandlers?: CoreMainMenuHandlerData[];
     subscription: any;
     customItems: any;
     isAdvisor = false;
     isInit = false;
+    selectedUser = '';
+    colorScheme = 'light';
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private ws: WebserviceService) {
 
     }
 
     buttons = [
-        //! TODOS
+        // ! DATES
+        { title: 'addon.local_coodle.viewdates', icon: 'calendar-outline',
+        url: 'siteplugins/content/local_coodle/view_dates/0', color: 'var(--coodle-dates)' },
+        // ! TODOS
         { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
-        url: 'siteplugins/content/local_coodle/view_todos/0', color: 'rgb(238, 58, 47)' },
-        //! WEGE
+        url: 'siteplugins/content/local_coodle/view_todos/0', color: 'var(--coodle-tasks)' },
+        // ! Beratung
+        { title: 'addon.local_coodle.dok3', icon: 'people-outline',
+        url: 'siteplugins/content/local_coodle/view_files3/0', color: 'var(--coodle-consult' },
+        // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
+        // ! Dokumente
+        { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
+        url: 'siteplugins/content/local_coodle/view_files1/0', color: 'var(--coodle-documents)' },
+        // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
+        // ! WEGE
         { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
         url: 'siteplugins/content/local_coodle/view_address/0',
-        color: 'rgb(163, 96, 239)' },
-        //! Beratung
-        { title: 'addon.local_coodle.dok3', icon: 'people-outline',
-        url: 'siteplugins/content/local_coodle/view_files3/0', color: 'rgb(33, 181, 98)' },
-        // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-        //! Dokumente
-        { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
-        url: 'siteplugins/content/local_coodle/view_files1/0', color: 'rgb(94, 160, 242)' },
-        //! Info
-        { title: 'addon.local_coodle.viewinfo', icon: 'globe-outline',
-        url: 'siteplugins/content/local_coodle/view_info/0', color: 'rgb(251, 135, 66)' },
-        // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
+        color: 'var(--coodle-route)' },
     ];
 
     advisorButtons = [
-         //! TODOS
-         { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
-         url: 'siteplugins/content/local_coodle/view_todos/0', color: 'rgb(238, 58, 47)' },
-         //! WEGE
-         { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
-         url: 'siteplugins/content/local_coodle/view_address/0',
-         color: 'rgb(163, 96, 239)' },
-         //! Beratung
-         { title: 'addon.local_coodle.dok3', icon: 'people-outline',
-         url: 'siteplugins/content/local_coodle/view_files3/0', color: 'rgb(33, 181, 98)' },
-         // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-         //! Dokumente
-         { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
-         url: 'siteplugins/content/local_coodle/view_files1/0', color: 'rgb(94, 160, 242)' },
-         //! Info
-         { title: 'addon.local_coodle.viewinfo', icon: 'globe-outline',
-         url: 'siteplugins/content/local_coodle/view_info/0', color: 'rgb(251, 135, 66)' },
-         // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
-        //! User Select
-        { title: 'addon.local_coodle.selectuser', icon: 'person-add-outline',
-        url: 'siteplugins/content/local_coodle/select_user/0', color: 'rgb(102, 112, 255)' },
+        // ! DATES
+        { title: 'addon.local_coodle.viewdates', icon: 'calendar-outline',
+        url: 'siteplugins/content/local_coodle/view_dates/0', color: 'var(--coodle-dates)' },
+        // ! TODOS
+        { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
+        url: 'siteplugins/content/local_coodle/view_todos/0', color: 'var(--coodle-tasks)' },
+        // ! Beratung
+        { title: 'addon.local_coodle.dok3', icon: 'people-outline',
+        url: 'siteplugins/content/local_coodle/view_files3/0', color: 'var(--coodle-consult' },
         // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-    ]
+        // ! Dokumente
+        { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
+        url: 'siteplugins/content/local_coodle/view_files1/0', color: 'var(--coodle-documents)' },
+        // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
+        // ! WEGE
+        { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
+        url: 'siteplugins/content/local_coodle/view_address/0',
+        color: 'var(--coodle-route)' },
+        // ! User Select
+        { title: 'addon.local_coodle.selectuser', icon: 'person-add-outline',
+        url: 'siteplugins/content/local_coodle/select_user/0', color: 'var(--coodle-selectuser)' },
+        // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
+    ];
 
-async ngOnInit(){
+    async ngOnInit(){
+
+        // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        // this.colorScheme = event.matches ? "dark" : "light";
+        // console.log('colorscheme', this.colorScheme);
+        // });
+
         // Load the handlers.
         const site = CoreSites.getSite().then((site) => {
             console.warn('site', site);
@@ -95,6 +108,31 @@ async ngOnInit(){
         // const user = CoreUser.setUserPreference('isCoodleAdmin', 'true');
         await CoreUser.setUserPreference('coodle_settings', 'wert 123').then((res) => {
             console.warn('setting saved', res);
+        });
+
+        const userSel = CoreUser.getUserPreference('coodleuser_chosen').then((setting) => {
+            console.warn('setting', setting);
+            if (setting) {
+                const settings = JSON.parse(setting);
+                if (settings.name) {
+                    this.selectedUser = settings.name;
+                    this.ws.setUser = settings;
+                }
+            }
+            this.isInit = true;
+        });
+
+        const userCoreSub = CoreEvents.on('USERSELECTED', () => {
+            CoreUser.getUserPreference('coodleuser_chosen').then((setting) => {
+                if (setting) {
+                    const settings = JSON.parse(setting);
+                    if (settings.name) {
+                        this.selectedUser = settings.name;
+                        this.ws.setUser = settings;
+                    }
+
+                }
+            });
         });
 
         const usersetting = CoreUser.getUserPreference('coodle_settings').then((setting) => {
@@ -115,29 +153,31 @@ async ngOnInit(){
             // this.initHandlers();
         });
 
+        await CoreUtils.ignoreErrors(AddonNotifications.markAllNotificationsAsRead());
+
         this.initHandlers();
     }
 
-    openModal() {
-        console.log('hallo welt')
-        AlertController.create({
-            header: 'test',
-            inputs: [
-                {
-                  name: 'newTodo',
-                  placeholder: 'Enter todo....',
-                }
-            ],
-            buttons: [{
-                text: "submit",
-                handler: (data) => {
-                    console.log('data', data);
-                    this.testFunction2(data.newTodo);
-                }
-            }
-            ]
-        }).then(alert => alert.present())
-    }
+    // openModal() {
+    //     console.log('hallo welt')
+    //     AlertController.create({
+    //         header: 'test',
+    //         inputs: [
+    //             {
+    //               name: 'newTodo',
+    //               placeholder: 'Enter todo....',
+    //             }
+    //         ],
+    //         buttons: [{
+    //             text: "submit",
+    //             handler: (data) => {
+    //                 console.log('data', data);
+    //                 this.testFunction2(data.newTodo);
+    //             }
+    //         }
+    //         ]
+    //     }).then(alert => alert.present())
+    // }
 
     testFunction2(todo) {
         console.log('my new todo', todo );
@@ -152,18 +192,14 @@ async ngOnInit(){
     openHandler(handlerClicked: any): void {
         const selectedHandler = this.allHandlers?.filter(handler => handler.page === handlerClicked.url)[0];
 
-        console.log('selectedHandler', selectedHandler, handlerClicked, this.allHandlers)
+        console.log('selectedHandler', selectedHandler, handlerClicked, this.allHandlers);
 
         if (selectedHandler) {
             const params = selectedHandler.pageParams;
             CoreNavigator.navigateToSitePath(selectedHandler.page, { params });
         }
 
-
     }
-        // CoreNavigator.navigate(handler.url, { params: { title: handler.title.replace(/\s/g, ''), comingFromCoodle: true } });
-
-
-
+    // CoreNavigator.navigate(handler.url, { params: { title: handler.title.replace(/\s/g, ''), comingFromCoodle: true } });
 
 }

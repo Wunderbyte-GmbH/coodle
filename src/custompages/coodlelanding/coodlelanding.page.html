@@ -4,7 +4,9 @@
       <ion-back-button [text]="'core.back' | translate"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <h1>{{'addon.local_coodle.landingpage' | translate}}</h1>
+      <img src="../../assets/img/coodlesvg.svg" class="coodlelogo" alt="Coodle Logo" />
+      <!-- <h1 class="headertext" *ngIf="selectedUser === ''">{{'addon.local_coodle.landingpage' | translate}}</h1> -->
+      <h1 class="headertext" *ngIf="selectedUser !== ''">{{ selectedUser }}</h1>
     </ion-title>
     <ion-buttons slot="end">
       <core-user-menu-button></core-user-menu-button>

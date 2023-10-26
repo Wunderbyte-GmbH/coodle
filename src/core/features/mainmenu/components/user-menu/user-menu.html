@@ -1,10 +1,10 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>
+        <!-- <ion-title>
             <h1>
                 {{'core.user.useraccount' | translate}}
             </h1>
-        </ion-title>
+        </ion-title> -->
         <ion-buttons slot="end">
             <ion-button fill="clear" (click)="close($event)" [attr.aria-label]="'core.close' | translate">
                 <ion-icon name="fas-times" slot="icon-only" aria-hidden="true"></ion-icon>
@@ -67,13 +67,13 @@
                 </ion-label>
             </ion-item>
 
-            <ion-item *ngIf="displayContactSupport" button (click)="contactSupport($event)"
+            <!-- <ion-item *ngIf="displayContactSupport" button (click)="contactSupport($event)"
                 [attr.aria-label]="'core.user.support' | translate" detail="true" detailIcon="open-outline" class="core-user-menu-support">
                 <ion-icon name="fas-envelope" slot="start" aria-hidden="true"></ion-icon>
                 <ion-label>
                     <p class="item-heading">{{ 'core.user.support' | translate }}</p>
                 </ion-label>
-            </ion-item>
+            </ion-item> -->
         </ion-list>
     </core-loading>
 </ion-content>

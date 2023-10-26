@@ -128,6 +128,14 @@ export class CoreSendMessageFormComponent implements OnInit {
         }
     }
 
+    extractStringAfterLastSlash(input: string) {
+        const parts = input.split("/");
+        if (parts.length > 1) {
+          return parts[parts.length - 1];
+        }
+        return undefined;
+      }
+
     handleSendFileEvent(event: any): void {
         const splitarray = event.fileurl.split('.');
         const format = splitarray[splitarray.length - 1];
@@ -144,6 +152,15 @@ export class CoreSendMessageFormComponent implements OnInit {
                 break;
             case 'MOV':
                 message = '<video preload="metadata" width="320" height="240" controls><source src="' + event.fileurl + '" type="video/mov"></video>';
+                break;
+            case 'pdf':
+                const name = this.extractStringAfterLastSlash(splitarray[splitarray.length - 2]);
+                message = '<a href="' + event.fileurl + '">PDF: ' + name + '</a>';
+                break;
+            case 'docx':
+            case 'doc':
+                const docname = this.extractStringAfterLastSlash(splitarray[splitarray.length - 2]);
+                message = '<a href="' + event.fileurl + '">Dokument: ' + docname + '</a>';
                 break;
             default:
                 message = '<a href="' + event.fileurl + '">Link</a>';
