@@ -1,5 +1,5 @@
 {
-    "app_id": "at.wunderbyte.coodle",
+    "app_id": "at.wuk.coodle",
     "appname": "Coodle",
     "versioncode": 100,
     "versionname": "1.0.0",
@@ -36,7 +36,7 @@
     "forceLoginLogo": false,
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
-        "android": "at.wunderbyte.coodle",
+        "android": "at.wuk.coodle",
         "ios": "id633359593"
     },
     "wsrequestqueuelimit": 10,

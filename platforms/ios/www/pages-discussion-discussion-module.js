@@ -1045,7 +1045,7 @@ let AddonMessagesDiscussionPage = class AddonMessagesDiscussionPage {
             _singletons_events__WEBPACK_IMPORTED_MODULE_3__["CoreEvents"].trigger(_services_messages__WEBPACK_IMPORTED_MODULE_5__["AddonMessagesProvider"].NEW_MESSAGE_EVENT, {
                 conversationId: this.conversationId,
                 userId: this.userId,
-                message: 'test',
+                message: 'this.lastMessage.text',
                 timecreated: this.lastMessage.timecreated,
                 isfavourite: !!((_a = this.conversation) === null || _a === void 0 ? void 0 : _a.isfavourite),
                 type: (_b = this.conversation) === null || _b === void 0 ? void 0 : _b.type,

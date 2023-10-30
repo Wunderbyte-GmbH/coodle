@@ -836,7 +836,7 @@ export class AddonMessagesDiscussionPage implements OnInit, OnDestroy, AfterView
             CoreEvents.trigger(AddonMessagesProvider.NEW_MESSAGE_EVENT, {
                 conversationId: this.conversationId,
                 userId: this.userId,
-                message: 'test',
+                message: 'this.lastMessage.text',
                 timecreated: this.lastMessage.timecreated,
                 isfavourite: !!this.conversation?.isfavourite,
                 type: this.conversation?.type,

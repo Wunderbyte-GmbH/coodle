@@ -190,6 +190,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _features_mainmenu_services_mainmenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @features/mainmenu/services/mainmenu */ "./src/core/features/mainmenu/services/mainmenu.ts");
 /* harmony import */ var _customservices_webservice_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/customservices/webservice.service */ "./src/customservices/webservice.service.ts");
 /* harmony import */ var _singletons_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @singletons/events */ "./src/core/singletons/events.ts");
+/* harmony import */ var _services_utils_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @services/utils/utils */ "./src/core/services/utils/utils.ts");
+/* harmony import */ var _addons_notifications_services_notifications__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @addons/notifications/services/notifications */ "./src/addons/notifications/services/notifications.ts");
 
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
@@ -213,6 +215,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let CoodlelandingPage = class CoodlelandingPage {
     constructor(router, ws) {
         this.router = router;
@@ -222,45 +226,45 @@ let CoodlelandingPage = class CoodlelandingPage {
         this.selectedUser = '';
         this.colorScheme = 'light';
         this.buttons = [
-            //! DATES
+            // ! DATES
             { title: 'addon.local_coodle.viewdates', icon: 'calendar-outline',
                 url: 'siteplugins/content/local_coodle/view_dates/0', color: 'var(--coodle-dates)' },
-            //! TODOS
+            // ! TODOS
             { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
                 url: 'siteplugins/content/local_coodle/view_todos/0', color: 'var(--coodle-tasks)' },
-            //! Beratung
+            // ! Beratung
             { title: 'addon.local_coodle.dok3', icon: 'people-outline',
                 url: 'siteplugins/content/local_coodle/view_files3/0', color: 'var(--coodle-consult' },
             // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-            //! Dokumente
+            // ! Dokumente
             { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
                 url: 'siteplugins/content/local_coodle/view_files1/0', color: 'var(--coodle-documents)' },
             // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
-            //! WEGE
+            // ! WEGE
             { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
                 url: 'siteplugins/content/local_coodle/view_address/0',
                 color: 'var(--coodle-route)' },
         ];
         this.advisorButtons = [
-            //! DATES
+            // ! DATES
             { title: 'addon.local_coodle.viewdates', icon: 'calendar-outline',
                 url: 'siteplugins/content/local_coodle/view_dates/0', color: 'var(--coodle-dates)' },
-            //! TODOS
+            // ! TODOS
             { title: 'addon.local_coodle.viewtodos', icon: 'checkbox-outline',
                 url: 'siteplugins/content/local_coodle/view_todos/0', color: 'var(--coodle-tasks)' },
-            //! Beratung
+            // ! Beratung
             { title: 'addon.local_coodle.dok3', icon: 'people-outline',
                 url: 'siteplugins/content/local_coodle/view_files3/0', color: 'var(--coodle-consult' },
             // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
-            //! Dokumente
+            // ! Dokumente
             { title: 'addon.local_coodle.dok1', icon: 'document-text-outline',
                 url: 'siteplugins/content/local_coodle/view_files1/0', color: 'var(--coodle-documents)' },
             // { title: 'Kalender', icon: 'calendar-outline', url: '/main/more/calendar/index', color: '#e75151' },
-            //! WEGE
+            // ! WEGE
             { title: 'addon.local_coodle.viewaddress', icon: 'trail-sign-outline',
                 url: 'siteplugins/content/local_coodle/view_address/0',
                 color: 'var(--coodle-route)' },
-            //! User Select
+            // ! User Select
             { title: 'addon.local_coodle.selectuser', icon: 'person-add-outline',
                 url: 'siteplugins/content/local_coodle/select_user/0', color: 'var(--coodle-selectuser)' },
         ];
@@ -317,6 +321,7 @@ let CoodlelandingPage = class CoodlelandingPage {
                 console.log('allHandlersCoodle', this.allHandlers);
                 // this.initHandlers();
             });
+            yield _services_utils_utils__WEBPACK_IMPORTED_MODULE_10__["CoreUtils"].ignoreErrors(_addons_notifications_services_notifications__WEBPACK_IMPORTED_MODULE_11__["AddonNotifications"].markAllNotificationsAsRead());
             this.initHandlers();
         });
     }

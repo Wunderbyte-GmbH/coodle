@@ -1,36 +1,26 @@
-{
+  {
   "project_info": {
-    "project_number": "359728918759",
-    "project_id": "coodle-app",
-    "storage_bucket": "coodle-app.appspot.com"
+    "project_number": "240302052916",
+    "project_id": "wuk-coodle",
+    "storage_bucket": "wuk-coodle.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:359728918759:android:0b02245d50a1388f71b242",
+        "mobilesdk_app_id": "1:240302052916:android:1288f3cc6c0a2b3dc25c61",
         "android_client_info": {
-          "package_name": "at.wunderbyte.coodle"
+          "package_name": "at.wuk.coodle"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "359728918759-1tgc869gumcnjsqj6sg6cnqlaassi7rr.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD0jZh3jrG54oFhRdXSX7BBwV5qPr3FdVQ"
+          "current_key": "AIzaSyB8XL366-7by8SZOMytDql8q41J38SJFck"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "359728918759-1tgc869gumcnjsqj6sg6cnqlaassi7rr.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

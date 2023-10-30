@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359728918759",
+    "project_id": "coodle-app",
+    "storage_bucket": "coodle-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359728918759:android:0b02245d50a1388f71b242",
+        "android_client_info": {
+          "package_name": "at.wunderbyte.coodle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359728918759-1tgc869gumcnjsqj6sg6cnqlaassi7rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0jZh3jrG54oFhRdXSX7BBwV5qPr3FdVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359728918759-1tgc869gumcnjsqj6sg6cnqlaassi7rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
