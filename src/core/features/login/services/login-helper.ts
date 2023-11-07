@@ -1352,23 +1352,40 @@ export class CoreLoginHelperProvider {
         const urlToOpen = CoreNavigator.getRouteParam('urlToOpen');
         const text = await CoreUtils.scanQR();
         if(text !== undefined) {
+            const modal = await CoreDomUtils.showModalLoading();
             const results = text.split(';');
 
             const userId = Number(results[1]);
             const privatekey = results[0];
             const wwwroot = results[2] + '/';
 
-            console.log('logincreds', userId, privatekey, wwwroot);
-            this.ws.loginUserWithQRCode(wwwroot, userId, privatekey).subscribe(async res => {
+            // console.log('logincreds', userId, privatekey, wwwroot);
+            this.ws.loginUserWithQRCode(wwwroot, userId, privatekey).subscribe(
+                async res => {
+                    if (res.exception !== undefined) {
+                        modal.dismiss();
+                        CoreDomUtils.showErrorModal(res);
+                    } else if (res.error !== undefined) {
+                        modal.dismiss();
+                        CoreDomUtils.showErrorModal(Translate.instant('core.errorsomethingwrong'));
+                    }
+                    await CoreSites.newSite(
+                        wwwroot,
+                        res.token,
+                        res.privateToken,
+                    ).catch(err => {
+                        CoreDomUtils.showErrorModal(err);
+                    })
+                    ;
+                    await CoreNavigator.navigateToSiteHome({ params: { urlToOpen: urlToOpen } });
 
-                await CoreSites.newSite(
-                    wwwroot,
-                    res.token,
-                    res.privateToken,
-                );
-                await CoreNavigator.navigateToSiteHome({ params: { urlToOpen: urlToOpen } });
+                    modal.dismiss();
 
-            });
+                },
+                err => {
+                    CoreDomUtils.showErrorModal(err);
+                },
+            );
         }
     }
 

@@ -44,7 +44,7 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
     jsData?: Record<string, unknown>; // JS variables to pass to the plugin so they can be used in the template or JS.
     preSets?: CoreSiteWSPreSets; // The preSets for the WS call.
     ptrEnabled = false;
-    comingFromCoodle? : boolean;
+    comingFromCoodle?: boolean;
 
     /**
      * @inheritdoc
@@ -67,7 +67,6 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
      * @param refresher Refresher.
      */
     refreshData(refresher: IonRefresher): void {
-        console.log('refresh data');
         this.content?.refreshContent(false).finally(() => {
             refresher.complete();
         });
@@ -85,6 +84,7 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
      */
     ionViewDidEnter(): void {
         this.content?.callComponentFunction('ionViewDidEnter');
+        this.title = CoreNavigator.getRouteParam('title');
     }
 
     /**
@@ -122,7 +122,6 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
 
         return result === undefined || result === null ? true : !!result;
     }
-
 
     async uploadFile(): Promise<void>{
         console.log('upload');

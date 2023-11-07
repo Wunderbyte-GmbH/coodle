@@ -10,6 +10,8 @@
     "addon.local_coodle.landingpage": "COOdLe",
     "addon.local_coodle.selectuser": "User Auswahl",
     "addon.local_coodle.viewdates": "Termine",
+    "addon.local_coodle.hideLogin": "Login-Form ausblenden",
+    "addon.local_coodle.showLogin": "Login-Form einblenden",
     "addon.messages.contacts": "Kontakte",
     "addon.messages.messages": "Nachrichten",
     "addon.badges.alignment": "Ausrichtung",

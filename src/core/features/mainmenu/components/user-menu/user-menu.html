@@ -78,6 +78,14 @@
     </core-loading>
 </ion-content>
 <ion-footer>
+    <ion-item button (click)="openNotifications($event)" [attr.aria-label]="'addon.notifications.notifications' | translate" detail="true"
+        class="addon.notifications.notifications">
+        <ion-icon name="fas-bell" slot="start" aria-hidden="true"></ion-icon>
+        <ion-label>
+            <p class="item-heading">{{ 'addon.notifications.notifications' | translate }}</p>
+        </ion-label>
+    </ion-item>
+
     <ion-item *ngIf="displaySwitchAccount" button lines="full" (click)="switchAccounts($event)" detail="true" class="ion-text-wrap">
         <ion-icon name="fas-exchange-alt" slot="start" aria-hidden="true"></ion-icon>
         <ion-label>

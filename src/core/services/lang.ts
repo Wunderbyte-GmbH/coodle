@@ -167,7 +167,6 @@ export class CoreLangProvider {
      */
     async changeCurrentLanguage(language: string): Promise<void> {
         const promises: Promise<unknown>[] = [];
-
         // Change the language, resolving the promise when we receive the first value.
         promises.push(new Promise((resolve, reject) => {
             CoreSubscriptions.once(Translate.use(language), async data => {

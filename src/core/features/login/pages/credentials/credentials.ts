@@ -62,6 +62,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
     loginAttempts = 0;
     supportConfig?: CoreUserSupportConfig;
     exceededAttemptsHTML?: SafeHtml | string | null;
+    showLoginForm = false;
 
     protected siteConfig?: CoreSitePublicConfigResponse;
     protected eventThrown = false;
@@ -130,6 +131,10 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
                 }
             });
         }
+    }
+
+    toggleForm(): void{
+        this.showLoginForm = !this.showLoginForm;
     }
 
     /**
@@ -282,7 +287,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
 
             const id = await CoreSites.newSite(data.siteUrl, data.token, data.privateToken);
 
-            //Get User Setting
+            // Get User Setting
             // const coodleSettings = await CoreUser.set
 
             // Reset fields so the data is not in the view anymore.
@@ -349,12 +354,16 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
      * @returns Promise resolved when done.
      */
     async showInstructionsAndScanQR(): Promise<void> {
+        // const modal = await CoreDomUtils.showModalLoading();
         try {
             // await CoreLoginHelper.showScanQRInstructions();
 
             await CoreLoginHelper.scanQR();
-        } catch {
+        } catch(err) {
             // Ignore errors.
+            CoreDomUtils.showErrorModal(err);
+        }   finally {
+            // modal.dismiss();
         }
     }
 

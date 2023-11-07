@@ -15,18 +15,15 @@ import { Component, OnInit } from '@angular/core';
 import { CoreNavigator } from '@services/navigator';
 import { Router } from '@angular/router';
 import { CoreSites } from '@services/sites';
-import { CoreUser, CoreUserProfile } from '@features/user/services/user';
+import { CoreUser } from '@features/user/services/user';
 import { CoreMainMenuDelegate, CoreMainMenuHandlerData } from '@features/mainmenu/services/mainmenu-delegate';
-import { CoreMainMenu } from '@features/mainmenu/services/mainmenu';
-import { CoreModalsService } from '@services/modals';
-import { AlertController } from '@singletons';
-import { CoreDomUtilsProvider } from '@services/utils/dom';
+
 import { WebserviceService } from '@/customservices/webservice.service';
-import { CoreSettingsHandlersSource } from '@features/settings/classes/settings-handlers-source';
-import { CoreSettingsHelper } from '@features/settings/services/settings-helper';
+
 import { CoreEvents } from '@singletons/events';
 import { CoreUtils } from '@services/utils/utils';
 import { AddonNotifications } from '@addons/notifications/services/notifications';
+import { CoreMainMenu } from '@features/mainmenu/services/mainmenu';
 
 @Component({
     selector: 'app-coodlelanding',
@@ -42,8 +39,24 @@ export class CoodlelandingPage implements OnInit {
     isInit = false;
     selectedUser = '';
     colorScheme = 'light';
+    handlers: any;
 
     constructor(private router: Router, private ws: WebserviceService) {
+
+        // const subscription = CoreMainMenuHomeDelegate.getHandlersObservable().subscribe((handlers) => {
+        //     handlers && this.initHandlers(handlers);
+        // });
+
+        CoreEvents.on(CoreEvents.SITE_UPDATED, async () => {
+            // this.customItems = await CoreMainMenu.getCustomMenuItems();
+            window.setTimeout(async () => {
+
+                const sites = await CoreSites.getSitesInstances();
+                await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
+
+                CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
+            }, 10000);
+        }, CoreSites.getCurrentSiteId());
 
     }
 
@@ -93,7 +106,7 @@ export class CoodlelandingPage implements OnInit {
         // { title: 'Nachrichten', icon: 'chatbox-ellipses-outline', url: '/main/messages/group-conversations', color: '#E9C46A' },
     ];
 
-    async ngOnInit(){
+    async ngOnInit(): Promise<void>{
 
         // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
         // this.colorScheme = event.matches ? "dark" : "light";
@@ -101,17 +114,8 @@ export class CoodlelandingPage implements OnInit {
         // });
 
         // Load the handlers.
-        const site = CoreSites.getSite().then((site) => {
-            console.warn('site', site);
-        });
 
-        // const user = CoreUser.setUserPreference('isCoodleAdmin', 'true');
-        await CoreUser.setUserPreference('coodle_settings', 'wert 123').then((res) => {
-            console.warn('setting saved', res);
-        });
-
-        const userSel = CoreUser.getUserPreference('coodleuser_chosen').then((setting) => {
-            console.warn('setting', setting);
+        CoreUser.getUserPreference('coodleuser_chosen').then((setting) => {
             if (setting) {
                 const settings = JSON.parse(setting);
                 if (settings.name) {
@@ -120,9 +124,14 @@ export class CoodlelandingPage implements OnInit {
                 }
             }
             this.isInit = true;
+
+            return;
+        }).catch(error => {
+            // eslint-disable-next-line no-console
+            console.log('error', error);
         });
 
-        const userCoreSub = CoreEvents.on('USERSELECTED', () => {
+        CoreEvents.on('USERSELECTED', () => {
             CoreUser.getUserPreference('coodleuser_chosen').then((setting) => {
                 if (setting) {
                     const settings = JSON.parse(setting);
@@ -130,13 +139,16 @@ export class CoodlelandingPage implements OnInit {
                         this.selectedUser = settings.name;
                         this.ws.setUser = settings;
                     }
-
                 }
+
+                return;
+            }).catch(error => {
+                // eslint-disable-next-line no-console
+                console.log('error', error);
             });
         });
 
-        const usersetting = CoreUser.getUserPreference('coodle_settings').then((setting) => {
-            console.warn('setting', setting);
+        CoreUser.getUserPreference('coodle_settings').then((setting) => {
             if (setting) {
                 const settings = JSON.parse(setting);
                 if (settings.isadvisor === true) {
@@ -144,60 +156,60 @@ export class CoodlelandingPage implements OnInit {
                 }
             }
             this.isInit = true;
+
+            return;
+        }).catch(error => {
+            // eslint-disable-next-line no-console
+            console.log('error', error);
         });
         // const userPref = CoreUser.get
 
         this.subscription = CoreMainMenuDelegate.getHandlersObservable().subscribe((handlers) => {
             this.allHandlers = handlers;
-            console.log('allHandlersCoodle', this.allHandlers);
-            // this.initHandlers();
         });
 
         await CoreUtils.ignoreErrors(AddonNotifications.markAllNotificationsAsRead());
 
-        this.initHandlers();
+        // this.initHandlers();
     }
 
-    // openModal() {
-    //     console.log('hallo welt')
-    //     AlertController.create({
-    //         header: 'test',
-    //         inputs: [
-    //             {
-    //               name: 'newTodo',
-    //               placeholder: 'Enter todo....',
-    //             }
-    //         ],
-    //         buttons: [{
-    //             text: "submit",
-    //             handler: (data) => {
-    //                 console.log('data', data);
-    //                 this.testFunction2(data.newTodo);
-    //             }
-    //         }
-    //         ]
-    //     }).then(alert => alert.present())
-    // }
-
-    testFunction2(todo) {
-        console.log('my new todo', todo );
-    }
-
-    async initHandlers() {
+    async initHandlers(): Promise<any>{
         // CoreNavigator.navigateToSitePath('siteplugins/content/local_coodle/view_files1/0', { params });
         this.customItems = await CoreMainMenu.getCustomMenuItems();
-        console.log('custom Items', this.customItems);
+        // this.handlers = this.allHandlers.filter((handler) => mainHandlers.indexOf(handler) == -1);
+        // const handlersLoaded = CoreMainMenuDelegate.areHandlersLoaded();
+    }
+
+    ionViewWillEnter(): void {
+        this.refresher();
+    }
+
+    async refresher(): Promise<any> {
+        // return CoreMainMenuDelegate.getHandlersObservable().pipe(tap((handlers)=> {
+        //     this.allHandlers = [];
+        //     this.allHandlers = handlers;
+        // }),first()).toPromise();
+
+        const sites = await CoreSites.getSitesInstances();
+        await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
+
+        CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
+    }
+
+    refreshData(event: any): void {
+        this.refresher().finally(()=> {
+            event.complete();
+        });
+
     }
 
     openHandler(handlerClicked: any): void {
         const selectedHandler = this.allHandlers?.filter(handler => handler.page === handlerClicked.url)[0];
 
-        console.log('selectedHandler', selectedHandler, handlerClicked, this.allHandlers);
-
         if (selectedHandler) {
             const params = selectedHandler.pageParams;
             CoreNavigator.navigateToSitePath(selectedHandler.page, { params });
-        }
+        };
 
     }
     // CoreNavigator.navigate(handler.url, { params: { title: handler.title.replace(/\s/g, ''), comingFromCoodle: true } });

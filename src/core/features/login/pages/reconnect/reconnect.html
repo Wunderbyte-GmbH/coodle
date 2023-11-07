@@ -48,7 +48,7 @@
                 </core-login-exceeded-attempts>
             </div>
 
-            <!-- <form *ngIf="!isOAuth" [formGroup]="credForm" (ngSubmit)="login($event)" class="core-login-form" #reconnectForm>
+            <form *ngIf="showLoginForm" [formGroup]="credForm" (ngSubmit)="login($event)" class="core-login-form" #reconnectForm>
                 <ion-item class="ion-text-wrap core-username item-interactive">
                     <ion-label>
                         <p>{{username}}</p>
@@ -88,19 +88,19 @@
 
                 <core-login-methods></core-login-methods>
 
-                <ng-container *ngIf="showScanQR && !isBrowserSSO">
-                    <ion-button expand="block" fill="outline" class="ion-margin core-login-site-qrcode"
-                        (click)="showInstructionsAndScanQR()">
-                        <ion-icon slot="start" name="fas-qrcode" aria-hidden="true"></ion-icon>
-                        {{ 'core.scanqr' | translate }}
-                    </ion-button>
-                </ng-container>
-            </form> -->
+            </form>
+
+            <p *ngIf="!showLoginForm" class="showform" (click)="toggleForm()"
+                attr.aria-label="{{'addon.local_coodle.showLogin' | translate}}">
+                {{ 'addon.local_coodle.showLogin' | translate}}</p>
+            <p *ngIf="showLoginForm" class="showform" (click)="toggleForm()"
+                attr.aria-label="{{'addon.local_coodle.hideLogin' | translate}}">
+                {{ 'addon.local_coodle.hideLogin' | translate}}</p>
 
 
             <ng-container *ngIf="showScanQR">
                 <ion-button expand="block" fill="outline" class="ion-margin core-login-site-qrcode" (click)="showInstructionsAndScanQR()">
-                    <ion-icon slot="start" name="fas-qrcode" aria-hidden="true"></ion-icon>
+                    <ion-icon slot="start" name="fas-qrcode" attr.aria-label="{{'core.scanqr' | translate}}"></ion-icon>
                     {{ 'core.scanqr' | translate }}
                 </ion-button>
             </ng-container>

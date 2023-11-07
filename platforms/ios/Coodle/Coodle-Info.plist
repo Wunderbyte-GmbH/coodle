@@ -6,53 +6,6 @@
 	<string>en_US</string>
 	<key>CFBundleDisplayName</key>
 	<string>Coodle</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSMainNibFile</key>
-	<string/>
-	<key>NSMainNibFile~ipad</key>
-	<string/>
-	<key>UILaunchStoryboardName</key>
-	<string>CDVLaunchScreen</string>
-	<key>UIRequiresFullScreen</key>
-	<false/>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
-	<string>YES</string>
-	<key>NSCrossWebsiteTrackingUsageDescription</key>
-	<string>This app needs third party cookies to correctly render embedded content from the Moodle site.</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -431,6 +384,20 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -440,20 +407,39 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app requires constant access to your location in order to track your position, even when the screen is off or the app is in the background.</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>This app requires Bluetooth access to function properly.</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
+	<string>YES</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>This app requires constant Bluetooth access to function properly.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>This app requires contacts access to function properly.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app requires Bluetooth access to function properly.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app requires calendar access to function properly.</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>This app requires reminders access to function properly.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app requires contacts access to function properly.</string>
+	<key>NSCrossWebsiteTrackingUsageDescription</key>
+	<string>This app needs third party cookies to correctly render embedded content from the Moodle site.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires constant access to your location in order to track your position, even when the screen is off or the app is in the background.</string>
+	<key>NSMainNibFile</key>
+	<string/>
+	<key>NSMainNibFile~ipad</key>
+	<string/>
 	<key>NSMotionUsageDescription</key>
 	<string>This app requires motion detection access to function properly.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>This app requires reminders access to function properly.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -462,6 +448,22 @@
 	<key>UIInterfaceOrientation</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>CDVLaunchScreen</string>
+	<key>UIRequiresFullScreen</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location so you can attach it as part of your submissions.</string>

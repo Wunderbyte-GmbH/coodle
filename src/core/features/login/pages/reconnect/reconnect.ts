@@ -63,6 +63,8 @@ export class CoreLoginReconnectPage implements OnInit, OnDestroy {
     reconnectAttempts = 0;
     supportConfig?: CoreUserSupportConfig;
     exceededAttemptsHTML?: SafeHtml | string | null;
+    showLoginForm = false;
+    formString = '';
 
     protected siteConfig?: CoreSitePublicConfigResponse;
     protected viewLeft = false;
@@ -332,18 +334,27 @@ export class CoreLoginReconnectPage implements OnInit, OnDestroy {
         }
     }
 
+    toggleForm(): void{
+        this.showLoginForm = !this.showLoginForm;
+        // this.showLoginForm ? this.formString = 'Hide Form' : this.formString = 'Hide Form';
+    }
+
     /**
      * Show instructions and scan QR code.
      *
      * @returns Promise resolved when done.
      */
     async showInstructionsAndScanQR(): Promise<void> {
+        // const modal = await CoreDomUtils.showModalLoading();
         try {
             // await CoreLoginHelper.showScanQRInstructions();
 
             await CoreLoginHelper.scanQR();
-        } catch {
+        } catch (error){
             // Ignore errors.
+            // CoreDomUtils.showErrorModal(error);
+        }   finally {
+            // modal.dismiss();
         }
     }
 

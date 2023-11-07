@@ -17,18 +17,6 @@ import { Routes, RouterModule, ROUTES } from '@angular/router';
 import { CoodlelandingPage } from './coodlelanding.page';
 import { buildTabMainRoutes } from '@features/mainmenu/mainmenu-tab-routing.module';
 
-const routes: Routes = [
-    {
-        path: '',
-        component: CoodlelandingPage,
-        children: [
-            {
-                path: 'dok1',
-                redirectTo: '/main/more/siteplugins/content/local_coodle/view_files2/0',
-            },
-        ],
-    },
-];
 
 /**
  *

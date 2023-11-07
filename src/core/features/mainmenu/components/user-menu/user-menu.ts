@@ -18,6 +18,7 @@ import { CoreSite, CoreSiteInfo } from '@classes/site';
 import { CoreFilter } from '@features/filter/services/filter';
 import { CoreLoginSitesComponent } from '@features/login/components/sites/sites';
 import { CoreLoginHelper } from '@features/login/services/login-helper';
+import { CoreMainMenuDelegate } from '@features/mainmenu/services/mainmenu-delegate';
 import { CoreUserAuthenticatedSupportConfig } from '@features/user/classes/support/authenticated-support-config';
 import { CoreUserSupport } from '@features/user/services/support';
 import { CoreUser, CoreUserProfile } from '@features/user/services/user';
@@ -89,7 +90,11 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
                     if (!handlers || !this.user) {
                         return;
                     }
-                    console.log('profilehandlers all', this.handlers);
+
+                    // CoreMainMenuDelegate.getHandlersObservable().subscribe(handlers => {
+
+                    // });
+
                     const newHandlers = handlers
                         .filter((handler) => handler.type === CoreUserDelegateService.TYPE_NEW_PAGE)
                         .map((handler) => handler.data);
@@ -160,6 +165,12 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
         await this.close(event);
 
         CoreNavigator.navigateToSitePath('preferences');
+    }
+
+    async openNotifications(event: Event): Promise<void> {
+        await this.close(event);
+
+        CoreNavigator.navigateToSitePath('notifications');
     }
 
     /**
@@ -249,7 +260,7 @@ export class CoreMainMenuUserMenuComponent implements OnInit, OnDestroy {
         }
     }
 
-    enableLogout() {
+    enableLogout(): void {
         this.disableLogout = !this.disableLogout;
 
     }

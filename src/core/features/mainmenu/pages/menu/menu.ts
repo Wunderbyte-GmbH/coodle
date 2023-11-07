@@ -31,6 +31,7 @@ import { CoreSites } from '@services/sites';
 import { CoreDom } from '@singletons/dom';
 import { CoreLogger } from '@singletons/logger';
 import { CorePlatform } from '@services/platform';
+import { CoreLang, CoreLangProvider } from '@services/lang';
 
 const ANIMATION_DURATION = 500;
 
@@ -158,6 +159,8 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
      * @param previousHandlers Previous handlers (if they haave just been updated).
      */
     async updateHandlers(previousHandlers?: CoreMainMenuHandlerToDisplay[]): Promise<void> {
+        // CoreLang.getAllCustomStrings();
+        // CoreLang.getAllSitePluginsStrings();
         if (!this.allHandlers) {
             return;
         }
@@ -166,7 +169,10 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
 
         const handlers = this.allHandlers
             .filter((handler) => !handler.onlyInMore)
+            .filter(x => x.page !== 'notifications')
             .slice(0, CoreMainMenu.getNumItems()); // Get main handlers.
+
+        console.warn('handlers', handlers);
 
         // Re-build the list of tabs. If a handler is already in the list, use existing object to prevent re-creating the tab.
         const newTabs: CoreMainMenuHandlerToDisplay[] = [];
@@ -185,11 +191,11 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
         }
 
         this.tabs = newTabs;
-        console.log('tab 0',this.tabs[0])
-        this.tabs[0].page = 'coodlelanding';
-        this.tabs[0].icon = 'home'
 
-        console.log('tab 0',this.tabs[0])
+        // const coodleHanlder = this.allHandlers.
+
+        this.tabs[0].page = 'coodlelanding';
+        this.tabs[0].icon = 'home';
 
         // Sort them by priority so new handlers are in the right position.
         this.tabs.sort((a, b) => (b.priority || 0) - (a.priority || 0));

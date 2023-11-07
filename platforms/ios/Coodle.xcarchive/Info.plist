@@ -13,9 +13,9 @@
 		<key>CFBundleIdentifier</key>
 		<string>at.wuk.coodle</string>
 		<key>CFBundleShortVersionString</key>
-		<string>1.0.1</string>
+		<string>1.0.0</string>
 		<key>CFBundleVersion</key>
-		<string>1.0.1</string>
+		<string>1.0.0</string>
 		<key>SigningIdentity</key>
 		<string>Apple Development: Christian Badusch (HM8V4223R3)</string>
 		<key>Team</key>
@@ -24,7 +24,7 @@
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2023-10-30T14:00:08Z</date>
+	<date>2023-11-07T19:30:13Z</date>
 	<key>Name</key>
 	<string>Coodle</string>
 	<key>SchemeName</key>

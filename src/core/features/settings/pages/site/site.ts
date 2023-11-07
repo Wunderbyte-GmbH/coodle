@@ -64,7 +64,7 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
 
         this.handlers = new CoreListItemsManager(source, CoreSitePreferencesPage);
         // const generalSettingHandler = new Core
-        console.log('pref handlers', this.handlers)
+        console.log('pref handlers', this.handlers);
 
         this.sitesObserver = CoreEvents.on(CoreEvents.SITE_UPDATED, () => {
             this.refreshData();
@@ -90,7 +90,7 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
      * @inheritdoc
      */
     async ngAfterViewInit(): Promise<void> {
-        this.dataSaver = await CoreConfig.get(CoreConstants.SETTINGS_SYNC_ONLY_ON_WIFI, true);
+        this.dataSaver = false;
 
         const pageToOpen = CoreNavigator.getRouteParam('page');
 
