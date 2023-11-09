@@ -47,16 +47,16 @@ export class CoodlelandingPage implements OnInit {
         //     handlers && this.initHandlers(handlers);
         // });
 
-        CoreEvents.on(CoreEvents.SITE_UPDATED, async () => {
-            // this.customItems = await CoreMainMenu.getCustomMenuItems();
-            window.setTimeout(async () => {
+        // CoreEvents.on(CoreEvents.SITE_UPDATED, async () => {
+        //     // this.customItems = await CoreMainMenu.getCustomMenuItems();
+        //     window.setTimeout(async () => {
 
-                const sites = await CoreSites.getSitesInstances();
-                await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
+        //         const sites = await CoreSites.getSitesInstances();
+        //         await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
 
-                CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
-            }, 10000);
-        }, CoreSites.getCurrentSiteId());
+        //         CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
+        //     }, 10000);
+        // }, CoreSites.getCurrentSiteId());
 
     }
 
@@ -190,10 +190,10 @@ export class CoodlelandingPage implements OnInit {
         //     this.allHandlers = handlers;
         // }),first()).toPromise();
 
-        const sites = await CoreSites.getSitesInstances();
-        await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
+        // const sites = await CoreSites.getSitesInstances();
+        // await CoreUtils.ignoreErrors(Promise.all(sites.map((site) => site.invalidateWsCache())));
 
-        CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
+        // CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED);
     }
 
     refreshData(event: any): void {

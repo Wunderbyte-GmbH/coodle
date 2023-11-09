@@ -148,7 +148,7 @@ export class CoreNavigatorService {
             ? await NavController.navigateRoot(url, navigationOptions)
             : await NavController.navigateForward(url, navigationOptions);
 
-        console.log('navresult', navigationResult)
+        console.log('navresult', navigationResult);
         if (options.nextNavigation?.path && navigationResult !== false) {
             if (options.nextNavigation.isSitePath) {
                 return this.navigateToSitePath(options.nextNavigation.path, options.nextNavigation.options);
@@ -187,7 +187,7 @@ export class CoreNavigatorService {
     async navigateToSiteHome(options: Omit<CoreNavigationOptions, 'reset'> & { siteId?: string } = {}): Promise<boolean> {
         const siteId = options.siteId ?? CoreSites.getCurrentSiteId();
         const landingPagePath = CoreSites.isLoggedIn() && CoreSites.getCurrentSiteId() === siteId ?
-            this.getLandingTabPage() : 'main';
+            this.getLandingTabPage() : 'coodlelanding';
 
         return this.navigateToSitePath(landingPagePath, {
             ...options,
@@ -595,7 +595,8 @@ export class CoreNavigatorService {
 
         const handlers = CoreMainMenuDelegate.getHandlers().filter((handler) => !handler.onlyInMore);
 
-        return handlers[0]?.page || '';
+        // Hardcooded return our landingpage.
+        return 'coodlelanding';
     }
 
     /**

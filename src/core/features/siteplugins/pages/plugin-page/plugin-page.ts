@@ -24,6 +24,8 @@ import { CoreSitePluginsPluginContentComponent } from '../../components/plugin-c
 import { AddonPrivateFilesHelper } from '@addons/privatefiles/services/privatefiles-helper';
 import { AddonPrivateFilesGetUserInfoWSResult } from '@addons/privatefiles/services/privatefiles';
 import { CoreDomUtils } from '@services/utils/dom';
+import { Translate } from '@singletons';
+import { CoreLang } from '@services/lang';
 
 /**
  * Page to render a site plugin page.
@@ -45,13 +47,15 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
     preSets?: CoreSiteWSPreSets; // The preSets for the WS call.
     ptrEnabled = false;
     comingFromCoodle?: boolean;
+    isPluginTitle = false;
+    titleLocal?: string; // Page title.
 
     /**
      * @inheritdoc
      */
     ngOnInit(): void {
         this.comingFromCoodle = CoreNavigator.getRouteParam('comingFromCoodle');
-        this.title = CoreNavigator.getRouteParam('title');
+        // this.title = CoreNavigator.getRouteParam('title');
         this.component = CoreNavigator.getRouteParam('component');
         this.method = CoreNavigator.getRouteParam('method');
         this.args = CoreNavigator.getRouteParam('args');
@@ -59,6 +63,39 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
         this.jsData = CoreNavigator.getRouteParam('jsData');
         this.preSets = CoreNavigator.getRouteParam('preSets');
         this.ptrEnabled = !CoreUtils.isFalseOrZero(CoreNavigator.getRouteBooleanParam('ptrEnabled'));
+
+
+        if (CoreNavigator.getRouteParam('title')?.startsWith('plugin') ) {
+                // Translate didnt work -> Fallback
+                this.title = CoreNavigator.getRouteParam('title')?.replace('plugin','addon')
+        }
+        const test = Translate.currentLang;
+
+        const trans = Translate.getTranslation('de').subscribe(res=>
+            console.log('lang', test, trans, res)
+            );
+
+
+        // CoreSitePluginsHelperProvider.loadSitePlugin().then(() => {
+        //     this.title = CoreNavigator.getRouteParam('title');
+        // }).catch(() => {
+        //     return;
+        // });
+
+        // if (this.title?.startsWith('plugin')) {
+        //     const test = CoreLang.getAllSitePluginsStrings();
+        //     const lang = CoreLang.getCurrentLanguage();
+        //     // console.log('lang', lang);
+        //     // const test = CoreLang.getAllSitePluginsStrings();
+        //     const titleTranslate = Translate.instant(this.title);
+        //     console.log('lang', lang, titleTranslate);
+        //     // if (titleTranslate.startsWith('plugin') ) {
+        //     //     // Translate didnt work -> Fallback
+        //     //     this.titleLocal = this.title.replace('plugin','addon');
+        //     //     this.isPluginTitle = true;
+        //     // }
+
+        // }
     }
 
     /**
@@ -84,7 +121,7 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
      */
     ionViewDidEnter(): void {
         this.content?.callComponentFunction('ionViewDidEnter');
-        this.title = CoreNavigator.getRouteParam('title');
+        // this.title = CoreNavigator.getRouteParam('title');
     }
 
     /**

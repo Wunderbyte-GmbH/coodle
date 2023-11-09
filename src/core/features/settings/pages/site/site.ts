@@ -82,7 +82,7 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
         });
     }
 
-    goToGenSettings() {
+    goToGenSettings(): void {
         CoreNavigator.navigateToSitePath('/settings/general');
     }
 
@@ -90,7 +90,7 @@ export class CoreSitePreferencesPage implements AfterViewInit, OnDestroy {
      * @inheritdoc
      */
     async ngAfterViewInit(): Promise<void> {
-        this.dataSaver = false;
+        this.dataSaver = await CoreConfig.get(CoreConstants.SETTINGS_SYNC_ONLY_ON_WIFI, true);
 
         const pageToOpen = CoreNavigator.getRouteParam('page');
 

@@ -6,7 +6,8 @@
             <ion-back-button [text]="'core.back' | translate"></ion-back-button>
         </ion-buttons>
         <ion-title>
-            <h1 *ngIf="title">{{ title | translate }}</h1>
+            <h1 *ngIf="title && !isPluginTitle">{{ title | translate }}</h1>
+            <h1 *ngIf="isPluginTitle && titleLocal">{{ titleLocal | translate }}</h1>
         </ion-title>
 
         <ion-buttons slot="end">
@@ -22,8 +23,8 @@
         [data]="jsData" [pageTitle]="title">
     </core-site-plugins-plugin-content>
 </ion-content>
-<ion-fab *ngIf="title === 'plugin.local_coodle.dok1' || title === 'plugin.local_coodle.dok3'" slot="fixed" vertical="bottom"
-    horizontal="end">
+<ion-fab *ngIf="title === 'plugin.local_coodle.dok1' || title === 'plugin.local_coodle.dok3'
+|| title === 'addon.local_coodle.dok1' || title === 'addon.local_coodle.dok3'" slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button (click)="uploadFile()">
         <ion-icon name="add"></ion-icon>
     </ion-fab-button>

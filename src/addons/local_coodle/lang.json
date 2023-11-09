@@ -1,16 +1,19 @@
 {
     "image": "Photo",
     "video": "Video",
-    "viewtodos": "Todo's",
+    "viewtodos": "Todos",
+    "todos": "Todos",
     "dok1": "Documents",
-    "dok2": "Documents",
+    "dok2": "Advisory Service",
     "dok3": "Advisory service",
     "viewaddress": "Address",
     "landingpage": "COOdLe",
     "viewinfo": "Info",
     "notes": "Notes",
     "selectuser": "Select User",
-    "viewdates": "Dates",
+    "viewdates": "Events",
     "hideLogin": "Hide login-form",
-    "showLogin": "Show login-form"
+    "showLogin": "Show login-form",
+    "impressum": "Impressum",
+    "myfiles": "My Files"
 }

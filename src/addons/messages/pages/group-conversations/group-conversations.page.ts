@@ -117,7 +117,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
             AddonMessagesProvider.NEW_MESSAGE_EVENT,
             (data) => {
                 console.log('update chat');
-            // Check if the new message belongs to the option that is currently expanded.
+                // Check if the new message belongs to the option that is currently expanded.
                 const expandedOption = this.getExpandedOption();
                 // const messageOption = this.getConversationOption(data);
 
@@ -333,7 +333,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
         const temp = AddonMessages.sortConversations(this.favourites.conversations.concat(this.group.conversations)
             .concat(this.individual.conversations));
         this.allConversations = [...temp];
-        console.warn('convos', this.allConversations)
+        console.warn('convos', this.allConversations);
 
     }
 
@@ -442,7 +442,7 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
 
         // Get the conversations and, if needed, the offline messages. Always try to get the latest data.
         promises.push(AddonMessages.invalidateConversations(this.siteId).then(async () => {
-            data = await AddonMessages.getConversations(option.type, option.favourites, limitFrom, this.siteId);
+            data = await AddonMessages.getConversations(option.type, option.favourites, limitFrom, this.siteId );
 
             return;
         }));

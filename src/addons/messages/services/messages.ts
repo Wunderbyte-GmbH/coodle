@@ -354,12 +354,14 @@ export class AddonMessagesProvider {
         const regexvdieo = /<video\b[^>]*>/;
         if (regeximg.test(text)) {
             const imagestring = await CoreLang.getMessage('addon.local_coodle.image', lang);
-            return 'Image'
+
+            return 'Image';
         } else if (regexvdieo.test(text)) {
             const videostring = await CoreLang.getMessage('addon.local_coodle.video', lang);
-            return 'Video'
+
+            return 'Video';
         } else {
-            return undefined
+            return undefined;
         }
     }
 
@@ -1456,7 +1458,7 @@ export class AddonMessagesProvider {
         preSets: CoreSiteWSPreSets,
         siteId?: string,
     ): Promise<AddonMessagesGetMessagesResult> {
-        console.log('getting messages')
+        console.log('getting messages');
         params.type = 'conversations';
         params.newestfirst = true;
 

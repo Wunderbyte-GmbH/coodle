@@ -274,7 +274,9 @@ export class CoreLangProvider {
 
         // User hasn't defined a language. If default language is forced, use it.
         if (CoreConstants.CONFIG.default_lang && CoreConstants.CONFIG.forcedefaultlanguage) {
+            console.log('godefualt Lang', CoreConstants.CONFIG.default_lang);
             return CoreConstants.CONFIG.default_lang;
+
         }
 
         // No forced language, try to get current language from browser.
