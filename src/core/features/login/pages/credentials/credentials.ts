@@ -100,7 +100,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
         if (this.siteConfig) {
             this.treatSiteConfig();
         }
-        this.isFixedUrlSet = CoreLoginHelper.isFixedUrlSet();
+        this.isFixedUrlSet = true;
 
         if (this.isFixedUrlSet || !this.siteConfig) {
             // Fixed URL or not siteConfig retrieved from params, we need to check if it uses browser SSO login.

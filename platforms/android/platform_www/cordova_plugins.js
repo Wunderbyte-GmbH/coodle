@@ -263,38 +263,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-camera.Camera",
-      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "Camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverOptions",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverOptions"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.camera",
-      "file": "plugins/cordova-plugin-camera/www/Camera.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "navigator.camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverHandle",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverHandle"
-      ]
-    },
-    {
       "id": "cordova-plugin-chooser.Chooser",
       "file": "plugins/cordova-plugin-chooser/www/chooser.js",
       "pluginId": "cordova-plugin-chooser",
@@ -645,6 +613,54 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "PushNotification"
       ]
+    },
+    {
+      "id": "com.wmjalak.cordova.fileopener.FileOpener",
+      "file": "plugins/com.wmjalak.cordova.fileopener/www/fileopener.js",
+      "pluginId": "com.wmjalak.cordova.fileopener",
+      "clobbers": [
+        "fileOpener"
+      ]
+    },
+    {
+      "id": "com.napolitano.cordova.plugin.intent.IntentPlugin",
+      "file": "plugins/com.napolitano.cordova.plugin.intent/www/android/IntentPlugin.js",
+      "pluginId": "com.napolitano.cordova.plugin.intent",
+      "clobbers": [
+        "IntentPlugin"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.Camera",
+      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "Camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverOptions",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverOptions"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.camera",
+      "file": "plugins/cordova-plugin-camera/www/Camera.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "navigator.camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverHandle",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverHandle"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -654,7 +670,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-advanced-http": "3.3.1",
     "cordova-plugin-androidx-adapter": "1.1.3",
     "cordova-plugin-badge": "0.8.8",
-    "cordova-plugin-camera": "6.0.0",
     "cordova-plugin-chooser": "1.3.1",
     "cordova-plugin-customurlscheme": "5.0.2",
     "cordova-plugin-device": "2.1.0",
@@ -680,6 +695,9 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "@moodlehq/cordova-plugin-local-notification": "0.9.0-moodle.7",
     "@moodlehq/cordova-plugin-qrscanner": "3.0.1-moodle.4",
     "@moodlehq/cordova-plugin-zip": "3.1.0-moodle.1",
-    "@moodlehq/phonegap-plugin-push": "4.0.0-moodle.2"
+    "@moodlehq/phonegap-plugin-push": "4.0.0-moodle.2",
+    "com.wmjalak.cordova.fileopener": "1.0.0",
+    "com.napolitano.cordova.plugin.intent": "0.1.2",
+    "cordova-plugin-camera": "6.0.1-dev"
   };
 });

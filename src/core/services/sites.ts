@@ -926,10 +926,10 @@ export class CoreSitesProvider {
 
         const site = await this.getSite(siteId);
 
-        const siteUrlAllowed = await CoreLoginHelper.isSiteUrlAllowed(site.getURL(), false);
-        if (!siteUrlAllowed) {
-            throw new CoreErrorWithOptions(Translate.instant('core.login.sitenotallowed'));
-        }
+        // const siteUrlAllowed = await CoreLoginHelper.isSiteUrlAllowed(site.getURL(), false);
+        // if (!siteUrlAllowed) {
+        //     throw new CoreErrorWithOptions(Translate.instant('core.login.sitenotallowed'));
+        // }
 
         this.currentSite = site;
 

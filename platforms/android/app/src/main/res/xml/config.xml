@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="106" id="at.wuk.coodle" ios-CFBundleVersion="1.0.0" version="1.0.6" versionCode="100" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="108" id="at.wuk.coodle" ios-CFBundleVersion="1.0.0" version="1.0.8" versionCode="100" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="IntentShim">
         <param name="android-package" value="com.darryncampbell.cordova.plugin.intent.IntentShim" />
         <param name="onload" value="true" />
@@ -68,6 +68,12 @@
         <param name="android-package" value="org.apache.cordova.preventoverride.PreventOverride" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="FileOpener">
+        <param name="android-package" value="com.wmjalak.cordova.fileopener.FileOpener" />
+    </feature>
+    <feature name="IntentPlugin">
+        <param name="android-package" value="com.napolitano.cordova.plugin.intent.IntentPlugin" />
+    </feature>
     <feature name="Zip">
         <param name="android-package" value="org.apache.cordova.Zip" />
     </feature>
@@ -121,7 +127,7 @@
     <name>Coodle</name>
     <description>Coodle App</description>
     <author email="info@wunderbyte.at" href="http://wunderbyte.at">Wunderbyte Mobile team</author>
-    <content original-src="index.html" src="https://192.168.0.74:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -194,7 +200,7 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="false" />
-    <preference name="AppendUserAgent" value="Coodle 1.0.6 (6)" />
+    <preference name="AppendUserAgent" value="Coodle 1.0.8 (8)" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />

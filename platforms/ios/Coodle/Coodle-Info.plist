@@ -390,6 +390,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -408,7 +412,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>5</string>
 	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
 	<string>YES</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -419,6 +423,11 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>192.168.0.74</key>
+			<dict/>
+		</dict>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>This app requires constant Bluetooth access to function properly.</string>
@@ -426,18 +435,28 @@
 	<string>This app requires Bluetooth access to function properly.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app requires calendar access to function properly.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>This app requires contacts access to function properly.</string>
 	<key>NSCrossWebsiteTrackingUsageDescription</key>
 	<string>This app needs third party cookies to correctly render embedded content from the Moodle site.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app requires constant access to your location in order to track your position, even when the screen is off or the app is in the background.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location so you can attach it as part of your submissions.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location so you can attach it as part of your submissions.</string>
 	<key>NSMainNibFile</key>
-	<string/>
+	<string></string>
 	<key>NSMainNibFile~ipad</key>
-	<string/>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>This app requires motion detection access to function properly.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>This app requires reminders access to function properly.</string>
 	<key>UIBackgroundModes</key>
@@ -451,9 +470,9 @@
 	<key>UILaunchStoryboardName</key>
 	<string>CDVLaunchScreen</string>
 	<key>UIRequiresFullScreen</key>
-	<false/>
+	<true/>
 	<key>UIStatusBarStyle</key>
-	<string/>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -464,21 +483,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location so you can attach it as part of your submissions.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need your location so you can attach it as part of your submissions.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-	</array>
 </dict>
 </plist>
