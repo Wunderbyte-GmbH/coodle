@@ -25,8 +25,7 @@
 
                 <div class="core-login-site-logo" *ngIf="!showSiteAvatar">
                     <!-- Show site logo or a default image. -->
-                    <img *ngIf="logoUrl" [src]="logoUrl" role="presentation" onError="this.src='assets/img/login_logo.png'" alt="">
-                    <img *ngIf="!logoUrl" src="assets/img/login_logo.png" role="presentation" alt="">
+                    <img class="bright" src="assets/img/icon_coodle_round.png" role="presentation" alt="">
                 </div>
 
                 <p *ngIf="siteName" class="ion-padding core-sitename">
@@ -90,13 +89,6 @@
 
             </form>
 
-            <p *ngIf="!showLoginForm" class="showform" (click)="toggleForm()"
-                attr.aria-label="{{'addon.local_coodle.showLogin' | translate}}">
-                {{ 'addon.local_coodle.showLogin' | translate}}</p>
-            <p *ngIf="showLoginForm" class="showform" (click)="toggleForm()"
-                attr.aria-label="{{'addon.local_coodle.hideLogin' | translate}}">
-                {{ 'addon.local_coodle.hideLogin' | translate}}</p>
-
 
             <ng-container *ngIf="showScanQR">
                 <ion-button expand="block" fill="outline" class="ion-margin core-login-site-qrcode" (click)="showInstructionsAndScanQR()">
@@ -104,6 +96,15 @@
                     {{ 'core.scanqr' | translate }}
                 </ion-button>
             </ng-container>
+
+            <ion-row>
+                <p *ngIf="!showLoginForm" class="showform" (click)="toggleForm()"
+                    attr.aria-label="{{'addon.local_coodle.showLogin' | translate}}">
+                    {{ 'addon.local_coodle.showLogin' | translate}}</p>
+                <p *ngIf="showLoginForm" class="showform" (click)="toggleForm()"
+                    attr.aria-label="{{'addon.local_coodle.hideLogin' | translate}}">
+                    {{ 'addon.local_coodle.hideLogin' | translate}}</p>
+            </ion-row>
 
 
             <!-- Identity providers. -->
