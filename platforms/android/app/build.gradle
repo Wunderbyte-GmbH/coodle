@@ -40,10 +40,12 @@ buildscript {
     repositories repos
 
     dependencies {
-        classpath "com.android.tools.build:gradle:${cordovaConfig.AGP_VERSION}"
+        // classpath "com.android.tools.build:gradle:${cordovaConfig.AGP_VERSION}"
+        classpath 'com.android.tools.build:gradle:8.1.0'
 
         if (cordovaConfig.IS_GRADLE_PLUGIN_KOTLIN_ENABLED) {
-            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${cordovaConfig.KOTLIN_VERSION}"
+            //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${cordovaConfig.KOTLIN_VERSION}"
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
         }
 
         if(cordovaConfig.IS_GRADLE_PLUGIN_GOOGLE_SERVICES_ENABLED) {
@@ -184,16 +186,17 @@ task cdvPrintProps {
 }
 
 android {
+    namespace 'at.wuk.coodle'
+    compileSdkVersion 35
     defaultConfig {
         versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
-        applicationId privateHelpers.extractStringFromManifest("package")
+        applicationId 'at.wuk.coodle'
 
         minSdkVersion cordovaConfig.MIN_SDK_VERSION
         if (cordovaConfig.MAX_SDK_VERSION != null) {
             maxSdkVersion cordovaConfig.MAX_SDK_VERSION
         }
-        targetSdkVersion cordovaConfig.SDK_VERSION
-        compileSdkVersion cordovaConfig.SDK_VERSION
+        targetSdkVersion 35
     }
 
     lintOptions {
@@ -280,6 +283,7 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+    namespace 'at.wuk.coodle'
 }
 
 /*

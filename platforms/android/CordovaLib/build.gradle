@@ -42,7 +42,8 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion cordovaConfig.SDK_VERSION
+    namespace 'org.apache.cordova'
+    compileSdkVersion 35
     buildToolsVersion cordovaConfig.BUILD_TOOLS_VERSION
 
     compileOptions {
@@ -50,10 +51,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+
     // For the Android Cordova Lib, we allow changing the minSdkVersion, but it is at the users own risk
     defaultConfig {
         minSdkVersion cordovaConfig.MIN_SDK_VERSION
+        targetSdkVersion 35
     }
+
 
     sourceSets {
         main {
@@ -72,6 +76,10 @@ android {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/NOTICE'
+    }
+    buildFeatures {
+        renderScript true
+        aidl true
     }
 }
 
